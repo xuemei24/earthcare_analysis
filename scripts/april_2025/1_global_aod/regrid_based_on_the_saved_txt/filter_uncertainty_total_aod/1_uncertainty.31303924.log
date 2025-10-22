@@ -1,0 +1,3320 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 53180, mtime: Wed Sep 24 13:03:55 2025
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Sun Oct 19 07:49:04 2025 (1760860144.4028883) on ac6-102.bullx:/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/sbatch_uncertainty.job
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --output=%x.%j.log
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=1_uncertainty
+[ECMWF-INFO -sbatch] - #SBATCH --qos=np
+[ECMWF-INFO -sbatch] - #SBATCH --nodes=1
+[ECMWF-INFO -sbatch] - #SBATCH --ntasks-per-node=32
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=4
+[ECMWF-INFO -sbatch] - #SBATCH --hint=nomultithread
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['sbatch_uncertainty.job']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=4
+[ECMWF-INFO -sbatch] - ARG --job_name=1_uncertainty
+[ECMWF-INFO -sbatch] - ARG --ntasks_per_node=32
+[ECMWF-INFO -sbatch] - ARG --nodes=1
+[ECMWF-INFO -sbatch] - ARG --output=%x.%j.log
+[ECMWF-INFO -sbatch] - ARG --qos=np
+[ECMWF-INFO -sbatch] - ARG --hint=nomultithread
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: nld6854-1_uncertainty-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/1_uncertainty._JOBID_.log
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - Average Walltime 3408 with a Standard Deviation 159
+[ECMWF-INFO -sbatch] - Runtime history
+[ECMWF-INFO -sbatch] -   Date               | Cores   Cluster   Walltime       Mem
+[ECMWF-INFO -sbatch] -   17.10.2025 - 14:27 | 256        ac         3473       240000M   
+[ECMWF-INFO -sbatch] -   17.10.2025 - 12:43 | 256        ac         3544       240000M   
+[ECMWF-INFO -sbatch] -   17.10.2025 - 11:28 | 256        ac         3209       240000M   
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=4', '--job-name=1_uncertainty', '--ntasks-per-node=32', '--nodes=1', '--output=%x.%j.log', '--qos=np', '--hint=nomultithread', '--licenses=h2resw01', '--time=00:59:27', '/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/sbatch_uncertainty.job']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 31303924
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ac2-2079 at 20251019_074933.388, PID: 1566832, JOBID: 31303924
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/nld6854
+[ECMWF-INFO -ecprofile] $PERM=/perm/nld6854
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/nld6854
+[ECMWF-INFO -ecprofile] $TMPDIR=/dev/shm/_tmpdir_.nld6854.31303924
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/nld6854/4/31303924
+<IPython.core.display.HTML object>
+<xarray.Dataset> Size: 1GB
+Dimensions:                  (forecast_period: 12, forecast_reference_time: 60,
+                              latitude: 451, longitude: 900)
+Coordinates:
+  * forecast_period          (forecast_period) timedelta64[ns] 96B 00:00:00 ....
+  * forecast_reference_time  (forecast_reference_time) datetime64[ns] 480B 20...
+  * latitude                 (latitude) float64 4kB 90.0 89.6 ... -89.6 -90.0
+  * longitude                (longitude) float64 7kB 0.0 0.4 0.8 ... 359.2 359.6
+    valid_time               (forecast_reference_time, forecast_period) datetime64[ns] 6kB ...
+Data variables:
+    aod355                   (forecast_period, forecast_reference_time, latitude, longitude) float32 1GB ...
+Attributes:
+    GRIB_centre:             ecmf
+    GRIB_centreDescription:  European Centre for Medium-Range Weather Forecasts
+    GRIB_subCentre:          0
+    Conventions:             CF-1.7
+    institution:             European Centre for Medium-Range Weather Forecasts
+    history:                 2025-10-01T18:41 GRIB to CDM+CF via cfgrib-0.9.1...
+<xarray.DataArray 'forecast_reference_time' (forecast_reference_time: 60)> Size: 480B
+array(['2025-09-01T00:00:00.000000000', '2025-09-01T12:00:00.000000000',
+       '2025-09-02T00:00:00.000000000', '2025-09-02T12:00:00.000000000',
+       '2025-09-03T00:00:00.000000000', '2025-09-03T12:00:00.000000000',
+       '2025-09-04T00:00:00.000000000', '2025-09-04T12:00:00.000000000',
+       '2025-09-05T00:00:00.000000000', '2025-09-05T12:00:00.000000000',
+       '2025-09-06T00:00:00.000000000', '2025-09-06T12:00:00.000000000',
+       '2025-09-07T00:00:00.000000000', '2025-09-07T12:00:00.000000000',
+       '2025-09-08T00:00:00.000000000', '2025-09-08T12:00:00.000000000',
+       '2025-09-09T00:00:00.000000000', '2025-09-09T12:00:00.000000000',
+       '2025-09-10T00:00:00.000000000', '2025-09-10T12:00:00.000000000',
+       '2025-09-11T00:00:00.000000000', '2025-09-11T12:00:00.000000000',
+       '2025-09-12T00:00:00.000000000', '2025-09-12T12:00:00.000000000',
+       '2025-09-13T00:00:00.000000000', '2025-09-13T12:00:00.000000000',
+       '2025-09-14T00:00:00.000000000', '2025-09-14T12:00:00.000000000',
+       '2025-09-15T00:00:00.000000000', '2025-09-15T12:00:00.000000000',
+       '2025-09-16T00:00:00.000000000', '2025-09-16T12:00:00.000000000',
+       '2025-09-17T00:00:00.000000000', '2025-09-17T12:00:00.000000000',
+       '2025-09-18T00:00:00.000000000', '2025-09-18T12:00:00.000000000',
+       '2025-09-19T00:00:00.000000000', '2025-09-19T12:00:00.000000000',
+       '2025-09-20T00:00:00.000000000', '2025-09-20T12:00:00.000000000',
+       '2025-09-21T00:00:00.000000000', '2025-09-21T12:00:00.000000000',
+       '2025-09-22T00:00:00.000000000', '2025-09-22T12:00:00.000000000',
+       '2025-09-23T00:00:00.000000000', '2025-09-23T12:00:00.000000000',
+       '2025-09-24T00:00:00.000000000', '2025-09-24T12:00:00.000000000',
+       '2025-09-25T00:00:00.000000000', '2025-09-25T12:00:00.000000000',
+       '2025-09-26T00:00:00.000000000', '2025-09-26T12:00:00.000000000',
+       '2025-09-27T00:00:00.000000000', '2025-09-27T12:00:00.000000000',
+       '2025-09-28T00:00:00.000000000', '2025-09-28T12:00:00.000000000',
+       '2025-09-29T00:00:00.000000000', '2025-09-29T12:00:00.000000000',
+       '2025-09-30T00:00:00.000000000', '2025-09-30T12:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * forecast_reference_time  (forecast_reference_time) datetime64[ns] 480B 20...
+Attributes:
+    long_name:      initial time of forecast
+    standard_name:  forecast_reference_time
+<xarray.DataArray 'forecast_period' (forecast_period: 12)> Size: 96B
+array([             0,  3600000000000,  7200000000000, 10800000000000,
+       14400000000000, 18000000000000, 21600000000000, 25200000000000,
+       28800000000000, 32400000000000, 36000000000000, 39600000000000],
+      dtype='timedelta64[ns]')
+Coordinates:
+  * forecast_period  (forecast_period) timedelta64[ns] 96B 00:00:00 ... 11:00:00
+Attributes:
+    long_name:      time since forecast_reference_time
+    standard_name:  forecast_period
+    dtype:          timedelta64[ns]
+<xarray.DataArray (forecast_period: 12, forecast_reference_time: 60)> Size: 6kB
+array([['2025-09-01T00:00:00.000000000', '2025-09-01T12:00:00.000000000',
+        '2025-09-02T00:00:00.000000000', '2025-09-02T12:00:00.000000000',
+        '2025-09-03T00:00:00.000000000', '2025-09-03T12:00:00.000000000',
+        '2025-09-04T00:00:00.000000000', '2025-09-04T12:00:00.000000000',
+        '2025-09-05T00:00:00.000000000', '2025-09-05T12:00:00.000000000',
+        '2025-09-06T00:00:00.000000000', '2025-09-06T12:00:00.000000000',
+        '2025-09-07T00:00:00.000000000', '2025-09-07T12:00:00.000000000',
+        '2025-09-08T00:00:00.000000000', '2025-09-08T12:00:00.000000000',
+        '2025-09-09T00:00:00.000000000', '2025-09-09T12:00:00.000000000',
+        '2025-09-10T00:00:00.000000000', '2025-09-10T12:00:00.000000000',
+        '2025-09-11T00:00:00.000000000', '2025-09-11T12:00:00.000000000',
+        '2025-09-12T00:00:00.000000000', '2025-09-12T12:00:00.000000000',
+        '2025-09-13T00:00:00.000000000', '2025-09-13T12:00:00.000000000',
+        '2025-09-14T00:00:00.000000000', '2025-09-14T12:00:00.000000000',
+        '2025-09-15T00:00:00.000000000', '2025-09-15T12:00:00.000000000',
+        '2025-09-16T00:00:00.000000000', '2025-09-16T12:00:00.000000000',
+        '2025-09-17T00:00:00.000000000', '2025-09-17T12:00:00.000000000',
+        '2025-09-18T00:00:00.000000000', '2025-09-18T12:00:00.000000000',
+        '2025-09-19T00:00:00.000000000', '2025-09-19T12:00:00.000000000',
+        '2025-09-20T00:00:00.000000000', '2025-09-20T12:00:00.000000000',
+...
+        '2025-09-12T11:00:00.000000000', '2025-09-12T23:00:00.000000000',
+        '2025-09-13T11:00:00.000000000', '2025-09-13T23:00:00.000000000',
+        '2025-09-14T11:00:00.000000000', '2025-09-14T23:00:00.000000000',
+        '2025-09-15T11:00:00.000000000', '2025-09-15T23:00:00.000000000',
+        '2025-09-16T11:00:00.000000000', '2025-09-16T23:00:00.000000000',
+        '2025-09-17T11:00:00.000000000', '2025-09-17T23:00:00.000000000',
+        '2025-09-18T11:00:00.000000000', '2025-09-18T23:00:00.000000000',
+        '2025-09-19T11:00:00.000000000', '2025-09-19T23:00:00.000000000',
+        '2025-09-20T11:00:00.000000000', '2025-09-20T23:00:00.000000000',
+        '2025-09-21T11:00:00.000000000', '2025-09-21T23:00:00.000000000',
+        '2025-09-22T11:00:00.000000000', '2025-09-22T23:00:00.000000000',
+        '2025-09-23T11:00:00.000000000', '2025-09-23T23:00:00.000000000',
+        '2025-09-24T11:00:00.000000000', '2025-09-24T23:00:00.000000000',
+        '2025-09-25T11:00:00.000000000', '2025-09-25T23:00:00.000000000',
+        '2025-09-26T11:00:00.000000000', '2025-09-26T23:00:00.000000000',
+        '2025-09-27T11:00:00.000000000', '2025-09-27T23:00:00.000000000',
+        '2025-09-28T11:00:00.000000000', '2025-09-28T23:00:00.000000000',
+        '2025-09-29T11:00:00.000000000', '2025-09-29T23:00:00.000000000',
+        '2025-09-30T11:00:00.000000000', '2025-09-30T23:00:00.000000000']],
+      dtype='datetime64[ns]')
+Coordinates:
+  * forecast_period          (forecast_period) timedelta64[ns] 96B 00:00:00 ....
+  * forecast_reference_time  (forecast_reference_time) datetime64[ns] 480B 20...
+(12, 60)
+<xarray.Dataset> Size: 1GB
+Dimensions:                  (latitude: 451, longitude: 900, time: 720)
+Coordinates:
+  * latitude                 (latitude) float64 4kB 90.0 89.6 ... -89.6 -90.0
+  * longitude                (longitude) float64 7kB 0.0 0.4 0.8 ... 359.2 359.6
+  * time                     (time) datetime64[ns] 6kB 2025-09-01 ... 2025-09...
+    forecast_reference_time  (time) datetime64[ns] 6kB 2025-09-01 ... 2025-09...
+    forecast_period          (time) timedelta64[ns] 6kB 00:00:00 ... 11:00:00
+    forecast_time            (time) datetime64[ns] 6kB 2025-09-01 ... 2025-09...
+Data variables:
+    aod355                   (latitude, longitude, time) float32 1GB 0.0988 ....
+Attributes:
+    GRIB_centre:             ecmf
+    GRIB_centreDescription:  European Centre for Medium-Range Weather Forecasts
+    GRIB_subCentre:          0
+    Conventions:             CF-1.7
+    institution:             European Centre for Medium-Range Weather Forecasts
+    history:                 2025-10-01T18:41 GRIB to CDM+CF via cfgrib-0.9.1...
+<xarray.DataArray 'time' (time: 720)> Size: 6kB
+array(['2025-09-01T00:00:00.000000000', '2025-09-01T01:00:00.000000000',
+       '2025-09-01T02:00:00.000000000', ..., '2025-09-30T21:00:00.000000000',
+       '2025-09-30T22:00:00.000000000', '2025-09-30T23:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * time                     (time) datetime64[ns] 6kB 2025-09-01 ... 2025-09...
+    forecast_reference_time  (time) datetime64[ns] 6kB 2025-09-01 ... 2025-09...
+    forecast_period          (time) timedelta64[ns] 6kB 00:00:00 ... 11:00:00
+    forecast_time            (time) datetime64[ns] 6kB 2025-09-01 ... 2025-09...
+cams_aod_r (451, 900, 240)
+lwc_cams.shape (4, 60, 451, 900)
+(4, 60)
+valid_time_flat.shape,lwc_flat.shape (240,) (240, 451, 900)
+(451, 900, 240)
+(451, 900, 240)
+(451, 900, 240)
+<xarray.Dataset> Size: 390MB
+Dimensions:    (latitude: 451, longitude: 900, timeN: 240)
+Coordinates:
+  * latitude   (latitude) float64 4kB 90.0 89.6 89.2 88.8 ... -89.2 -89.6 -90.0
+  * longitude  (longitude) float64 7kB 0.0 0.4 0.8 1.2 ... -1.6 -1.2 -0.8 -0.4
+  * timeN      (timeN) datetime64[ns] 2kB 2025-09-01 ... 2025-09-30T21:00:00
+Data variables:
+    aod355     (latitude, longitude, timeN) float32 390MB 0.0988 ... 0.01703
+longitude <xarray.DataArray 'longitude' (longitude: 900)> Size: 7kB
+array([ 0. ,  0.4,  0.8, ..., -1.2, -0.8, -0.4])
+Coordinates:
+  * longitude  (longitude) float64 7kB 0.0 0.4 0.8 1.2 ... -1.6 -1.2 -0.8 -0.4
+Selecting frame from 99 to 5044
+<IPython.core.display.HTML object>
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+(4867, 242) (4867, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 241) (4962, 241)
+Selecting frame from 96 to 4764
+Selecting frame from 96 to 4764
+(4668, 242) (4668, 242)
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5109
+Selecting frame from 99 to 5109
+(5010, 242) (5010, 242)
+Selecting frame from 98 to 4924
+Selecting frame from 98 to 4924
+(4826, 242) (4826, 242)
+Selecting frame from 97 to 5241
+Selecting frame from 97 to 5241
+(5144, 242) (5144, 242)
+Selecting frame from 96 to 5163
+Selecting frame from 96 to 5163
+(5067, 242) (5067, 242)
+Selecting frame from 100 to 5244
+Selecting frame from 100 to 5244
+(5144, 242) (5144, 242)
+Selecting frame from 96 to 4922
+Selecting frame from 96 to 4922
+(4826, 242) (4826, 242)
+Selecting frame from 99 to 5244
+Selecting frame from 99 to 5244
+(5145, 242) (5145, 242)
+Selecting frame from 97 to 5164
+Selecting frame from 97 to 5164
+(5067, 242) (5067, 242)
+Selecting frame from 100 to 5244
+Selecting frame from 100 to 5244
+(5144, 242) (5144, 242)
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4742
+Selecting frame from 97 to 4742
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 97 to 4964
+Selecting frame from 97 to 4964
+(4867, 242) (4867, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 95 to 5040
+Selecting frame from 95 to 5040
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+(4867, 242) (4867, 242)
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+(4961, 242) (4961, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+(4961, 241) (4961, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 241) (4962, 241)
+Selecting frame from 96 to 4764
+Selecting frame from 96 to 4764
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5058
+Selecting frame from 97 to 5058
+(4961, 242) (4961, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 100 to 5045
+Selecting frame from 100 to 5045
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5059
+Selecting frame from 98 to 5059
+(4961, 242) (4961, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4741
+Selecting frame from 96 to 4741
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4766
+Selecting frame from 99 to 4766
+(4667, 242) (4667, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4742
+Selecting frame from 96 to 4742
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4965
+Selecting frame from 98 to 4965
+(4867, 242) (4867, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 97 to 4743
+Selecting frame from 97 to 4743
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+(4961, 242) (4961, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4743
+Selecting frame from 97 to 4743
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 5043
+Selecting frame from 96 to 5043
+(4947, 241) (4947, 241)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 241) (4963, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 94 to 4963
+Selecting frame from 94 to 4963
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 97 to 4744
+Selecting frame from 97 to 4744
+(4647, 242) (4647, 242)
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 241) (4963, 241)
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+(4669, 242) (4669, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4966
+Selecting frame from 96 to 4966
+(4870, 242) (4870, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 241) (4963, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 95 to 5042
+Selecting frame from 95 to 5042
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+(4669, 242) (4669, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+(4669, 242) (4669, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+(4669, 242) (4669, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+(4669, 242) (4669, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4743
+Selecting frame from 96 to 4743
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+(4669, 242) (4669, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5045
+Selecting frame from 98 to 5045
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 241) (4962, 241)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 241) (4962, 241)
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+(4669, 242) (4669, 242)
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 5058
+(4963, 242) (4963, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4744
+Selecting frame from 97 to 4744
+(4647, 242) (4647, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 94 to 4964
+Selecting frame from 94 to 4964
+(4870, 242) (4870, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4743
+Selecting frame from 97 to 4743
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 96 to 5043
+Selecting frame from 96 to 5043
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+(4867, 242) (4867, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 241) (4963, 241)
+Selecting frame from 96 to 4764
+Selecting frame from 96 to 4764
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 241) (4962, 241)
+Selecting frame from 96 to 4764
+Selecting frame from 96 to 4764
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 100 to 5046
+Selecting frame from 100 to 5046
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4742
+Selecting frame from 96 to 4742
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4766
+Selecting frame from 99 to 4766
+(4667, 242) (4667, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4744
+Selecting frame from 99 to 4744
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4963
+Selecting frame from 96 to 4963
+(4867, 242) (4867, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+(4668, 242) (4668, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+(4647, 242) (4647, 242)
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 100 to 5062
+Selecting frame from 100 to 5062
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 241) (4962, 241)
+Selecting frame from 95 to 4764
+Selecting frame from 95 to 4764
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 241) (4963, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5037
+Selecting frame from 99 to 5037
+(4938, 242) (4938, 242)
+Selecting frame from 97 to 4963
+Selecting frame from 97 to 4963
+(4866, 242) (4866, 242)
+Selecting frame from 99 to 5049
+Selecting frame from 99 to 5049
+(4950, 242) (4950, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 98 to 5033
+Selecting frame from 98 to 5033
+(4935, 242) (4935, 242)
+Selecting frame from 98 to 4905
+Selecting frame from 98 to 4905
+(4807, 242) (4807, 242)
+Selecting frame from 99 to 5011
+Selecting frame from 99 to 5011
+(4912, 242) (4912, 242)
+Selecting frame from 98 to 4711
+Selecting frame from 98 to 4711
+(4613, 242) (4613, 242)
+Selecting frame from 96 to 5033
+Selecting frame from 96 to 5033
+(4937, 242) (4937, 242)
+Selecting frame from 99 to 4946
+Selecting frame from 99 to 4946
+(4847, 242) (4847, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4731
+Selecting frame from 99 to 4731
+(4632, 242) (4632, 242)
+Selecting frame from 99 to 5041
+Selecting frame from 99 to 5041
+(4942, 242) (4942, 242)
+Selecting frame from 99 to 4943
+Selecting frame from 99 to 4943
+(4844, 242) (4844, 242)
+Selecting frame from 95 to 4962
+Selecting frame from 95 to 4962
+(4867, 242) (4867, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 242) (4962, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 92 to 5037
+Selecting frame from 92 to 5037
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4744
+Selecting frame from 99 to 4744
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+(4961, 242) (4961, 242)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+(4962, 242) (4962, 242)
+Selecting frame from 94 to 4963
+Selecting frame from 94 to 4963
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4741
+Selecting frame from 96 to 4741
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+(4961, 241) (4961, 241)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 242) (4962, 242)
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4744
+Selecting frame from 99 to 4744
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4964
+Selecting frame from 97 to 4964
+(4867, 242) (4867, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 95 to 4741
+Selecting frame from 95 to 4741
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4742
+Selecting frame from 96 to 4742
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5059
+Selecting frame from 98 to 5059
+(4961, 242) (4961, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4742
+Selecting frame from 96 to 4742
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5059
+Selecting frame from 98 to 5059
+(4961, 242) (4961, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+(4945, 242) (4945, 242)
+Selecting frame from 95 to 4741
+Selecting frame from 95 to 4741
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4766
+Selecting frame from 99 to 4766
+(4667, 242) (4667, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 95 to 4741
+Selecting frame from 95 to 4741
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+(4961, 242) (4961, 242)
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+(4668, 242) (4668, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 95 to 4740
+Selecting frame from 95 to 4740
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 97 to 4764
+Selecting frame from 97 to 4764
+(4667, 242) (4667, 242)
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+(4962, 242) (4962, 242)
+Selecting frame from 94 to 4962
+Selecting frame from 94 to 4962
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4744
+Selecting frame from 99 to 4744
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 241) (4947, 241)
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+(4647, 242) (4647, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 241) (4963, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5063
+Selecting frame from 99 to 5063
+(4964, 243) (4964, 243)
+Selecting frame from 100 to 4969
+Selecting frame from 100 to 4969
+(4869, 243) (4869, 243)
+Selecting frame from 95 to 5042
+Selecting frame from 95 to 5042
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 100 to 5062
+Selecting frame from 100 to 5062
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 100 to 5063
+Selecting frame from 100 to 5063
+(4963, 242) (4963, 242)
+Selecting frame from 92 to 4961
+Selecting frame from 92 to 4961
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 94 to 4741
+Selecting frame from 94 to 4741
+(4647, 242) (4647, 242)
+Selecting frame from 93 to 5040
+Selecting frame from 93 to 5040
+(4947, 242) (4947, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 243) (4668, 243)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 243) (4963, 243)
+Selecting frame from 93 to 4963
+Selecting frame from 93 to 4963
+(4870, 242) (4870, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+(4669, 242) (4669, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 95 to 5042
+Selecting frame from 95 to 5042
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 94 to 4741
+Selecting frame from 94 to 4741
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 94 to 4741
+Selecting frame from 94 to 4741
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5044
+Selecting frame from 97 to 5044
+(4947, 242) (4947, 242)
+Selecting frame from 95 to 4741
+Selecting frame from 95 to 4741
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4969
+Selecting frame from 99 to 4969
+(4870, 242) (4870, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 94 to 4740
+Selecting frame from 94 to 4740
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4969
+Selecting frame from 99 to 4969
+(4870, 242) (4870, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 94 to 4741
+Selecting frame from 94 to 4741
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4969
+Selecting frame from 99 to 4969
+(4870, 242) (4870, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 241) (4963, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 95 to 4742
+Selecting frame from 95 to 4742
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 95 to 4742
+Selecting frame from 95 to 4742
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 100 to 4768
+Selecting frame from 100 to 4768
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5045
+Selecting frame from 98 to 5045
+(4947, 242) (4947, 242)
+Selecting frame from 100 to 4746
+Selecting frame from 100 to 4746
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 241) (4963, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+(4669, 242) (4669, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5044
+Selecting frame from 97 to 5044
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 241) (4963, 241)
+Selecting frame from 100 to 4925
+Selecting frame from 100 to 4925
+(4825, 242) (4825, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 96 to 5043
+Selecting frame from 96 to 5043
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 100 to 4768
+Selecting frame from 100 to 4768
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4969
+Selecting frame from 99 to 4969
+(4870, 242) (4870, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 100 to 4768
+Selecting frame from 100 to 4768
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4969
+Selecting frame from 99 to 4969
+(4870, 242) (4870, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4743
+Selecting frame from 96 to 4743
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 241) (4962, 241)
+Selecting frame from 95 to 4764
+Selecting frame from 95 to 4764
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5045
+Selecting frame from 98 to 5045
+(4947, 242) (4947, 242)
+Selecting frame from 97 to 4744
+Selecting frame from 97 to 4744
+(4647, 242) (4647, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 241) (4963, 241)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4966
+Selecting frame from 96 to 4966
+(4870, 242) (4870, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+(4647, 242) (4647, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 241) (4963, 241)
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+(4668, 242) (4668, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4966
+Selecting frame from 96 to 4966
+(4870, 242) (4870, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+(4669, 242) (4669, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+(4669, 242) (4669, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+(4647, 242) (4647, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+(4669, 242) (4669, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+(4669, 242) (4669, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5045
+Selecting frame from 98 to 5045
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 241) (4962, 241)
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+(4669, 242) (4669, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 94 to 5040
+Selecting frame from 94 to 5040
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 241) (4962, 241)
+Selecting frame from 95 to 4763
+Selecting frame from 95 to 4763
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 95 to 4740
+Selecting frame from 95 to 4740
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+(4647, 242) (4647, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+(4867, 242) (4867, 242)
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4964
+Selecting frame from 97 to 4964
+(4867, 242) (4867, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+(4669, 242) (4669, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 242) (4962, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 95 to 4742
+Selecting frame from 95 to 4742
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 100 to 4768
+Selecting frame from 100 to 4768
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4744
+Selecting frame from 99 to 4744
+(4645, 242) (4645, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 241) (4962, 241)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 5058
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4742
+Selecting frame from 96 to 4742
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5043
+Selecting frame from 99 to 5043
+(4944, 242) (4944, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 241) (4962, 241)
+Selecting frame from 96 to 4764
+Selecting frame from 96 to 4764
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4744
+Selecting frame from 99 to 4744
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 96 to 4743
+Selecting frame from 96 to 4743
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+(4647, 242) (4647, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 5058
+(4963, 242) (4963, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+(4669, 242) (4669, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+(4647, 242) (4647, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4742
+Selecting frame from 96 to 4742
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 5058
+(4963, 241) (4963, 241)
+Selecting frame from 95 to 4763
+Selecting frame from 95 to 4763
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 95 to 4742
+Selecting frame from 95 to 4742
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 5058
+(4963, 241) (4963, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5045
+Selecting frame from 98 to 5045
+(4947, 242) (4947, 242)
+Selecting frame from 96 to 4742
+Selecting frame from 96 to 4742
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 4742
+Selecting frame from 96 to 4742
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 241) (4963, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5063
+Selecting frame from 99 to 5063
+(4964, 242) (4964, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4743
+Selecting frame from 96 to 4743
+(4647, 242) (4647, 242)
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4764
+Selecting frame from 96 to 4764
+(4668, 242) (4668, 242)
+Selecting frame from 94 to 5058
+Selecting frame from 94 to 5058
+(4964, 242) (4964, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4744
+Selecting frame from 97 to 4744
+(4647, 242) (4647, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+(4669, 242) (4669, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+(4647, 242) (4647, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+(4669, 242) (4669, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 241) (4962, 241)
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+(4669, 242) (4669, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 241) (4963, 241)
+Selecting frame from 96 to 4764
+Selecting frame from 96 to 4764
+(4668, 242) (4668, 242)
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 5058
+(4963, 242) (4963, 242)
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 97 to 4743
+Selecting frame from 97 to 4743
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 241) (4963, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5063
+Selecting frame from 99 to 5063
+(4964, 242) (4964, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4743
+Selecting frame from 96 to 4743
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+(4867, 242) (4867, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4969
+Selecting frame from 99 to 4969
+(4870, 242) (4870, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4742
+Selecting frame from 96 to 4742
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+(4669, 242) (4669, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+(4963, 242) (4963, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5046
+Selecting frame from 99 to 5046
+(4947, 242) (4947, 242)
+Selecting frame from 97 to 4743
+Selecting frame from 97 to 4743
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4744
+Selecting frame from 99 to 4744
+(4645, 242) (4645, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 98 to 4765
+Selecting frame from 98 to 4765
+(4667, 242) (4667, 242)
+Selecting frame from 97 to 5060
+Selecting frame from 97 to 5060
+(4963, 242) (4963, 242)
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 100 to 5062
+Selecting frame from 100 to 5062
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+(4962, 242) (4962, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 98 to 4744
+Selecting frame from 98 to 4744
+(4646, 242) (4646, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 241) (4962, 241)
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+(4668, 242) (4668, 242)
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+(4963, 242) (4963, 242)
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+(4869, 242) (4869, 242)
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+(4945, 242) (4945, 242)
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+(4647, 242) (4647, 242)
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+(4945, 242) (4945, 242)
+Selecting frame from 96 to 4963
+Selecting frame from 96 to 4963
+(4867, 242) (4867, 242)
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+(4962, 242) (4962, 242)
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+(4668, 242) (4668, 242)
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+(4963, 242) (4963, 242)
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+(4869, 242) (4869, 242)
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+(4946, 242) (4946, 242)
+Selecting frame from 97 to 4743
+Selecting frame from 97 to 4743
+(4646, 242) (4646, 242)
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+(4946, 242) (4946, 242)
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+(4868, 242) (4868, 242)
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+(4962, 242) (4962, 242)
+Selecting frame from 100 to 4768
+Selecting frame from 100 to 4768
+(4668, 24/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/3_co-located_cams_atlid_uncertainty.py:139: RuntimeWarning: All-NaN slice encountered
+  med_meas = np.nanmedian(draws, axis=1)
+/usr/local/apps/python3/3.12.9-01/lib/python3.12/site-packages/numpy/lib/_nanfunctions_impl.py:2053: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+Month= september
+max and min of latitude before mask 83.01986433846342 -83.01999650642385
+Month= september
+max and min of latitude before mask 83.01986433846342 -83.01999650642385
+Percentage of NaNs in regridded data: 6.98%
+aod_cams.max()= nan
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+ATLID land= 0.14539042115211487 sea= 0.1477126181125641
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS land= 0.12377353757619856 sea= 0.11437178030610085
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS-ATLID land= -0.017507594078779224 sea= -0.026471491903066642
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS-ATLID/ATLID land= -0.2292574232563361 sea= -0.18431211975852105
+CAMS AOD median= 0.11214062571525572
+ATLID AOD median= 0.13428492099046707
+CAMS-ATLID median= -0.01780616119503975
+CAMS-ATLID/ATLID median= -0.16994566488935073
+CAMS,ATLID NMB= -16.621734884591678
+Estimated modes from histogram: [np.float64(0.10230280168904554), np.float64(0.016153073950901927), np.float64(0.2422961092635289), np.float64(0.28537097313260074)]
+Estimated modes from histogram: [np.float64(0.03444400009692915), np.float64(0.11317314317562435), np.float64(0.07380857163627676), np.float64(0.2804725722178517)]
+Month= september
+max and min of latitude before mask 83.01986433846342 -83.01999650642385
+Percentage of NaNs in regridded data: 6.98%
+aod_cams.max()= nan
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+ATLID land= 0.1460564211010933 sea= 0.14795924350619316
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS land= 0.12422826886177062 sea= 0.11420973390340805
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS-ATLID land= -0.017507594078779224 sea= -0.02674128301441671
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS-ATLID/ATLID land= -0.22872844891928157 sea= -0.18667706296200381
+CAMS AOD median= 0.11208707466721535
+ATLID AOD median= 0.13444020226597786
+CAMS-ATLID median= -0.017888167873024954
+CAMS-ATLID/ATLID median= -0.1707191991341594
+CAMS,ATLID NMB= -16.960764846292577
+Estimated modes from histogram: [np.float64(0.10230280168904554), np.float64(0.016153073950901927), np.float64(0.2422961092635289), np.float64(0.28537097313260074)]
+Estimated modes from histogram: [np.float64(0.04280205080973222), np.float64(0.12840615242919667), np.float64(0.06726036555815063), np.float64(0.2506977261712887)]
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2025-10-19T08:35:54 on ac
+[ECMWF-INFO -ecepilog] JobName                   : 1_uncertainty
+[ECMWF-INFO -ecepilog] JobID                     : 31303924
+[ECMWF-INFO -ecepilog] Submit                    : 2025-10-19T07:49:04
+[ECMWF-INFO -ecepilog] Start                     : 2025-10-19T07:49:09
+[ECMWF-INFO -ecepilog] End                       : 2025-10-19T08:35:54
+[ECMWF-INFO -ecepilog] QueuedTime                : 5.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 2805
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : nlchekli
+[ECMWF-INFO -ecepilog] QOS                       : np
+[ECMWF-INFO -ecepilog] User                      : nld6854
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/1_uncertainty.31303924.log
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/1_uncertainty.31303924.log
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 256
+[ECMWF-INFO -ecepilog] SBU                       : 1701.817
+[ECMWF-INFO -ecepilog] jobtag                    : nld6854-1_uncertainty-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/1_uncertainty._JOBID_.log
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

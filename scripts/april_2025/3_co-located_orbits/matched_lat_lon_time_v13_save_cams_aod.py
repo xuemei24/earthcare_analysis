@@ -38,29 +38,19 @@ from pylab import *
 from scipy.interpolate import interp1d
 from matplotlib.colors import ListedColormap, BoundaryNorm
 
-script_path = '/usr/people/wangxu/Desktop/earthcare_scripts/scripts/april_2025/'
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), script_path)))
+script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
+sys.path.append(script_path)
 
 from ectools import ecio
 from ectools import ecplot as ecplt
 from ectools import colormaps
-from plotting_tools import read_h5,ATC_category_colors,projections
+from plotting_tools import read_h5,ATC_category_colors
 
-month = 'july'
+month = 'august'
 
-restart = 0
-if restart == 1:
-    old_file = 'save_2025_'+month+'_cams_atlid_co-located_aod.txt'
-    df = pd.read_csv(old_file, delimiter=",")
-    a_aod = list(df['aod355nm_atlid'].values)
-    c_aod = list(df['aod355nm_cams'].values)
-    all_lat = list(df['# latitude'].values)
-    all_lon = list(df['longitude'].values)
-else:
-    a_aod, c_aod, all_lat, all_lon = [], [], [], []
-#month = 'april'
 # CAMS Data (xxx)
-fcams = '/net/pc190625/nobackup_1/users/wangxu/cams_data/total_aerosol_optical_depth_355nm_'+month+'_2025.nc'
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
+fcams = cams_dir+'total_aerosol_optical_depth_355nm_'+month+'_2025.nc'
 
 ds = xr.open_dataset(fcams)
 print(ds)
@@ -93,7 +83,7 @@ cams_lon[ilon] = cams_lon[ilon]-360.
 ds = ds.assign_coords(longitude=(('longitude',), cams_lon))
 
 #this file should be merged
-dslwc = xr.open_dataset('/net/pc190625/nobackup_1/users/wangxu/cams_data/lwc/specific_cloud_liquid_water_content_'+month+'_2025.nc')
+dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_2025/specific_cloud_liquid_water_content_'+month+'_2025.nc')
 lwc = dslwc['clwc'].values[:,:]
 def collapse_lwc(cloud,data):
     for i in range(data.shape[0]):
@@ -117,6 +107,7 @@ print('valid_time_flat.shape,lwc_flat.shape',valid_time_flat.shape,lwc_flat.shap
 sorted_indices = np.argsort(valid_time_flat)
 lwc_sorted = lwc_flat[sorted_indices]
 lwc_final = np.transpose(lwc_sorted,(1,2,0))
+
 
 print(lwc_final.shape)
 aod_cams = np.where(lwc_final>=0.0001,np.nan,cams_aod_r)
@@ -153,10 +144,10 @@ orography = orography.assign_coords(longitude=(('longitude',), cams_lon))
 
 
 
-srcdir = '/net/pc190625/nobackup_1/users/wangxu/earthcare_data/'+month+'_2025/EBD/'
+srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
-ATC = ecio.load_ATC('/net/pc190625/nobackup_1/users/wangxu/earthcare_data/march_2025/TC_/ECA_EXAE_ATL_TC__2A_20250321T133730Z_20250321T152847Z_04615D.h5', prodmod_code="ECA_EXAE")
+ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXAE_ATL_TC__2A_20250321T133730Z_20250321T152847Z_04615D.h5', prodmod_code="ECA_EXAE")
 
 cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC,'classification_low_resolution')
 #category_colors = ecplt.ATC_category_colors
@@ -210,8 +201,7 @@ for res in results:
     c_aod.extend(caod)
 
 # save once
-np.savetxt(f'/net/pc190625/nobackup_1/users/wangxu/cams_data/2025_{month}_cams_atlid_co-located_aod.txt',
+np.savetxt(cams_dir+'2025_'+month+'_cams_atlid_co-located_aod.txt',
            np.array([all_lat, all_lon, a_aod, c_aod]).T,
            header='latitude,longitude,aod355nm_atlid,aod355nm_cams',
            delimiter=',')
-

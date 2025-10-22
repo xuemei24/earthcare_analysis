@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --output=%x.%j.log
+#SBATCH --job-name=1_uncertainty
+#SBATCH --qos=np
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=32
+#SBATCH --cpus-per-task=4
+#SBATCH --hint=nomultithread
+
+module load python3
+module load ecmwf-toolbox
+
+python3 1_matched_lat_lon_time_v13_save_cams_aod_snr.py
+python3 2_matched_lat_lon_time_v13_save_variance.py
+python3 3_co-located_cams_atlid_uncertainty.py 
+python3 4_uncertainty_co-located_cams_atlid_filter_uncertainty.py
+python3 5_uncertainty_co-located_cams_atlid.py

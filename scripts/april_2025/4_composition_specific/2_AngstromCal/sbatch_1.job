@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --output=%x.%j.log
+#SBATCH --job-name=1_convert
+#SBATCH --qos=np
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=32
+#SBATCH --cpus-per-task=4
+#SBATCH --hint=nomultithread
+#SBATCH --time=6:00:00
+
+module load python3
+module load ecmwf-toolbox
+
+python3 1_convert_to_355nm.py

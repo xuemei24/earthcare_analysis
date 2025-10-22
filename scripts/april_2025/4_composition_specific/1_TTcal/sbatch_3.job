@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --output=%x.%j.log
+#SBATCH --job-name=3_match_TT
+#SBATCH --qos=np
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=32
+#SBATCH --cpus-per-task=4
+#SBATCH --hint=nomultithread
+
+module load python3
+module load ecmwf-toolbox
+
+python3 3_matched_lat_lon_time_v13_save_cams_aod.py

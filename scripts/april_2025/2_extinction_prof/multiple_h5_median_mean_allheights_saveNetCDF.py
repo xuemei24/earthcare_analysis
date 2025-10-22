@@ -11,7 +11,7 @@ from scipy.stats import binned_statistic_2d
 import sys
 import os
 
-script_path = '/usr/people/wangxu/Desktop/earthcare_scripts/scripts/april_2025/'
+script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), script_path)))
 
 from ectools import ecio

@@ -1,0 +1,51 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 53180, mtime: Wed Sep 24 13:03:55 2025
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Sun Oct 19 18:40:07 2025 (1760899207.1467128) on ac6-102.bullx:/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/filter_uncertainty_TTcal
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/filter_uncertainty_TTcal/sbatch_345.job
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --output=%x.%j.log
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=match_TT
+[ECMWF-INFO -sbatch] - #SBATCH --qos=np
+[ECMWF-INFO -sbatch] - #SBATCH --nodes=1
+[ECMWF-INFO -sbatch] - #SBATCH --ntasks-per-node=32
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=4
+[ECMWF-INFO -sbatch] - #SBATCH --hint=nomultithread
+[ECMWF-INFO -sbatch] - #SBATCH --time=6:00:00
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['sbatch_345.job']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=4
+[ECMWF-INFO -sbatch] - ARG --job_name=match_TT
+[ECMWF-INFO -sbatch] - ARG --ntasks_per_node=32
+[ECMWF-INFO -sbatch] - ARG --nodes=1
+[ECMWF-INFO -sbatch] - ARG --output=%x.%j.log
+[ECMWF-INFO -sbatch] - ARG --qos=np
+[ECMWF-INFO -sbatch] - ARG --time=6:00:00
+[ECMWF-INFO -sbatch] - ARG --hint=nomultithread
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: nld6854-match_TT-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/filter_uncertainty_TTcal/match_TT._JOBID_.log
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - Average Walltime 2087 with a Standard Deviation 1146
+[ECMWF-INFO -sbatch] - Runtime history
+[ECMWF-INFO -sbatch] -   Date               | Cores   Cluster   Walltime       Mem
+[ECMWF-INFO -sbatch] -   19.10.2025 - 17:49 | 256        ac         2771       240000M   
+[ECMWF-INFO -sbatch] -   19.10.2025 - 16:46 | 256        ac         2890       240000M   
+[ECMWF-INFO -sbatch] -   19.10.2025 - 15:50 | 256        ac         3233       240000M   
+[ECMWF-INFO -sbatch] -   19.10.2025 - 14:43 | 256        ac         2810       240000M   
+[ECMWF-INFO -sbatch] -   19.10.2025 - 13:13 | 256        ac         2957       240000M   
+[ECMWF-INFO -sbatch] -   19.10.2025 - 12:21 | 256        ac         31         240000M   
+[ECMWF-INFO -sbatch] -   19.10.2025 - 12:05 | 256        ac         682        240000M   
+[ECMWF-INFO -sbatch] -   19.10.2025 - 09:41 | 256        ac         1327       240000M   
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=4', '--job-name=match_TT', '--ntasks-per-node=32', '--nodes=1', '--output=%x.%j.log', '--qos=np', '--time=6:00:00', '--hint=nomultithread', '--licenses=h2resw01', '--export=EC_user_time_limit=6:00:00', '/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/filter_uncertainty_TTcal/sbatch_345.job']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 31457867

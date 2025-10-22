@@ -3,8 +3,8 @@ import glob
 import sys
 import os
 
-script_path = '/usr/people/wangxu/Desktop/earthcare_scripts/scripts/april_2025/'
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), script_path)))
+script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
+sys.path.append(script_path)
 
 from ectools import ecio
 def is_within_bounds(latitudes, longitudes, lat_min, lat_max, lon_min, lon_max):

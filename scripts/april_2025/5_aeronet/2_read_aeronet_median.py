@@ -164,8 +164,8 @@ regridded_data_xr.to_netcdf(output_filename)
 
 import os
 import sys
-script_path = '/usr/people/wangxu/Desktop/earthcare_scripts/scripts/april_2025/'
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), script_path)))
+script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
+sys.path.append(script_path)
 from plotting_tools import statistics
 
 file_dir = '/net/pc190625/nobackup_1/users/wangxu/cams_data/'

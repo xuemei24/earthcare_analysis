@@ -11,25 +11,33 @@ from scipy.stats import binned_statistic_2d
 import sys
 import os
 
-script_path = '/usr/people/wangxu/Desktop/earthcare_scripts/scripts/april_2025/'
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), script_path)))
+script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
+sys.path.append(script_path)
 
 from ectools import ecio
 from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5
 
-month = 'may'
+def get_ext_wrapper(args):
+    return read_h5.get_ext(*args)
+
+month = 'june'
 #simple_classification
 which_aerosol='total'
+
+mean_or_std = 'median'
 # List of file paths you want to read concurrently
-file_paths = glob.glob('/net/pc190625/nobackup_1/users/wangxu/earthcare_data/'+month+'_2025/EBD/*.h5')
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
+file_paths = glob.glob('/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/*.h5')
 file_paths.sort()
+
+args = [(fp, np.array([10,11,12,13,14,15,25,26,27])) for fp in file_paths]
 
 # Use ProcessPoolExecutor to read files concurrently
 results = []
 with concurrent.futures.ProcessPoolExecutor() as executor:
-    for result in executor.map(read_h5.get_ext_col, file_paths):
+    for result in executor.map(get_ext_wrapper, args):
         if result is not None:  # Filter out None results from failed reads
             results.append(result[:5])
 
@@ -94,7 +102,7 @@ for i in range(all_extinction_coe[0].shape[1]):
    
     # Compute 2D histogram for the mean wind
     stat, x_edge, y_edge, _ = binned_statistic_2d(
-        all_lat, all_lon, all_extinction, statistic='mean', bins=[lat_bins, lon_bins])
+        all_lat, all_lon, all_extinction, statistic=mean_or_std, bins=[lat_bins, lon_bins])
     
     nan_percentage = np.isnan(stat).sum() / stat.size * 100
     #print(f"Percentage of NaNs in regridded data: {nan_percentage:.2f}%")
@@ -123,7 +131,7 @@ regridded_data_xr = xr.DataArray(
 )
 '''
 # Save the regridded data to a NetCDF file
-output_filename = "regridded_satellite_"+which_aerosol+"_extinction_coe_2deg_mean_single_alt_"+month+"_2025.nc"
+output_filename = cams_dir+"regridded_satellite_"+which_aerosol+"_extinction_coe_2deg_"+mean_or_std+"_single_alt_"+month+"_2025_snr_gr_2.nc"
 regridded_data_xr.to_netcdf(output_filename)
 
 
@@ -146,9 +154,13 @@ for i in range(all_extinction_coe[0].shape[1]):
     all_lat2 = all_lat[mask]
     all_lon2 = all_lon[mask]
 
+    if len(all_lat2) == 0 or len(all_lon2) == 0 or len(all_extinction) == 0:
+        print(f"Skipping i={i}: empty data after masking")
+        continue
+
     # Compute 2D histogram for the mean wind
     stat, x_edge, y_edge, _ = binned_statistic_2d(
-        all_lat2, all_lon2, all_extinction, statistic='mean', bins=[lat_bins, lon_bins])
+        all_lat2, all_lon2, all_extinction, statistic=mean_or_std, bins=[lat_bins, lon_bins])
 
     # Replace NaN with zeros (or another value if necessary)
     #stat = np.nan_to_num(stat)
@@ -172,7 +184,7 @@ regridded_data_xr = xr.Dataset(
 )
 
 # Save the regridded data to a NetCDF file
-output_filename = "regridded_satellite_"+which_aerosol+"_extinction_coe_2deg_masknan_mean_single_alt_"+month+"_2025.nc"
+output_filename = cams_dir+"regridded_satellite_"+which_aerosol+"_extinction_coe_2deg_masknan_"+mean_or_std+"_single_alt_"+month+"_2025_snr_gr_2.nc"
 regridded_data_xr.to_netcdf(output_filename)
 
 

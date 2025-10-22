@@ -4,8 +4,8 @@ import xarray as xr
 import sys
 import os
 from scipy.stats import binned_statistic_2d,pearsonr
-script_path = '/usr/people/wangxu/Desktop/earthcare_scripts/scripts/april_2025/'
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), script_path)))
+script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
+sys.path.append(script_path)
 from plotting_tools import statistics
 
 def get_AOD(aod_old, wave_old, wave_new, angstrom):

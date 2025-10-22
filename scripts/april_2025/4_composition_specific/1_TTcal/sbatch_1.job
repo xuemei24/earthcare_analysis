@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --output=%x.%j.log
+#SBATCH --job-name=1_Tsept
+#SBATCH --qos=np
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=32
+#SBATCH --cpus-per-task=4
+#SBATCH --hint=nomultithread
+#SBATCH --time=24:00:00
+
+module load python3
+module load ecmwf-toolbox
+
+python3 1_TTcal_cams_extinction_with_time_dim.py

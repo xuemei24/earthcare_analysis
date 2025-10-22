@@ -1,0 +1,87 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 53180, mtime: Wed Sep 24 13:03:55 2025
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Sun Oct 19 13:46:18 2025 (1760881578.410664) on ac6-102.bullx:/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/sbatch_2.job
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --output=%x.%j.log
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=2_Tsept
+[ECMWF-INFO -sbatch] - #SBATCH --qos=np
+[ECMWF-INFO -sbatch] - #SBATCH --nodes=1
+[ECMWF-INFO -sbatch] - #SBATCH --ntasks-per-node=32
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=4
+[ECMWF-INFO -sbatch] - #SBATCH --hint=nomultithread
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['sbatch_2.job']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=4
+[ECMWF-INFO -sbatch] - ARG --job_name=2_Tsept
+[ECMWF-INFO -sbatch] - ARG --ntasks_per_node=32
+[ECMWF-INFO -sbatch] - ARG --nodes=1
+[ECMWF-INFO -sbatch] - ARG --output=%x.%j.log
+[ECMWF-INFO -sbatch] - ARG --qos=np
+[ECMWF-INFO -sbatch] - ARG --hint=nomultithread
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: nld6854-2_Tsept-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/2_Tsept._JOBID_.log
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - Average Walltime 42 with a Standard Deviation 0
+[ECMWF-INFO -sbatch] - Runtime history
+[ECMWF-INFO -sbatch] -   Date               | Cores   Cluster   Walltime       Mem
+[ECMWF-INFO -sbatch] -   13.10.2025 - 11:39 | 256        ac         42         240000M   
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=4', '--job-name=2_Tsept', '--ntasks-per-node=32', '--nodes=1', '--output=%x.%j.log', '--qos=np', '--hint=nomultithread', '--licenses=h2resw01', '--time=00:00:42', '/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/sbatch_2.job']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 31391983
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ac1-2016 at 20251019_134625.982, PID: 4105980, JOBID: 31391983
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/nld6854
+[ECMWF-INFO -ecprofile] $PERM=/perm/nld6854
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/nld6854
+[ECMWF-INFO -ecprofile] $TMPDIR=/dev/shm/_tmpdir_.nld6854.31391983
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/nld6854/7/31391983
+/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/2_merge_ext_files.py:14: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a 'CFTimedeltaCoder' instance.
+  ds = xr.open_mfdataset(
+/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/2_merge_ext_files.py:14: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a 'CFTimedeltaCoder' instance.
+  ds = xr.open_mfdataset(
+/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/2_merge_ext_files.py:14: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a 'CFTimedeltaCoder' instance.
+  ds = xr.open_mfdataset(
+/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/2_merge_ext_files.py:14: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a 'CFTimedeltaCoder' instance.
+  ds = xr.open_mfdataset(
+/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/2_merge_ext_files.py:22: UserWarning: Timedeltas can't be serialized faithfully with requested units 'days'. Serializing with units 'hours' instead. Set encoding['dtype'] to floating point dtype to serialize with units 'days'. Set encoding['units'] to 'hours' to silence this warning .
+  ds.to_netcdf(cams_dir+aero_type+'_'+month+"_2025.nc")
+['/scratch/nld6854/earthcare/cams_data/june_2025/TTcal/TTcal_aod355nm_per_composition_june_2025_0.nc', '/scratch/nld6854/earthcare/cams_data/june_2025/TTcal/TTcal_aod355nm_per_composition_june_2025_3.nc', '/scratch/nld6854/earthcare/cams_data/june_2025/TTcal/TTcal_aod355nm_per_composition_june_2025_6.nc', '/scratch/nld6854/earthcare/cams_data/june_2025/TTcal/TTcal_aod355nm_per_composition_june_2025_9.nc']
+file_list done
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2025-10-19T13:46:59 on ac
+[ECMWF-INFO -ecepilog] JobName                   : 2_Tsept
+[ECMWF-INFO -ecepilog] JobID                     : 31391983
+[ECMWF-INFO -ecepilog] Submit                    : 2025-10-19T13:46:18
+[ECMWF-INFO -ecepilog] Start                     : 2025-10-19T13:46:19
+[ECMWF-INFO -ecepilog] End                       : 2025-10-19T13:46:59
+[ECMWF-INFO -ecepilog] QueuedTime                : 1.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 40
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : nlchekli
+[ECMWF-INFO -ecepilog] QOS                       : np
+[ECMWF-INFO -ecepilog] User                      : nld6854
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/2_Tsept.31391983.log
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/2_Tsept.31391983.log
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 256
+[ECMWF-INFO -ecepilog] SBU                       : 24.268
+[ECMWF-INFO -ecepilog] jobtag                    : nld6854-2_Tsept-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/4_composition_specific/1_TTcal/2_Tsept._JOBID_.log
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

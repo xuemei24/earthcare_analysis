@@ -1,0 +1,50 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 53180, mtime: Wed Sep 24 13:03:55 2025
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Mon Oct 20 13:24:56 2025 (1760966696.170413) on ac6-101.bullx:/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/sbatch_1.py
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --output=%x.%j.log
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=2saveCAMS
+[ECMWF-INFO -sbatch] - #SBATCH --qos=np
+[ECMWF-INFO -sbatch] - #SBATCH --nodes=1
+[ECMWF-INFO -sbatch] - #SBATCH --ntasks-per-node=32
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=4
+[ECMWF-INFO -sbatch] - #SBATCH --hint=nomultithread
+[ECMWF-INFO -sbatch] - #SBATCH --time=24:00:00
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['sbatch_1.py']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=4
+[ECMWF-INFO -sbatch] - ARG --job_name=2saveCAMS
+[ECMWF-INFO -sbatch] - ARG --ntasks_per_node=32
+[ECMWF-INFO -sbatch] - ARG --nodes=1
+[ECMWF-INFO -sbatch] - ARG --output=%x.%j.log
+[ECMWF-INFO -sbatch] - ARG --qos=np
+[ECMWF-INFO -sbatch] - ARG --time=24:00:00
+[ECMWF-INFO -sbatch] - ARG --hint=nomultithread
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: nld6854-2saveCAMS-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS._JOBID_.log
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - Average Walltime 10631 with a Standard Deviation 5017
+[ECMWF-INFO -sbatch] - Runtime history
+[ECMWF-INFO -sbatch] -   Date               | Cores   Cluster   Walltime       Mem
+[ECMWF-INFO -sbatch] -   15.10.2025 - 12:48 | 256        ac         2759       240000M   
+[ECMWF-INFO -sbatch] -   14.10.2025 - 12:48 | 256        ac         11202      240000M   
+[ECMWF-INFO -sbatch] -   13.10.2025 - 16:51 | 256        ac         15713      240000M   
+[ECMWF-INFO -sbatch] -   13.10.2025 - 12:18 | 256        ac         16432      240000M   
+[ECMWF-INFO -sbatch] -   11.10.2025 - 19:06 | 256        ac         11817      240000M   
+[ECMWF-INFO -sbatch] -   11.10.2025 - 16:52 | 256        ac         3684       240000M   
+[ECMWF-INFO -sbatch] -   10.10.2025 - 17:38 | 256        ac         12810      240000M   
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=4', '--job-name=2saveCAMS', '--ntasks-per-node=32', '--nodes=1', '--output=%x.%j.log', '--qos=np', '--time=24:00:00', '--hint=nomultithread', '--licenses=h2resw01', '--export=EC_user_time_limit=24:00:00', '/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/sbatch_1.py']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 31762891
