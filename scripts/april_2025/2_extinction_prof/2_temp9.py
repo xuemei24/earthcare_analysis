@@ -49,7 +49,7 @@ from pathlib import Path
 
 from multiprocessing import Pool
 
-month = 'may'
+month = 'august'
 forecast_period = '9'
 # CAMS Data (xxx)
 fcams = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/aerosol_extinction_coe_355nm_'+month+'_2025_'+str(int(forecast_period))+'.nc'
@@ -137,6 +137,11 @@ cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC
 
 ebd_files = sorted(glob.glob(srcdir+'*h5'))
 def process_file(filen):
+    outpath = filen.replace("EBD","CAMS").replace("h5","nc")
+    if os.path.exists(outpath):
+        print(f"Skipping {filen}, already processed.")
+        return
+
     try:
         if filen[-34:-32] not in utcs:
             return None

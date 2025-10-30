@@ -29,7 +29,7 @@ def read_cams_ext(filen):
     _,lat,lon,_,h,_,_,_ = read_h5.get_ext_col(febd)
     return ext,lat,lon,h
 
-month = 'june'
+month = 'may'
 #simple_classification
 which_aerosol='total'
 
@@ -188,7 +188,7 @@ regridded_data_xr = xr.Dataset(
 )
 
 # Save the regridded data to a NetCDF file
-output_filename = "/scratch/nld6854/earthcare/earthcare_data/"+month+"_2025/regridded_CAMS_"+which_aerosol+"_extinction_coe_2deg_masknan_"+mean_or_std+"_single_alt_"+month+"_2025_snr_gr_2.nc"
+output_filename = "/scratch/nld6854/earthcare/cams_data/"+month+"_2025/regridded_CAMS_"+which_aerosol+"_extinction_coe_2deg_masknan_"+mean_or_std+"_single_alt_"+month+"_2025_snr_gr_2.nc"
 regridded_data_xr.to_netcdf(output_filename)
 
 

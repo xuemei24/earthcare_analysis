@@ -1,0 +1,210 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 53180, mtime: Wed Sep 24 13:03:55 2025
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Wed Oct 29 10:30:27 2025 (1761733827.0769043) on ac6-101.bullx:/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/sbatch_22.job
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --output=%x.%j.log
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=2saveCAMS
+[ECMWF-INFO -sbatch] - #SBATCH --qos=np
+[ECMWF-INFO -sbatch] - #SBATCH --nodes=1
+[ECMWF-INFO -sbatch] - #SBATCH --ntasks-per-node=32
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=4
+[ECMWF-INFO -sbatch] - #SBATCH --hint=nomultithread
+[ECMWF-INFO -sbatch] - #SBATCH --time=24:00:00
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['sbatch_22.job']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=4
+[ECMWF-INFO -sbatch] - ARG --job_name=2saveCAMS
+[ECMWF-INFO -sbatch] - ARG --ntasks_per_node=32
+[ECMWF-INFO -sbatch] - ARG --nodes=1
+[ECMWF-INFO -sbatch] - ARG --output=%x.%j.log
+[ECMWF-INFO -sbatch] - ARG --qos=np
+[ECMWF-INFO -sbatch] - ARG --time=24:00:00
+[ECMWF-INFO -sbatch] - ARG --hint=nomultithread
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: nld6854-2saveCAMS-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS._JOBID_.log
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - Average Walltime 3885 with a Standard Deviation 4751
+[ECMWF-INFO -sbatch] - Runtime history
+[ECMWF-INFO -sbatch] -   Date               | Cores   Cluster   Walltime       Mem
+[ECMWF-INFO -sbatch] -   29.10.2025 - 09:54 | 256        ac         1157       240000M   
+[ECMWF-INFO -sbatch] -   29.10.2025 - 09:53 | 256        ac         1097       240000M   
+[ECMWF-INFO -sbatch] -   28.10.2025 - 15:09 | 256        ac         3979       240000M   
+[ECMWF-INFO -sbatch] -   28.10.2025 - 14:12 | 256        ac         3967       240000M   
+[ECMWF-INFO -sbatch] -   28.10.2025 - 13:25 | 256        ac         1123       240000M   
+[ECMWF-INFO -sbatch] -   28.10.2025 - 08:23 | 256        ac         4072       240000M   
+[ECMWF-INFO -sbatch] -   28.10.2025 - 08:22 | 256        ac         4033       240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 13:01 | 256        ac         4104       240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 12:58 | 256        ac         3944       240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 11:29 | 256        ac         473        240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 11:29 | 256        ac         480        240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 11:29 | 256        ac         452        240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 06:31 | 256        ac         766        240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 06:27 | 256        ac         494        240000M   
+[ECMWF-INFO -sbatch] -   24.10.2025 - 08:17 | 256        ac         528        240000M   
+[ECMWF-INFO -sbatch] -   20.10.2025 - 14:11 | 256        ac         928        240000M   
+[ECMWF-INFO -sbatch] -   15.10.2025 - 12:48 | 256        ac         2759       240000M   
+[ECMWF-INFO -sbatch] -   14.10.2025 - 12:48 | 256        ac         11202      240000M   
+[ECMWF-INFO -sbatch] -   13.10.2025 - 16:51 | 256        ac         15713      240000M   
+[ECMWF-INFO -sbatch] -   13.10.2025 - 12:18 | 256        ac         16432      240000M   
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=4', '--job-name=2saveCAMS', '--ntasks-per-node=32', '--nodes=1', '--output=%x.%j.log', '--qos=np', '--time=24:00:00', '--hint=nomultithread', '--licenses=h2resw01', '--export=EC_user_time_limit=24:00:00', '/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/sbatch_22.job']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 35819712
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ac3-3080 at 20251029_103056.815, PID: 1003825, JOBID: 35819712
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/nld6854
+[ECMWF-INFO -ecprofile] $PERM=/perm/nld6854
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/nld6854
+[ECMWF-INFO -ecprofile] $TMPDIR=/dev/shm/_tmpdir_.nld6854.35819712
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/nld6854/0/35819712
+<IPython.core.display.HTML object>
+<xarray.DataArray 'forecast_reference_time' (forecast_period: 1,
+                                             forecast_reference_time: 62)> Size: 496B
+array([['2025-08-01T06:00:00.000000000', '2025-08-01T18:00:00.000000000',
+        '2025-08-02T06:00:00.000000000', '2025-08-02T18:00:00.000000000',
+        '2025-08-03T06:00:00.000000000', '2025-08-03T18:00:00.000000000',
+        '2025-08-04T06:00:00.000000000', '2025-08-04T18:00:00.000000000',
+        '2025-08-05T06:00:00.000000000', '2025-08-05T18:00:00.000000000',
+        '2025-08-06T06:00:00.000000000', '2025-08-06T18:00:00.000000000',
+        '2025-08-07T06:00:00.000000000', '2025-08-07T18:00:00.000000000',
+        '2025-08-08T06:00:00.000000000', '2025-08-08T18:00:00.000000000',
+        '2025-08-09T06:00:00.000000000', '2025-08-09T18:00:00.000000000',
+        '2025-08-10T06:00:00.000000000', '2025-08-10T18:00:00.000000000',
+        '2025-08-11T06:00:00.000000000', '2025-08-11T18:00:00.000000000',
+        '2025-08-12T06:00:00.000000000', '2025-08-12T18:00:00.000000000',
+        '2025-08-13T06:00:00.000000000', '2025-08-13T18:00:00.000000000',
+        '2025-08-14T06:00:00.000000000', '2025-08-14T18:00:00.000000000',
+        '2025-08-15T06:00:00.000000000', '2025-08-15T18:00:00.000000000',
+        '2025-08-16T06:00:00.000000000', '2025-08-16T18:00:00.000000000',
+        '2025-08-17T06:00:00.000000000', '2025-08-17T18:00:00.000000000',
+        '2025-08-18T06:00:00.000000000', '2025-08-18T18:00:00.000000000',
+        '2025-08-19T06:00:00.000000000', '2025-08-19T18:00:00.000000000',
+        '2025-08-20T06:00:00.000000000', '2025-08-20T18:00:00.000000000',
+        '2025-08-21T06:00:00.000000000', '2025-08-21T18:00:00.000000000',
+        '2025-08-22T06:00:00.000000000', '2025-08-22T18:00:00.000000000',
+        '2025-08-23T06:00:00.000000000', '2025-08-23T18:00:00.000000000',
+        '2025-08-24T06:00:00.000000000', '2025-08-24T18:00:00.000000000',
+        '2025-08-25T06:00:00.000000000', '2025-08-25T18:00:00.000000000',
+        '2025-08-26T06:00:00.000000000', '2025-08-26T18:00:00.000000000',
+        '2025-08-27T06:00:00.000000000', '2025-08-27T18:00:00.000000000',
+        '2025-08-28T06:00:00.000000000', '2025-08-28T18:00:00.000000000',
+        '2025-08-29T06:00:00.000000000', '2025-08-29T18:00:00.000000000',
+        '2025-08-30T06:00:00.000000000', '2025-08-30T18:00:00.000000000',
+        '2025-08-31T06:00:00.000000000', '2025-08-31T18:00:00.000000000']],
+      dtype='datetime64[ns]')
+Coordinates:
+  * forecast_period          (forecast_period) timedelta64[ns] 8B 06:00:00
+    forecast_reference_time  (forecast_period, forecast_reference_time) datetime64[ns] 496B ...
+    valid_time               (forecast_reference_time, forecast_period) datetime64[ns] 496B ...
+forecast_reference_time <xarray.DataArray 'forecast_reference_time' (forecast_reference_time: 62)> Size: 496B
+array(['2025-08-01T06:00:00.000000000', '2025-08-01T18:00:00.000000000',
+       '2025-08-02T06:00:00.000000000', '2025-08-02T18:00:00.000000000',
+       '2025-08-03T06:00:00.000000000', '2025-08-03T18:00:00.000000000',
+       '2025-08-04T06:00:00.000000000', '2025-08-04T18:00:00.000000000',
+       '2025-08-05T06:00:00.000000000', '2025-08-05T18:00:00.000000000',
+       '2025-08-06T06:00:00.000000000', '2025-08-06T18:00:00.000000000',
+       '2025-08-07T06:00:00.000000000', '2025-08-07T18:00:00.000000000',
+       '2025-08-08T06:00:00.000000000', '2025-08-08T18:00:00.000000000',
+       '2025-08-09T06:00:00.000000000', '2025-08-09T18:00:00.000000000',
+       '2025-08-10T06:00:00.000000000', '2025-08-10T18:00:00.000000000',
+       '2025-08-11T06:00:00.000000000', '2025-08-11T18:00:00.000000000',
+       '2025-08-12T06:00:00.000000000', '2025-08-12T18:00:00.000000000',
+       '2025-08-13T06:00:00.000000000', '2025-08-13T18:00:00.000000000',
+       '2025-08-14T06:00:00.000000000', '2025-08-14T18:00:00.000000000',
+       '2025-08-15T06:00:00.000000000', '2025-08-15T18:00:00.000000000',
+       '2025-08-16T06:00:00.000000000', '2025-08-16T18:00:00.000000000',
+       '2025-08-17T06:00:00.000000000', '2025-08-17T18:00:00.000000000',
+       '2025-08-18T06:00:00.000000000', '2025-08-18T18:00:00.000000000',
+       '2025-08-19T06:00:00.000000000', '2025-08-19T18:00:00.000000000',
+       '2025-08-20T06:00:00.000000000', '2025-08-20T18:00:00.000000000',
+       '2025-08-21T06:00:00.000000000', '2025-08-21T18:00:00.000000000',
+       '2025-08-22T06:00:00.000000000', '2025-08-22T18:00:00.000000000',
+       '2025-08-23T06:00:00.000000000', '2025-08-23T18:00:00.000000000',
+       '2025-08-24T06:00:00.000000000', '2025-08-24T18:00:00.000000000',
+       '2025-08-25T06:00:00.000000000', '2025-08-25T18:00:00.000000000',
+       '2025-08-26T06:00:00.000000000', '2025-08-26T18:00:00.000000000',
+       '2025-08-27T06:00:00.000000000', '2025-08-27T18:00:00.000000000',
+       '2025-08-28T06:00:00.000000000', '2025-08-28T18:00:00.000000000',
+       '2025-08-29T06:00:00.000000000', '2025-08-29T18:00:00.000000000',
+       '2025-08-30T06:00:00.000000000', '2025-08-30T18:00:00.000000000',
+       '2025-08-31T06:00:00.000000000', '2025-08-31T18:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * forecast_reference_time  (forecast_reference_time) datetime64[ns] 496B 20...
+cams_h[:,0,0] [3.42265974e+01 5.11097124e+01 6.95812407e+01 8.97829543e+01
+ 1.11861574e+02 1.35994476e+02 1.62341637e+02 1.91124296e+02
+ 2.22531677e+02 2.56785643e+02 2.94105974e+02 3.34719819e+02
+ 3.78856328e+02 4.26798672e+02 4.78787585e+02 5.35121192e+02
+ 5.96963670e+02 6.65457318e+02 7.39633419e+02 8.20041066e+02
+ 9.07150934e+02 1.00124260e+03 1.10254591e+03 1.21146386e+03
+ 1.32825133e+03 1.45302020e+03 1.58624411e+03 1.72813020e+03
+ 1.87874725e+03 2.03822075e+03 2.20604967e+03 2.38119848e+03
+ 2.56367740e+03 2.75391539e+03 2.95182899e+03 3.15773365e+03
+ 3.37074113e+03 3.59067928e+03 3.81486792e+03 4.04364868e+03
+ 4.27560206e+03 4.50997654e+03 4.74749518e+03 4.98850742e+03
+ 5.22826362e+03 5.46698912e+03 5.70676426e+03 5.94976062e+03
+ 6.19866498e+03 6.45544178e+03 6.71490348e+03 6.96966999e+03
+ 7.22916995e+03 7.49690600e+03 7.77456619e+03 8.05894014e+03
+ 8.34270925e+03 8.62558251e+03 8.90497841e+03 9.18268394e+03
+ 9.46286036e+03 9.74641204e+03 1.00325833e+04 1.03226313e+04
+ 1.06176726e+04 1.09130769e+04 1.11987972e+04 1.14774982e+04
+ 1.17615634e+04 1.20583160e+04 1.23714417e+04 1.27011118e+04
+ 1.30421628e+04 1.33905260e+04 1.37437892e+04 1.41058961e+04
+ 1.44851555e+04 1.48770784e+04 1.52908545e+04 1.57412674e+04
+ 1.62198393e+04 1.67019860e+04 1.71845234e+04 1.76647854e+04
+ 1.81640868e+04 1.87042995e+04 1.92878129e+04 1.98932437e+04
+ 2.05003650e+04 2.10957034e+04 2.16509641e+04 2.21891831e+04
+ 2.27389574e+04 2.32811323e+04 2.38218822e+04 2.44359290e+04
+ 2.51007162e+04 2.57802325e+04 2.64833257e+04 2.71917659e+04
+ 2.78337148e+04 2.84347968e+04 2.90782569e+04 2.97664646e+04
+ 3.05283204e+04 3.13852074e+04 3.22160403e+04 3.29937691e+04
+ 3.38006365e+04 3.46542504e+04 3.55178320e+04 3.63993890e+04
+ 3.73502486e+04 3.83526247e+04 3.93655469e+04 4.04697498e+04
+ 4.17287704e+04 4.30412821e+04 4.42812481e+04 4.54617238e+04
+ 4.65893769e+04 4.77531437e+04 4.87474513e+04 4.93374476e+04
+ 4.98036667e+04 5.09253617e+04 5.20114053e+04 5.22349686e+04
+ 5.23358986e+04 5.30590382e+04 5.38495825e+04 5.42345126e+04
+ 5.44432834e+04 5.50541637e+04 5.61252790e+04 5.73090676e+04
+ 5.77416193e+04]
+(1, 62, 137, 451, 900)
+Selecting frame from 99 to 5044
+slurmstepd: error: *** JOB 35819712 ON ac3-3080 CANCELLED AT 2025-10-30T10:31:06 ***
+slurmstepd: error: Detected 2 oom_kill events in StepId=35819712.batch. Some of the step tasks have been OOM Killed.
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2025-10-30T10:31:06 on ac
+[ECMWF-INFO -ecepilog] JobName                   : 2saveCAMS
+[ECMWF-INFO -ecepilog] JobID                     : 35819712
+[ECMWF-INFO -ecepilog] Submit                    : 2025-10-29T10:30:27
+[ECMWF-INFO -ecepilog] Start                     : 2025-10-29T10:30:41
+[ECMWF-INFO -ecepilog] End                       : 2025-10-30T10:31:06
+[ECMWF-INFO -ecepilog] QueuedTime                : 14.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 86425
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : CANCELLED by 0
+[ECMWF-INFO -ecepilog] AdminComment              : cancelled_by_root_TIME_LIMIT
+[ECMWF-INFO -ecepilog] Account                   : nlchekli
+[ECMWF-INFO -ecepilog] QOS                       : np
+[ECMWF-INFO -ecepilog] User                      : nld6854
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS.35819712.log
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS.35819712.log
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 256
+[ECMWF-INFO -ecepilog] SBU                       : 52434.757
+[ECMWF-INFO -ecepilog] jobtag                    : nld6854-2saveCAMS-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS._JOBID_.log
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

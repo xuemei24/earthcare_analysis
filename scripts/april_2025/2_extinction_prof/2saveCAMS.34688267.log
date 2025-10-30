@@ -1,0 +1,28 @@
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2025-10-28T06:20:19 on ac
+[ECMWF-INFO -ecepilog] JobName                   : 2saveCAMS
+[ECMWF-INFO -ecepilog] JobID                     : 34688267
+[ECMWF-INFO -ecepilog] Submit                    : 2025-10-27T06:19:13
+[ECMWF-INFO -ecepilog] Start                     : 2025-10-27T06:19:29
+[ECMWF-INFO -ecepilog] End                       : 2025-10-28T06:20:19
+[ECMWF-INFO -ecepilog] QueuedTime                : 16.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 86450
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : CANCELLED by 0
+[ECMWF-INFO -ecepilog] AdminComment              : cancelled_by_root_TIME_LIMIT
+[ECMWF-INFO -ecepilog] Account                   : nlchekli
+[ECMWF-INFO -ecepilog] QOS                       : np
+[ECMWF-INFO -ecepilog] User                      : nld6854
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS.34688267.log
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS.34688267.log
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 256
+[ECMWF-INFO -ecepilog] SBU                       : 52449.925
+[ECMWF-INFO -ecepilog] jobtag                    : nld6854-2saveCAMS-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS._JOBID_.log
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

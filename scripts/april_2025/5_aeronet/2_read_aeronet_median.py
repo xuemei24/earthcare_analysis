@@ -11,7 +11,7 @@ month = '04'
 month2 = 'April'
 month3 = 'april'
 
-aeronet_path = '/net/pc190625/nobackup_1/users/wangxu/aeronet/'
+aeronet_path = '/scratch/nld6854/earthcare/aeronet/'
 df = pd.read_table(aeronet_path+'2025'+month+'_all_sites_aod15_dailyAVG.txt', delimiter=',', header=[7])
 df = df.replace(-999.0, np.nan)
 
@@ -168,9 +168,10 @@ script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
 sys.path.append(script_path)
 from plotting_tools import statistics
 
-file_dir = '/net/pc190625/nobackup_1/users/wangxu/cams_data/'
+file_dir = '/scratch/nld6854/earthcare/cams_data/'+month3+'_2025/'
 print('Month=',month3)
-df = pd.read_csv(file_dir+"2025_"+month3+"_cams_atlid_co-located_aod.txt", delimiter=",")
+df = pd.read_csv(file_dir+"2025_"+month3+"_cams_atlid_co-located_aod_snr_gr_2.txt", delimiter=",")
+dfuncer = pd.read_csv(file_dir+"2025_"+month3+"_cams_atlid_co-located_aod_variance_snr_gr_2.txt", delimiter=",")
 
 #simple_classification
 which_aerosol='total'

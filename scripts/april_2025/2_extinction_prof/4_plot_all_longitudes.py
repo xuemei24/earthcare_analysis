@@ -31,8 +31,8 @@ def landsea_mean(var):
     print('not weighted by area')
     return land,sea
 
-month='jun'
-fmonth='June'
+month='may'
+fmonth='May'
 vname = 'extinction_coefficient'
 figname = 'extinction_coefficient'
 

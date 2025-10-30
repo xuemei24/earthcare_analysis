@@ -22,7 +22,7 @@ from plotting_tools import read_h5
 def get_ext_wrapper(args):
     return read_h5.get_ext(*args)
 
-month = 'june'
+month = 'april'
 #simple_classification
 which_aerosol='total'
 

@@ -1,0 +1,2397 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 53180, mtime: Wed Sep 24 13:03:55 2025
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Mon Oct 27 11:52:28 2025 (1761565948.9416323) on ac6-101.bullx:/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/sbatch_22.job
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --output=%x.%j.log
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=2saveCAMS
+[ECMWF-INFO -sbatch] - #SBATCH --qos=np
+[ECMWF-INFO -sbatch] - #SBATCH --nodes=1
+[ECMWF-INFO -sbatch] - #SBATCH --ntasks-per-node=32
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=4
+[ECMWF-INFO -sbatch] - #SBATCH --hint=nomultithread
+[ECMWF-INFO -sbatch] - #SBATCH --time=24:00:00
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['sbatch_22.job']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=4
+[ECMWF-INFO -sbatch] - ARG --job_name=2saveCAMS
+[ECMWF-INFO -sbatch] - ARG --ntasks_per_node=32
+[ECMWF-INFO -sbatch] - ARG --nodes=1
+[ECMWF-INFO -sbatch] - ARG --output=%x.%j.log
+[ECMWF-INFO -sbatch] - ARG --qos=np
+[ECMWF-INFO -sbatch] - ARG --time=24:00:00
+[ECMWF-INFO -sbatch] - ARG --hint=nomultithread
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: nld6854-2saveCAMS-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS._JOBID_.log
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - Average Walltime 5609 with a Standard Deviation 6150
+[ECMWF-INFO -sbatch] - Runtime history
+[ECMWF-INFO -sbatch] -   Date               | Cores   Cluster   Walltime       Mem
+[ECMWF-INFO -sbatch] -   27.10.2025 - 11:29 | 256        ac         473        240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 11:29 | 256        ac         480        240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 11:29 | 256        ac         452        240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 06:31 | 256        ac         766        240000M   
+[ECMWF-INFO -sbatch] -   27.10.2025 - 06:27 | 256        ac         494        240000M   
+[ECMWF-INFO -sbatch] -   24.10.2025 - 08:17 | 256        ac         528        240000M   
+[ECMWF-INFO -sbatch] -   20.10.2025 - 14:11 | 256        ac         928        240000M   
+[ECMWF-INFO -sbatch] -   15.10.2025 - 12:48 | 256        ac         2759       240000M   
+[ECMWF-INFO -sbatch] -   14.10.2025 - 12:48 | 256        ac         11202      240000M   
+[ECMWF-INFO -sbatch] -   13.10.2025 - 16:51 | 256        ac         15713      240000M   
+[ECMWF-INFO -sbatch] -   13.10.2025 - 12:18 | 256        ac         16432      240000M   
+[ECMWF-INFO -sbatch] -   11.10.2025 - 19:06 | 256        ac         11817      240000M   
+[ECMWF-INFO -sbatch] -   11.10.2025 - 16:52 | 256        ac         3684       240000M   
+[ECMWF-INFO -sbatch] -   10.10.2025 - 17:38 | 256        ac         12810      240000M   
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=4', '--job-name=2saveCAMS', '--ntasks-per-node=32', '--nodes=1', '--output=%x.%j.log', '--qos=np', '--time=24:00:00', '--hint=nomultithread', '--licenses=h2resw01', '--export=EC_user_time_limit=24:00:00', '/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/sbatch_22.job']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 34821031
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ac2-3002 at 20251027_115313.371, PID: 1141352, JOBID: 34821031
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/nld6854
+[ECMWF-INFO -ecprofile] $PERM=/perm/nld6854
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/nld6854
+[ECMWF-INFO -ecprofile] $TMPDIR=/dev/shm/_tmpdir_.nld6854.34821031
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/nld6854/7/34821031
+<IPython.core.display.HTML object>
+<xarray.DataArray 'forecast_reference_time' (forecast_period: 1,
+                                             forecast_reference_time: 60)> Size: 480B
+array([['2025-04-01T06:00:00.000000000', '2025-04-01T18:00:00.000000000',
+        '2025-04-02T06:00:00.000000000', '2025-04-02T18:00:00.000000000',
+        '2025-04-03T06:00:00.000000000', '2025-04-03T18:00:00.000000000',
+        '2025-04-04T06:00:00.000000000', '2025-04-04T18:00:00.000000000',
+        '2025-04-05T06:00:00.000000000', '2025-04-05T18:00:00.000000000',
+        '2025-04-06T06:00:00.000000000', '2025-04-06T18:00:00.000000000',
+        '2025-04-07T06:00:00.000000000', '2025-04-07T18:00:00.000000000',
+        '2025-04-08T06:00:00.000000000', '2025-04-08T18:00:00.000000000',
+        '2025-04-09T06:00:00.000000000', '2025-04-09T18:00:00.000000000',
+        '2025-04-10T06:00:00.000000000', '2025-04-10T18:00:00.000000000',
+        '2025-04-11T06:00:00.000000000', '2025-04-11T18:00:00.000000000',
+        '2025-04-12T06:00:00.000000000', '2025-04-12T18:00:00.000000000',
+        '2025-04-13T06:00:00.000000000', '2025-04-13T18:00:00.000000000',
+        '2025-04-14T06:00:00.000000000', '2025-04-14T18:00:00.000000000',
+        '2025-04-15T06:00:00.000000000', '2025-04-15T18:00:00.000000000',
+        '2025-04-16T06:00:00.000000000', '2025-04-16T18:00:00.000000000',
+        '2025-04-17T06:00:00.000000000', '2025-04-17T18:00:00.000000000',
+        '2025-04-18T06:00:00.000000000', '2025-04-18T18:00:00.000000000',
+        '2025-04-19T06:00:00.000000000', '2025-04-19T18:00:00.000000000',
+        '2025-04-20T06:00:00.000000000', '2025-04-20T18:00:00.000000000',
+        '2025-04-21T06:00:00.000000000', '2025-04-21T18:00:00.000000000',
+        '2025-04-22T06:00:00.000000000', '2025-04-22T18:00:00.000000000',
+        '2025-04-23T06:00:00.000000000', '2025-04-23T18:00:00.000000000',
+        '2025-04-24T06:00:00.000000000', '2025-04-24T18:00:00.000000000',
+        '2025-04-25T06:00:00.000000000', '2025-04-25T18:00:00.000000000',
+        '2025-04-26T06:00:00.000000000', '2025-04-26T18:00:00.000000000',
+        '2025-04-27T06:00:00.000000000', '2025-04-27T18:00:00.000000000',
+        '2025-04-28T06:00:00.000000000', '2025-04-28T18:00:00.000000000',
+        '2025-04-29T06:00:00.000000000', '2025-04-29T18:00:00.000000000',
+        '2025-04-30T06:00:00.000000000', '2025-04-30T18:00:00.000000000']],
+      dtype='datetime64[ns]')
+Coordinates:
+  * forecast_period          (forecast_period) timedelta64[ns] 8B 06:00:00
+    forecast_reference_time  (forecast_period, forecast_reference_time) datetime64[ns] 480B ...
+    valid_time               (forecast_reference_time, forecast_period) datetime64[ns] 480B ...
+forecast_reference_time <xarray.DataArray 'forecast_reference_time' (forecast_reference_time: 60)> Size: 480B
+array(['2025-04-01T06:00:00.000000000', '2025-04-01T18:00:00.000000000',
+       '2025-04-02T06:00:00.000000000', '2025-04-02T18:00:00.000000000',
+       '2025-04-03T06:00:00.000000000', '2025-04-03T18:00:00.000000000',
+       '2025-04-04T06:00:00.000000000', '2025-04-04T18:00:00.000000000',
+       '2025-04-05T06:00:00.000000000', '2025-04-05T18:00:00.000000000',
+       '2025-04-06T06:00:00.000000000', '2025-04-06T18:00:00.000000000',
+       '2025-04-07T06:00:00.000000000', '2025-04-07T18:00:00.000000000',
+       '2025-04-08T06:00:00.000000000', '2025-04-08T18:00:00.000000000',
+       '2025-04-09T06:00:00.000000000', '2025-04-09T18:00:00.000000000',
+       '2025-04-10T06:00:00.000000000', '2025-04-10T18:00:00.000000000',
+       '2025-04-11T06:00:00.000000000', '2025-04-11T18:00:00.000000000',
+       '2025-04-12T06:00:00.000000000', '2025-04-12T18:00:00.000000000',
+       '2025-04-13T06:00:00.000000000', '2025-04-13T18:00:00.000000000',
+       '2025-04-14T06:00:00.000000000', '2025-04-14T18:00:00.000000000',
+       '2025-04-15T06:00:00.000000000', '2025-04-15T18:00:00.000000000',
+       '2025-04-16T06:00:00.000000000', '2025-04-16T18:00:00.000000000',
+       '2025-04-17T06:00:00.000000000', '2025-04-17T18:00:00.000000000',
+       '2025-04-18T06:00:00.000000000', '2025-04-18T18:00:00.000000000',
+       '2025-04-19T06:00:00.000000000', '2025-04-19T18:00:00.000000000',
+       '2025-04-20T06:00:00.000000000', '2025-04-20T18:00:00.000000000',
+       '2025-04-21T06:00:00.000000000', '2025-04-21T18:00:00.000000000',
+       '2025-04-22T06:00:00.000000000', '2025-04-22T18:00:00.000000000',
+       '2025-04-23T06:00:00.000000000', '2025-04-23T18:00:00.000000000',
+       '2025-04-24T06:00:00.000000000', '2025-04-24T18:00:00.000000000',
+       '2025-04-25T06:00:00.000000000', '2025-04-25T18:00:00.000000000',
+       '2025-04-26T06:00:00.000000000', '2025-04-26T18:00:00.000000000',
+       '2025-04-27T06:00:00.000000000', '2025-04-27T18:00:00.000000000',
+       '2025-04-28T06:00:00.000000000', '2025-04-28T18:00:00.000000000',
+       '2025-04-29T06:00:00.000000000', '2025-04-29T18:00:00.000000000',
+       '2025-04-30T06:00:00.000000000', '2025-04-30T18:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * forecast_reference_time  (forecast_reference_time) datetime64[ns] 480B 20...
+cams_h[:,0,0] [3.42265974e+01 5.11097124e+01 6.95812407e+01 8.97829543e+01
+ 1.11861574e+02 1.35994476e+02 1.62341637e+02 1.91124296e+02
+ 2.22531677e+02 2.56785643e+02 2.94105974e+02 3.34719819e+02
+ 3.78856328e+02 4.26798672e+02 4.78787585e+02 5.35121192e+02
+ 5.96963670e+02 6.65457318e+02 7.39633419e+02 8.20041066e+02
+ 9.07150934e+02 1.00124260e+03 1.10254591e+03 1.21146386e+03
+ 1.32825133e+03 1.45302020e+03 1.58624411e+03 1.72813020e+03
+ 1.87874725e+03 2.03822075e+03 2.20604967e+03 2.38119848e+03
+ 2.56367740e+03 2.75391539e+03 2.95182899e+03 3.15773365e+03
+ 3.37074113e+03 3.59067928e+03 3.81486792e+03 4.04364868e+03
+ 4.27560206e+03 4.50997654e+03 4.74749518e+03 4.98850742e+03
+ 5.22826362e+03 5.46698912e+03 5.70676426e+03 5.94976062e+03
+ 6.19866498e+03 6.45544178e+03 6.71490348e+03 6.96966999e+03
+ 7.22916995e+03 7.49690600e+03 7.77456619e+03 8.05894014e+03
+ 8.34270925e+03 8.62558251e+03 8.90497841e+03 9.18268394e+03
+ 9.46286036e+03 9.74641204e+03 1.00325833e+04 1.03226313e+04
+ 1.06176726e+04 1.09130769e+04 1.11987972e+04 1.14774982e+04
+ 1.17615634e+04 1.20583160e+04 1.23714417e+04 1.27011118e+04
+ 1.30421628e+04 1.33905260e+04 1.37437892e+04 1.41058961e+04
+ 1.44851555e+04 1.48770784e+04 1.52908545e+04 1.57412674e+04
+ 1.62198393e+04 1.67019860e+04 1.71845234e+04 1.76647854e+04
+ 1.81640868e+04 1.87042995e+04 1.92878129e+04 1.98932437e+04
+ 2.05003650e+04 2.10957034e+04 2.16509641e+04 2.21891831e+04
+ 2.27389574e+04 2.32811323e+04 2.38218822e+04 2.44359290e+04
+ 2.51007162e+04 2.57802325e+04 2.64833257e+04 2.71917659e+04
+ 2.78337148e+04 2.84347968e+04 2.90782569e+04 2.97664646e+04
+ 3.05283204e+04 3.13852074e+04 3.22160403e+04 3.29937691e+04
+ 3.38006365e+04 3.46542504e+04 3.55178320e+04 3.63993890e+04
+ 3.73502486e+04 3.83526247e+04 3.93655469e+04 4.04697498e+04
+ 4.17287704e+04 4.30412821e+04 4.42812481e+04 4.54617238e+04
+ 4.65893769e+04 4.77531437e+04 4.87474513e+04 4.93374476e+04
+ 4.98036667e+04 5.09253617e+04 5.20114053e+04 5.22349686e+04
+ 5.23358986e+04 5.30590382e+04 5.38495825e+04 5.42345126e+04
+ 5.44432834e+04 5.50541637e+04 5.61252790e+04 5.73090676e+04
+ 5.77416193e+04]
+(1, 60, 137, 451, 900)
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 96 to 4766
+Selecting frame from 96 to 4766
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 96 to 4966
+Selecting frame from 96 to 4966
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 96 to 4766
+Selecting frame from 96 to 4766
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5043
+Selecting frame from 99 to 5043
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T200310Z_20250408T213446Z_04899F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T201459Z_20250408T212805Z_04899G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T202606Z_20250408T213424Z_04899H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T203755Z_20250408T212825Z_04900A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T204931Z_20250408T212818Z_04900B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T210117Z_20250408T225110Z_04900C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T211221Z_20250408T225217Z_04900D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T212408Z_20250408T225025Z_04900E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T213544Z_20250408T225218Z_04900F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T214732Z_20250408T225008Z_04900G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T215840Z_20250408T225227Z_04900H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T221029Z_20250408T225022Z_04901A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T222204Z_20250408T225014Z_04901B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T223351Z_20250409T003820Z_04901C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T224455Z_20250409T003721Z_04901D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T225641Z_20250409T003825Z_04901E.h5, already processed.
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 93 to 4962
+Selecting frame from 93 to 4962
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 94 to 4743
+Selecting frame from 94 to 4743
+Selecting frame from 95 to 5040
+Selecting frame from 95 to 5040
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+Selecting frame from 94 to 4764
+Selecting frame from 94 to 4764
+Selecting frame from 94 to 5057
+Selecting frame from 94 to 5057
+Selecting frame from 94 to 4963
+Selecting frame from 94 to 4963
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 96 to 4744
+Selecting frame from 96 to 4744
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T080014Z_20250409T093953Z_04907D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T081200Z_20250409T093957Z_04907E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T082336Z_20250409T094001Z_04907F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T083524Z_20250409T093755Z_04907G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T084632Z_20250409T094002Z_04907H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T085821Z_20250409T093903Z_04908A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T090956Z_20250409T111215Z_04908B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T092143Z_20250409T110957Z_04908C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T093247Z_20250409T111202Z_04908D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T094433Z_20250409T111204Z_04908E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T095609Z_20250409T111204Z_04908F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T100758Z_20250409T110855Z_04908G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T101905Z_20250409T111005Z_04908H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T103054Z_20250409T111102Z_04909A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T104229Z_20250409T125805Z_04909B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T105416Z_20250409T125603Z_04909C.h5, already processed.
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 100 to 4770
+Selecting frame from 100 to 4770
+Selecting frame from 100 to 5062
+Selecting frame from 100 to 5062
+Selecting frame from 99 to 4969
+Selecting frame from 99 to 4969
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 96 to 4745
+Selecting frame from 96 to 4745
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T080728Z_20250416T094614Z_05016D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T081914Z_20250416T094516Z_05016E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T083050Z_20250416T094718Z_05016F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T084239Z_20250416T094509Z_05016G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T085346Z_20250416T094616Z_05016H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T090535Z_20250416T094619Z_05017A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T091710Z_20250416T094718Z_05017B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T092857Z_20250416T111821Z_05017C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T094001Z_20250416T112022Z_05017D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T095148Z_20250416T112129Z_05017E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T100323Z_20250416T112120Z_05017F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T101512Z_20250416T111613Z_05017G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T102619Z_20250416T112019Z_05017H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T103808Z_20250416T111826Z_05018A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T104944Z_20250416T130729Z_05018B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T140637Z_20250416T160640Z_05020C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T141741Z_20250416T160741Z_05020D.h5, already processed.
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T200503Z_20250417T071743Z_05024B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T201650Z_20250416T221500Z_05024C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T202754Z_20250416T221858Z_05024D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T203940Z_20250416T222050Z_05024E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T205116Z_20250416T221904Z_05024F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T210305Z_20250416T221849Z_05024G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T211412Z_20250416T221933Z_05024H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T212601Z_20250416T221842Z_05025A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T213736Z_20250416T235110Z_05025B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T214923Z_20250416T235002Z_05025C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T220027Z_20250416T235106Z_05025D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T221213Z_20250416T235108Z_05025E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T222349Z_20250416T235108Z_05025F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T223538Z_20250416T234957Z_05025G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T224645Z_20250416T235118Z_05025H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T225834Z_20250416T235009Z_05026A.h5, already processed.
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 99 to 5092
+Selecting frame from 99 to 5092
+Selecting frame from 100 to 4769
+Selecting frame from 100 to 4769
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T200059Z_20250423T204918Z_05133A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T201234Z_20250423T205228Z_05133B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T202421Z_20250423T221612Z_05133C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T203525Z_20250423T221816Z_05133D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T204711Z_20250423T221620Z_05133E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T205847Z_20250423T221618Z_05133F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T211036Z_20250423T221811Z_05133G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T212143Z_20250423T221829Z_05133H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T213332Z_20250423T221722Z_05134A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T214507Z_20250423T221823Z_05134B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T215654Z_20250423T235922Z_05134C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T220758Z_20250424T000125Z_05134D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T221944Z_20250424T000025Z_05134E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T223120Z_20250424T000028Z_05134F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T224309Z_20250423T235721Z_05134G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T225416Z_20250424T000024Z_05134H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T021111Z_20250424T030345Z_05137A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T022246Z_20250424T030238Z_05137B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T023433Z_20250424T073608Z_05137C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T024537Z_20250424T073608Z_05137D.h5, already processed.
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 97 to 4967
+Selecting frame from 97 to 4967
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T080934Z_20250424T090207Z_05140H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T082123Z_20250424T090416Z_05141A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T083259Z_20250424T103935Z_05141B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T084445Z_20250424T103929Z_05141C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T085549Z_20250424T103818Z_05141D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T090736Z_20250424T104027Z_05141E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T091911Z_20250424T103712Z_05141F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T093100Z_20250424T103917Z_05141G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T094207Z_20250424T103619Z_05141H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T095356Z_20250424T103824Z_05142A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T100532Z_20250424T122041Z_05142B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T101718Z_20250424T122137Z_05142C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T102822Z_20250424T122141Z_05142D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T104009Z_20250424T122138Z_05142E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T105144Z_20250424T122032Z_05142F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T140839Z_20250424T165711Z_05144G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T141946Z_20250424T170021Z_05144H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T143135Z_20250424T165810Z_05145A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T144311Z_20250424T170029Z_05145B.h5, already processed.
+Selecting frame from 95 to 5056
+Selecting frame from 95 to 5056
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 100 to 5062
+Selecting frame from 100 to 5062
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5043
+Selecting frame from 99 to 5043
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+Selecting frame from 98 to 5059
+Selecting frame from 98 to 5059
+Selecting frame from 96 to 4766
+Selecting frame from 96 to 4766
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 95 to 5040
+Selecting frame from 95 to 5040
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T200256Z_20250406T213726Z_04868E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T201431Z_20250406T214116Z_04868F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T202620Z_20250406T214015Z_04868G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T203727Z_20250406T213419Z_04868H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T204916Z_20250406T214033Z_04869A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T210052Z_20250406T213728Z_04869B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T211238Z_20250406T230332Z_04869C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T212342Z_20250406T230432Z_04869D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T213529Z_20250406T230435Z_04869E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T214704Z_20250406T230235Z_04869F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T215853Z_20250406T230230Z_04869G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T221000Z_20250406T230141Z_04869H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T222149Z_20250406T230438Z_04870A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T020119Z_20250407T083549Z_04872D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T021306Z_20250407T082829Z_04872E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T022441Z_20250407T083617Z_04872F.h5, already processed.
+Selecting frame from 95 to 5039
+Selecting frame from 95 to 5039
+Selecting frame from 98 to 4965
+Selecting frame from 98 to 4965
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 98 to 4768
+Selecting frame from 98 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 94 to 5039
+Selecting frame from 94 to 5039
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 5041
+Selecting frame from 97 to 5041
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Selecting frame from 94 to 4763
+Selecting frame from 94 to 4763
+Selecting frame from 94 to 5056
+Selecting frame from 94 to 5056
+Selecting frame from 93 to 4961
+Selecting frame from 93 to 4961
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T080024Z_20250407T095039Z_04876C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T081128Z_20250407T095033Z_04876D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T082314Z_20250407T094942Z_04876E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T083450Z_20250407T095037Z_04876F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T084639Z_20250407T094931Z_04876G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T085746Z_20250407T095036Z_04876H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T090935Z_20250407T095039Z_04877A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T092110Z_20250407T094939Z_04877B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T093256Z_20250407T112543Z_04877C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T094400Z_20250407T112540Z_04877D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T095547Z_20250407T112242Z_04877E.h5, already processed.
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 94 to 5056
+Selecting frame from 94 to 5056
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T200937Z_20250411T220522Z_04946D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T202124Z_20250411T215844Z_04946E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T203259Z_20250411T220014Z_04946F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T204448Z_20250411T215940Z_04946G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T205555Z_20250411T215429Z_04946H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T210744Z_20250411T215853Z_04947A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T211919Z_20250411T231942Z_04947B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T213106Z_20250411T231939Z_04947C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T214210Z_20250411T232043Z_04947D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T215357Z_20250411T231950Z_04947E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T220532Z_20250411T231943Z_04947F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T221721Z_20250411T231839Z_04947G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T222828Z_20250411T231944Z_04947H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T224017Z_20250411T232046Z_04948A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T225152Z_20250412T010754Z_04948B.h5, already processed.
+Selecting frame from 94 to 5040
+Selecting frame from 94 to 5040
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 93 to 4961
+Selecting frame from 93 to 4961
+Selecting frame from 97 to 5058
+Selecting frame from 97 to 5058
+Selecting frame from 95 to 4764
+Selecting frame from 95 to 4764
+Selecting frame from 94 to 5057
+Selecting frame from 94 to 5057
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 5040
+Selecting frame from 95 to 5040
+Selecting frame from 98 to 4965
+Selecting frame from 98 to 4965
+Selecting frame from 94 to 5056
+Selecting frame from 94 to 5056
+Selecting frame from 92 to 4761
+Selecting frame from 92 to 4761
+Selecting frame from 92 to 5055
+Selecting frame from 92 to 5055
+Selecting frame from 92 to 4960
+Selecting frame from 92 to 4960
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T080708Z_20250413T003634Z_04954B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T081854Z_20250413T004134Z_04954C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T082958Z_20250412T101027Z_04954D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T084144Z_20250412T100830Z_04954E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T085320Z_20250412T101225Z_04954F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T090509Z_20250412T100821Z_04954G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T091616Z_20250412T100931Z_04954H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T092805Z_20250412T101228Z_04955A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T093940Z_20250412T114233Z_04955B.h5, already processed.
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4963
+Selecting frame from 96 to 4963
+Selecting frame from 98 to 5059
+Selecting frame from 98 to 5059
+Selecting frame from 96 to 4766
+Selecting frame from 96 to 4766
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 100 to 4967
+Selecting frame from 100 to 4967
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 5040
+Selecting frame from 95 to 5040
+Selecting frame from 98 to 4965
+Selecting frame from 98 to 4965
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T145457Z_20250424T165832Z_05145C.h5, already processed.
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 97 to 4767
+Selecting frame from 97 to 4767
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T200702Z_20250424T213153Z_05148F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T201851Z_20250424T213101Z_05148G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T202958Z_20250424T213255Z_05148H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T204147Z_20250424T213113Z_05149A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T205322Z_20250424T212936Z_05149B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T210509Z_20250424T225529Z_05149C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T211613Z_20250424T225530Z_05149D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T212800Z_20250424T225635Z_05149E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T213935Z_20250424T225632Z_05149F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T215124Z_20250424T225427Z_05149G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T220231Z_20250424T225631Z_05149H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T221420Z_20250424T225635Z_05150A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T222555Z_20250425T003948Z_05150B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T223742Z_20250425T003837Z_05150C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250424T224846Z_20250425T004045Z_05150D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T020538Z_20250425T034050Z_05152E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T021714Z_20250425T034052Z_05152F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T022902Z_20250425T034042Z_05152G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T024010Z_20250425T033953Z_05152H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T025158Z_20250425T034055Z_05153A.h5, already processed.
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 5061
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 97 to 4767
+Selecting frame from 97 to 4767
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+Selecting frame from 94 to 5040
+Selecting frame from 94 to 5040
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T080403Z_20250425T112123Z_05156D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T081549Z_20250425T111831Z_05156E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T082725Z_20250425T111822Z_05156F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T083914Z_20250425T112024Z_05156G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T085021Z_20250425T112127Z_05156H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T090210Z_20250425T111732Z_05157A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T091345Z_20250425T111833Z_05157B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T092532Z_20250425T111934Z_05157C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T093636Z_20250425T111721Z_05157D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T094822Z_20250425T112129Z_05157E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T095958Z_20250425T111821Z_05157F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T101147Z_20250425T112024Z_05157G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T102254Z_20250425T111729Z_05157H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T103443Z_20250426T041150Z_05158A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T104618Z_20250425T130401Z_05158B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T105805Z_20250425T130245Z_05158C.h5, already processed.
+Selecting frame from 95 to 5162
+Selecting frame from 95 to 5162
+Selecting frame from 99 to 5243
+Selecting frame from 99 to 5243
+Selecting frame from 100 to 4926
+Selecting frame from 100 to 4926
+Selecting frame from 99 to 5243
+Selecting frame from 99 to 5243
+Selecting frame from 97 to 5164
+Selecting frame from 97 to 5164
+Selecting frame from 100 to 5244
+Selecting frame from 100 to 5244
+Selecting frame from 98 to 4925
+Selecting frame from 98 to 4925
+Selecting frame from 98 to 5242
+Selecting frame from 98 to 5242
+Selecting frame from 97 to 5164
+Selecting frame from 97 to 5164
+Selecting frame from 100 to 5243
+Selecting frame from 100 to 5243
+Selecting frame from 97 to 4923
+Selecting frame from 97 to 4923
+Selecting frame from 96 to 5240
+Selecting frame from 96 to 5240
+Selecting frame from 99 to 5166
+Selecting frame from 99 to 5166
+Selecting frame from 100 to 5244
+Selecting frame from 100 to 5244
+Selecting frame from 99 to 4926
+Selecting frame from 99 to 4926
+Selecting frame from 100 to 5244
+Selecting frame from 100 to 5244
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T085626Z_20250402T031710Z_04783E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T090802Z_20250402T031802Z_04783F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T091950Z_20250402T031700Z_04783G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T093058Z_20250402T031714Z_04783H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T094246Z_20250402T031708Z_04784A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T095422Z_20250402T050111Z_04784B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T100608Z_20250402T050106Z_04784C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T101712Z_20250402T050004Z_04784D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T102858Z_20250402T050117Z_04784E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T104034Z_20250402T050112Z_04784F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T105223Z_20250402T050108Z_04784G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T140834Z_20250401T151602Z_04786H.h5, already processed.
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 100 to 5061
+Selecting frame from 100 to 5061
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4747
+Selecting frame from 98 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T200737Z_20250401T212022Z_04790G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T201844Z_20250401T212152Z_04790H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T203033Z_20250401T212036Z_04791A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T204209Z_20250401T212028Z_04791B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T205355Z_20250401T224741Z_04791C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T210459Z_20250401T224541Z_04791D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T211646Z_20250401T224641Z_04791E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T212821Z_20250401T224643Z_04791F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T214010Z_20250401T224638Z_04791G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T215118Z_20250401T224436Z_04791H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T220307Z_20250401T224646Z_04792A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250401T221442Z_20250401T224439Z_04792B.h5, already processed.
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 5059
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4744
+Selecting frame from 96 to 4744
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 94 to 4764
+Selecting frame from 94 to 4764
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 94 to 4963
+Selecting frame from 94 to 4963
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 96 to 4744
+Selecting frame from 96 to 4744
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T200404Z_20250410T211915Z_04930G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T201511Z_20250410T211957Z_04930H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T202700Z_20250410T212300Z_04931A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T203835Z_20250410T212454Z_04931B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T205022Z_20250410T223936Z_04931C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T210126Z_20250410T224042Z_04931D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T211312Z_20250410T223845Z_04931E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T212448Z_20250410T223944Z_04931F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T213637Z_20250410T223837Z_04931G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T214744Z_20250410T224044Z_04931H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T215933Z_20250410T223943Z_04932A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T221108Z_20250411T002549Z_04932B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T222255Z_20250411T002545Z_04932C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T223359Z_20250411T002549Z_04932D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T224545Z_20250411T002551Z_04932E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T225721Z_20250411T002552Z_04932F.h5, already processed.
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+Selecting frame from 94 to 4763
+Selecting frame from 94 to 4763
+Selecting frame from 93 to 5056
+Selecting frame from 93 to 5056
+Selecting frame from 93 to 4962
+Selecting frame from 93 to 4962
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 95 to 4742
+Selecting frame from 95 to 4742
+Selecting frame from 94 to 5040
+Selecting frame from 94 to 5040
+Selecting frame from 98 to 4965
+Selecting frame from 98 to 4965
+Selecting frame from 93 to 5055
+Selecting frame from 93 to 5055
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 100 to 5062
+Selecting frame from 100 to 5062
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T080102Z_20250411T095236Z_04938E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T081237Z_20250411T095132Z_04938F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T082426Z_20250411T095222Z_04938G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T083533Z_20250411T095241Z_04938H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T084722Z_20250411T095338Z_04939A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T085857Z_20250411T110251Z_04939B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T091044Z_20250411T110240Z_04939C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T092148Z_20250411T110240Z_04939D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T093334Z_20250411T110249Z_04939E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T094510Z_20250411T105941Z_04939F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T095659Z_20250411T110140Z_04939G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T100806Z_20250411T105956Z_04939H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T101955Z_20250411T105940Z_04940A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T103130Z_20250411T124451Z_04940B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T104317Z_20250411T124446Z_04940C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250411T105421Z_20250411T124241Z_04940D.h5, already processed.
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 5041
+Selecting frame from 97 to 5041
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T080253Z_20250419T085346Z_05063A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T081429Z_20250419T085344Z_05063B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T082615Z_20250419T101450Z_05063C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T083719Z_20250419T101450Z_05063D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T084906Z_20250419T101459Z_05063E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T090041Z_20250419T101448Z_05063F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T091230Z_20250419T101347Z_05063G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T092337Z_20250419T101451Z_05063H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T093526Z_20250419T101455Z_05064A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T094702Z_20250419T101453Z_05064B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T095848Z_20250419T114900Z_05064C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T100952Z_20250419T114757Z_05064D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T102138Z_20250419T114903Z_05064E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T103314Z_20250419T114901Z_05064F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T104503Z_20250419T114757Z_05064G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T105610Z_20250419T114859Z_05064H.h5, already processed.
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4744
+Selecting frame from 96 to 4744
+Selecting frame from 95 to 5040
+Selecting frame from 95 to 5040
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T200019Z_20250419T211451Z_05070G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T201126Z_20250419T212242Z_05070H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T202315Z_20250419T211758Z_05071A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T203451Z_20250419T223647Z_05071B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T204637Z_20250419T223653Z_05071C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T205741Z_20250419T223544Z_05071D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T210928Z_20250419T223654Z_05071E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T212103Z_20250419T223544Z_05071F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T213252Z_20250419T223443Z_05071G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T214359Z_20250419T223649Z_05071H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T215548Z_20250419T223548Z_05072A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250419T220723Z_20250420T001952Z_05072B.h5, already processed.
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4964
+Selecting frame from 97 to 4964
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 95 to 4763
+Selecting frame from 95 to 4763
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 4743
+Selecting frame from 99 to 5043
+Selecting frame from 99 to 5043
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 5041
+Selecting frame from 97 to 5041
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T200856Z_20250407T222835Z_04884B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T202042Z_20250407T222147Z_04884C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T203146Z_20250407T222039Z_04884D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T204332Z_20250407T222053Z_04884E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T205508Z_20250407T222206Z_04884F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T210657Z_20250407T222038Z_04884G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T211804Z_20250407T222750Z_04884H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T214128Z_20250407T222302Z_04885B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T215314Z_20250407T235645Z_04885C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T220418Z_20250407T235747Z_04885D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T221605Z_20250407T235647Z_04885E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T222740Z_20250407T235545Z_04885F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T223929Z_20250407T235336Z_04885G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250407T225036Z_20250407T235646Z_04885H.h5, already processed.
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 95 to 5040
+Selecting frame from 95 to 5040
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T080548Z_20250408T090019Z_04891H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T081737Z_20250408T090022Z_04892A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T082913Z_20250408T103130Z_04892B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T084059Z_20250408T103227Z_04892C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T085203Z_20250408T103224Z_04892D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T090349Z_20250408T102930Z_04892E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T091525Z_20250408T103231Z_04892F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T092714Z_20250408T102821Z_04892G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T093821Z_20250408T103033Z_04892H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T095009Z_20250408T103032Z_04893A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T100145Z_20250408T121641Z_04893B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T101331Z_20250408T121328Z_04893C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T102435Z_20250408T121331Z_04893D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T103621Z_20250408T121333Z_04893E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T104757Z_20250408T121326Z_04893F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250408T105946Z_20250408T121321Z_04893G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250413T080127Z_20250413T091610Z_04969F.h5, already processed.
+Selecting frame from 97 to 4964
+Selecting frame from 97 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 100 to 5061
+Selecting frame from 100 to 5061
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250413T201011Z_20250413T214922Z_04977E.h5, already processed.
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+Selecting frame from 97 to 5041
+Selecting frame from 97 to 5041
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 95 to 5056
+Selecting frame from 95 to 5056
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4969
+Selecting frame from 99 to 4969
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4967
+Selecting frame from 98 to 4967
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T080203Z_20250417T085600Z_05031H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T081352Z_20250417T085402Z_05032A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T082528Z_20250417T085254Z_05032B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T083714Z_20250417T102904Z_05032C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T084818Z_20250417T103306Z_05032D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T090005Z_20250417T102904Z_05032E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T091141Z_20250417T103005Z_05032F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T092329Z_20250417T102757Z_05032G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T093437Z_20250417T103005Z_05032H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T094626Z_20250417T103315Z_05033A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T095801Z_20250417T121313Z_05033B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T100948Z_20250417T121318Z_05033C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T102052Z_20250417T121317Z_05033D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T103238Z_20250417T121424Z_05033E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T104414Z_20250417T121421Z_05033F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T105603Z_20250417T121108Z_05033G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T140109Z_20250417T151332Z_05035G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T141216Z_20250417T151436Z_05035H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T142404Z_20250417T151444Z_05036A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T143540Z_20250417T151440Z_05036B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T144727Z_20250417T212246Z_05036C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T145831Z_20250417T212446Z_05036D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T151017Z_20250418T075028Z_05036E.h5, already processed.
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 5058
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 95 to 4965
+Selecting frame from 95 to 4965
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 4746
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T201120Z_20250417T212456Z_05039G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T202228Z_20250417T212252Z_05039H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T203417Z_20250418T074618Z_05040A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T204552Z_20250417T224956Z_05040B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T205739Z_20250417T225048Z_05040C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T210843Z_20250417T225102Z_05040D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T212029Z_20250417T224957Z_05040E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T213205Z_20250417T224956Z_05040F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T214354Z_20250417T225103Z_05040G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T215501Z_20250417T225053Z_05040H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T220650Z_20250417T225102Z_05041A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T221825Z_20250417T224957Z_05041B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T223012Z_20250418T003256Z_05041C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T224116Z_20250418T003253Z_05041D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250417T225302Z_20250418T003302Z_05041E.h5, already processed.
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4963
+Selecting frame from 96 to 4963
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 97 to 4765
+Selecting frame from 97 to 4765
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250429T080500Z_20250429T092028Z_05218F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250429T081649Z_20250429T091930Z_05218G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250429T082756Z_20250429T092128Z_05218H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250429T140334Z_20250429T171707Z_05222E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250429T141509Z_20250429T171815Z_05222F.h5, already processed.
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 96 to 4743
+Selecting frame from 96 to 4743
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4818
+Selecting frame from 99 to 4818
+Selecting frame from 99 to 5243
+Selecting frame from 99 to 5243
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4768
+Selecting frame from 98 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4968
+Selecting frame from 98 to 4968
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4768
+Selecting frame from 98 to 4768
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250403T081053Z_20250403T101514Z_04814B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250403T082239Z_20250403T101505Z_04814C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250403T083343Z_20250403T101407Z_04814D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250403T084530Z_20250403T101406Z_04814E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250403T085705Z_20250403T101358Z_04814F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250403T090854Z_20250403T101301Z_04814G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250403T092001Z_20250403T101408Z_04814H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250403T093150Z_20250403T101402Z_04815A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250403T094326Z_20250403T114950Z_04815B.h5, already processed.
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+Selecting frame from 99 to 4748
+Selecting frame from 99 to 4748
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T095127Z_20250412T114025Z_04955C.h5, already processed.
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 98 to 4768
+Selecting frame from 98 to 4768
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 97 to 5058
+Selecting frame from 97 to 5058
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T200403Z_20250412T223846Z_04961H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T201553Z_20250412T224432Z_04962A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T202728Z_20250412T224222Z_04962B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T203914Z_20250412T224539Z_04962C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T205018Z_20250412T224633Z_04962D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T210205Z_20250412T224225Z_04962E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T211340Z_20250412T224607Z_04962F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T212529Z_20250412T224144Z_04962G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T213636Z_20250412T224443Z_04962H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250412T214825Z_20250412T224029Z_04963A.h5, already processed.
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 97 to 5058
+Selecting frame from 97 to 5058
+Selecting frame from 95 to 4764
+Selecting frame from 95 to 4764
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 4746
+Selecting frame from 99 to 5043
+Selecting frame from 99 to 5043
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 97 to 4746
+Selecting frame from 97 to 4746
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T200620Z_20250422T214204Z_05117E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T201756Z_20250422T213806Z_05117F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T202945Z_20250422T213810Z_05117G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T204052Z_20250422T213808Z_05117H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T205241Z_20250422T214122Z_05118A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T210416Z_20250422T214017Z_05118B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T211603Z_20250422T230725Z_05118C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T020447Z_20250423T070104Z_05121D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T021633Z_20250423T070018Z_05121E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T022809Z_20250423T070514Z_05121F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T023958Z_20250423T070051Z_05121G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T025105Z_20250423T070125Z_05121H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T030254Z_20250423T065807Z_05122A.h5, already processed.
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T080356Z_20250423T095518Z_05125C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T081500Z_20250423T095415Z_05125D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T082646Z_20250423T095518Z_05125E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T083822Z_20250423T095513Z_05125F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T085011Z_20250423T095511Z_05125G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T090118Z_20250423T095411Z_05125H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T140222Z_20250423T161948Z_05129B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T141408Z_20250423T161951Z_05129C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T142512Z_20250423T162100Z_05129D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T143659Z_20250423T162125Z_05129E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250423T144834Z_20250423T161951Z_05129F.h5, already processed.
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 95 to 5058
+Selecting frame from 95 to 5058
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 100 to 5045
+Selecting frame from 100 to 5045
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 94 to 4963
+Selecting frame from 94 to 4963
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T200135Z_20250425T203812Z_05164B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T201321Z_20250425T220615Z_05164C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T202425Z_20250425T220615Z_05164D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T203612Z_20250425T220619Z_05164E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T204747Z_20250425T220614Z_05164F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T205936Z_20250425T220617Z_05164G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T211043Z_20250425T220624Z_05164H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T212232Z_20250425T220621Z_05165A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T213408Z_20250425T235026Z_05165B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T214554Z_20250425T235026Z_05165C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T215658Z_20250425T234819Z_05165D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T220845Z_20250425T235024Z_05165E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T222020Z_20250425T234920Z_05165F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T223209Z_20250425T235020Z_05165G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T224316Z_20250425T234823Z_05165H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250425T225505Z_20250425T235031Z_05166A.h5, already processed.
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 97 to 4744
+Selecting frame from 97 to 4744
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T081021Z_20250426T085615Z_05172A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T082157Z_20250426T102414Z_05172B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T083343Z_20250426T102516Z_05172C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T084447Z_20250426T102407Z_05172D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T085633Z_20250426T102611Z_05172E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T090809Z_20250426T102606Z_05172F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T091958Z_20250426T102206Z_05172G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T093105Z_20250426T102614Z_05172H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T094254Z_20250426T102320Z_05173A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T095429Z_20250426T120931Z_05173B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T100616Z_20250426T120626Z_05173C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T101720Z_20250426T120821Z_05173D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T102906Z_20250426T121019Z_05173E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T104042Z_20250426T120823Z_05173F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T105231Z_20250426T120916Z_05173G.h5, already processed.
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 93 to 4962
+Selecting frame from 93 to 4962
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T020128Z_20250405T084656Z_04841C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T021232Z_20250405T084626Z_04841D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T022418Z_20250405T084107Z_04841E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T023553Z_20250405T084648Z_04841F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T024742Z_20250405T083933Z_04841G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T025849Z_20250405T084000Z_04841H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T031038Z_20250405T084125Z_04842A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T032214Z_20250405T084226Z_04842B.h5, already processed.
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 5041
+Selecting frame from 97 to 5041
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 95 to 5056
+Selecting frame from 95 to 5056
+Selecting frame from 93 to 4763
+Selecting frame from 93 to 4763
+Selecting frame from 94 to 5056
+Selecting frame from 94 to 5056
+Selecting frame from 93 to 4962
+Selecting frame from 93 to 4962
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 4743
+Selecting frame from 94 to 5039
+Selecting frame from 94 to 5039
+Selecting frame from 98 to 4965
+Selecting frame from 98 to 4965
+Selecting frame from 93 to 5055
+Selecting frame from 93 to 5055
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T141002Z_20250405T145112Z_04849B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T142149Z_20250405T161913Z_04849C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T143253Z_20250405T162106Z_04849D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T144439Z_20250405T162324Z_04849E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T145615Z_20250405T162308Z_04849F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T150803Z_20250405T161915Z_04849G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T151910Z_20250405T162319Z_04849H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T153059Z_20250405T162027Z_04850A.h5, already processed.
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 100 to 4769
+Selecting frame from 100 to 4769
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 93 to 4962
+Selecting frame from 93 to 4962
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T200935Z_20250409T220941Z_04915C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T202039Z_20250409T220952Z_04915D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T203225Z_20250409T221023Z_04915E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T204401Z_20250409T220943Z_04915F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T205549Z_20250409T220858Z_04915G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T210657Z_20250409T221630Z_04915H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T211846Z_20250409T221024Z_04916A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T213021Z_20250409T221850Z_04916B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T214208Z_20250409T233055Z_04916C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T215312Z_20250409T233054Z_04916D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T220458Z_20250409T233059Z_04916E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T221634Z_20250409T233159Z_04916F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T222823Z_20250409T232950Z_04916G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T223930Z_20250409T233105Z_04916H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250409T225119Z_20250409T233100Z_04917A.h5, already processed.
+Selecting frame from 93 to 4962
+Selecting frame from 93 to 4962
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 95 to 4743
+Selecting frame from 95 to 4743
+Selecting frame from 94 to 5039
+Selecting frame from 94 to 5039
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 94 to 5056
+Selecting frame from 94 to 5056
+Selecting frame from 93 to 4762
+Selecting frame from 93 to 4762
+Selecting frame from 93 to 5056
+Selecting frame from 93 to 5056
+Selecting frame from 93 to 4962
+Selecting frame from 93 to 4962
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 94 to 4742
+Selecting frame from 94 to 4742
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 4769
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T080636Z_20250410T084840Z_04923A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T081812Z_20250410T102239Z_04923B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T082958Z_20250410T102133Z_04923C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T084102Z_20250410T102229Z_04923D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T085249Z_20250410T102039Z_04923E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T090424Z_20250410T101932Z_04923F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T091613Z_20250410T102024Z_04923G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T092720Z_20250410T102035Z_04923H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T093909Z_20250410T102236Z_04924A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T095045Z_20250410T115146Z_04924B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T100231Z_20250410T115141Z_04924C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T101335Z_20250410T115258Z_04924D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T102522Z_20250410T115249Z_04924E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T103657Z_20250410T115140Z_04924F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T104846Z_20250410T115037Z_04924G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250410T105953Z_20250410T115154Z_04924H.h5, already processed.
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 98 to 5059
+Selecting frame from 98 to 5059
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+Selecting frame from 94 to 4963
+Selecting frame from 94 to 4963
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 96 to 4744
+Selecting frame from 96 to 4744
+Selecting frame from 100 to 5045
+Selecting frame from 100 to 5045
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T080851Z_20250420T092335Z_05078F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T082040Z_20250420T092234Z_05078G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T083147Z_20250420T092339Z_05078H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T084336Z_20250420T092344Z_05079A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T085512Z_20250420T092334Z_05079B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T090658Z_20250420T105742Z_05079C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T091802Z_20250420T105843Z_05079D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T092949Z_20250420T105843Z_05079E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T094124Z_20250420T105842Z_05079F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T095313Z_20250420T105848Z_05079G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T100420Z_20250420T105745Z_05079H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T101609Z_20250420T105746Z_05080A.h5, already processed.
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 97 to 5058
+Selecting frame from 97 to 5058
+Selecting frame from 95 to 4765
+Selecting frame from 95 to 4765
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 96 to 4744
+Selecting frame from 96 to 4744
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4747
+Selecting frame from 99 to 4747
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T200550Z_20250420T215906Z_05086D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T201737Z_20250420T220008Z_05086E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250420T202912Z_20250420T220000Z_05086F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T093715Z_20250427T111119Z_05188E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T094850Z_20250427T110956Z_05188F.h5, already processed.
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 100 to 4968
+Selecting frame from 100 to 4968
+Selecting frame from 96 to 5042
+Selecting frame from 96 to 5042
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 95 to 4964
+Selecting frame from 95 to 4964
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T200212Z_20250427T215143Z_05195C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T201316Z_20250427T215351Z_05195D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T202502Z_20250427T215351Z_05195E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T203638Z_20250427T215506Z_05195F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T204826Z_20250427T215358Z_05195G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T205933Z_20250427T215350Z_05195H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T212258Z_20250427T232750Z_05196B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T213444Z_20250427T232454Z_05196C.h5, already processed.
+Selecting frame from 95 to 5041
+Selecting frame from 95 to 5041
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Selecting frame from 94 to 4763
+Selecting frame from 94 to 4763
+Selecting frame from 94 to 5056
+Selecting frame from 94 to 5056
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 96 to 4965
+Selecting frame from 96 to 4965
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 4745
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 93 to 5055
+Selecting frame from 93 to 5055
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 94 to 4741
+Selecting frame from 94 to 4741
+Selecting frame from 93 to 5039
+Selecting frame from 93 to 5039
+Selecting frame from 97 to 4964
+Selecting frame from 97 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T200837Z_20250405T223628Z_04853A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T202013Z_20250405T223248Z_04853B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T203159Z_20250405T223234Z_04853C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T204303Z_20250405T223539Z_04853D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T205450Z_20250405T223948Z_04853E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T210625Z_20250405T223255Z_04853F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T214110Z_20250405T223244Z_04854A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T215245Z_20250405T223948Z_04854B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T220432Z_20250406T000449Z_04854C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T221536Z_20250406T000448Z_04854D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T222722Z_20250406T000452Z_04854E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T223858Z_20250406T000700Z_04854F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250405T225047Z_20250406T000442Z_04854G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T020659Z_20250406T030908Z_04856H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T021847Z_20250406T030911Z_04857A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T023023Z_20250406T030804Z_04857B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T024209Z_20250406T074420Z_04857C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T025313Z_20250406T074938Z_04857D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T030500Z_20250406T074938Z_04857E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T031635Z_20250406T074807Z_04857F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T032824Z_20250406T074421Z_04857G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T033931Z_20250406T074956Z_04857H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T035120Z_20250406T074700Z_04858A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T040255Z_20250406T074928Z_04858B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T041442Z_20250406T074900Z_04858C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T042546Z_20250406T074958Z_04858D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T043732Z_20250406T075035Z_04858E.h5, already processed.
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+Selecting frame from 94 to 5040
+Selecting frame from 94 to 5040
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 93 to 4961
+Selecting frame from 93 to 4961
+Selecting frame from 97 to 5058
+Selecting frame from 97 to 5058
+Selecting frame from 94 to 4763
+Selecting frame from 94 to 4763
+Selecting frame from 94 to 5056
+Selecting frame from 94 to 5056
+Selecting frame from 93 to 4961
+Selecting frame from 93 to 4961
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 94 to 4742
+Selecting frame from 94 to 4742
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4964
+Selecting frame from 97 to 4964
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T080601Z_20250406T090821Z_04860G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T081708Z_20250406T090929Z_04860H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T082857Z_20250406T090936Z_04861A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T084032Z_20250406T104337Z_04861B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T085219Z_20250406T104333Z_04861C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T090323Z_20250406T104434Z_04861D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T091509Z_20250406T104440Z_04861E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T092645Z_20250406T104437Z_04861F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T093833Z_20250406T104328Z_04861G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T094941Z_20250406T104443Z_04861H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T100129Z_20250406T104443Z_04862A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T101305Z_20250406T122644Z_04862B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T102451Z_20250406T122641Z_04862C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T103555Z_20250406T122639Z_04862D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T104742Z_20250406T122849Z_04862E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T105917Z_20250406T122642Z_04862F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T140422Z_20250406T153656Z_04864F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T141611Z_20250406T153508Z_04864G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T142718Z_20250406T153725Z_04864H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T143906Z_20250406T153628Z_04865A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T145042Z_20250406T153707Z_04865B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250406T150229Z_20250406T165901Z_04865C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T044502Z_20250415T074225Z_04998F.h5, already processed.
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4963
+Selecting frame from 97 to 4963
+Selecting frame from 98 to 5059
+Selecting frame from 98 to 5059
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4963
+Selecting frame from 96 to 4963
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T080155Z_20250415T091017Z_05000G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T081302Z_20250415T091220Z_05000H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T082451Z_20250415T091222Z_05001A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T083626Z_20250415T091027Z_05001B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T084812Z_20250415T104332Z_05001C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T085916Z_20250415T104423Z_05001D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T091103Z_20250415T104227Z_05001E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T092238Z_20250415T104219Z_05001F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T093427Z_20250415T104217Z_05001G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T094534Z_20250415T104225Z_05001H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T095723Z_20250415T104227Z_05002A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T100858Z_20250415T104223Z_05002B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T102045Z_20250415T122537Z_05002C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T103148Z_20250415T122531Z_05002D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T104335Z_20250415T122331Z_05002E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T105510Z_20250415T122435Z_05002F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T140014Z_20250415T153147Z_05004F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T141203Z_20250415T153038Z_05004G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T142310Z_20250415T153202Z_05004H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T143459Z_20250415T153256Z_05005A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T144634Z_20250415T152949Z_05005B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T145821Z_20250415T165458Z_05005C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T150924Z_20250415T165651Z_05005D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T152111Z_20250415T165559Z_05005E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T153246Z_20250415T165702Z_05005F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T154435Z_20250415T165546Z_05005G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T155542Z_20250415T165559Z_05005H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T160730Z_20250415T165601Z_05006A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T161906Z_20250415T165710Z_05006B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T163053Z_20250415T213317Z_05006C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T164156Z_20250415T213311Z_05006D.h5, already processed.
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 98 to 4766
+Selecting frame from 98 to 4766
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 96 to 4964
+Selecting frame from 96 to 4964
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 4748
+Selecting frame from 99 to 4748
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T201023Z_20250415T213207Z_05008F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T202212Z_20250415T213502Z_05008G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T203319Z_20250415T213447Z_05008H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T204509Z_20250415T213322Z_05009A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T205644Z_20250415T225819Z_05009B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T210831Z_20250415T225819Z_05009C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T211935Z_20250415T225817Z_05009D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T213121Z_20250415T225924Z_05009E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T214257Z_20250415T230024Z_05009F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T215446Z_20250415T225817Z_05009G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T220553Z_20250415T225923Z_05009H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T221742Z_20250415T225925Z_05010A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T222917Z_20250416T004532Z_05010B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250415T224104Z_20250416T004427Z_05010C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T020901Z_20250416T082547Z_05012E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T022037Z_20250416T082551Z_05012F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T023226Z_20250416T082405Z_05012G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T024333Z_20250416T082920Z_05012H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T025522Z_20250416T083038Z_05013A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T030657Z_20250416T082321Z_05013B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T031844Z_20250416T082405Z_05013C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T032948Z_20250416T082544Z_05013D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250416T034134Z_20250416T083042Z_05013E.h5, already processed.
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 4746
+Selecting frame from 98 to 5043
+Selecting frame from 98 to 5043
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 97 to 5058
+Selecting frame from 97 to 5058
+Selecting frame from 95 to 4764
+Selecting frame from 95 to 4764
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250421T200015Z_20250421T210316Z_05101H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250421T201204Z_20250421T205814Z_05102A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250421T202339Z_20250421T210307Z_05102B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250421T203525Z_20250421T222730Z_05102C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250421T204629Z_20250421T222827Z_05102D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T021024Z_20250422T031150Z_05105H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T022213Z_20250422T031302Z_05106A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T023348Z_20250422T031447Z_05106B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T024535Z_20250422T075622Z_05106C.h5, already processed.
+Selecting frame from 93 to 4762
+Selecting frame from 93 to 4762
+Selecting frame from 93 to 5055
+Selecting frame from 93 to 5055
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4963
+Selecting frame from 96 to 4963
+Selecting frame from 98 to 5059
+Selecting frame from 98 to 5059
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 4765
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 95 to 4963
+Selecting frame from 95 to 4963
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 94 to 4742
+Selecting frame from 94 to 4742
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4965
+Selecting frame from 98 to 4965
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T080926Z_20250422T091426Z_05109G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T082033Z_20250422T091427Z_05109H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T083222Z_20250422T091426Z_05110A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T084357Z_20250422T091426Z_05110B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T085544Z_20250422T104631Z_05110C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T140746Z_20250422T153856Z_05113F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T141935Z_20250422T153642Z_05113G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T143042Z_20250422T153644Z_05113H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T144231Z_20250422T153657Z_05114A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250422T145406Z_20250422T153712Z_05114B.h5, already processed.
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 5059
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+Selecting frame from 99 to 5045
+Selecting frame from 99 to 5045
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Selecting frame from 100 to 4769
+Selecting frame from 100 to 4769
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 94 to 4742
+Selecting frame from 94 to 4742
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4966
+Selecting frame from 98 to 4966
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T200746Z_20250426T212216Z_05179G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T201853Z_20250426T211911Z_05179H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T203042Z_20250426T212354Z_05180A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T204218Z_20250426T224519Z_05180B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T205404Z_20250426T224504Z_05180C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T210508Z_20250426T224515Z_05180D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T211655Z_20250426T224522Z_05180E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T212830Z_20250426T224406Z_05180F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T214019Z_20250426T224403Z_05180G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T215126Z_20250426T224509Z_05180H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T220315Z_20250426T224413Z_05181A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T221450Z_20250427T002715Z_05181B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T222637Z_20250427T002620Z_05181C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T223741Z_20250427T002712Z_05181D.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250426T224927Z_20250427T002717Z_05181E.h5, already processed.
+Selecting frame from 96 to 5057
+Selecting frame from 96 to 5057
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 4768
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4968
+Selecting frame from 99 to 4968
+Selecting frame from 98 to 5044
+Selecting frame from 98 to 5044
+Selecting frame from 94 to 4741
+Selecting frame from 94 to 4741
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 97 to 4965
+Selecting frame from 97 to 4965
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 4767
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 97 to 4966
+Selecting frame from 97 to 4966
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+Selecting frame from 97 to 5043
+Selecting frame from 97 to 5043
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T080442Z_20250427T111008Z_05187E.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T081618Z_20250427T111002Z_05187F.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T082806Z_20250427T110854Z_05187G.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T083914Z_20250427T111004Z_05187H.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T085102Z_20250427T111007Z_05188A.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T090238Z_20250427T110957Z_05188B.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T091424Z_20250427T110812Z_05188C.h5, already processed.
+Skipping /scratch/nld6854/earthcare/earthcare_data/april_2025/EBD/ECA_EXAE_ATL_EBD_2A_20250427T092528Z_20250427T110959Z_05188D.h5, already processed.
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2025-10-27T12:58:27 on ac
+[ECMWF-INFO -ecepilog] JobName                   : 2saveCAMS
+[ECMWF-INFO -ecepilog] JobID                     : 34821031
+[ECMWF-INFO -ecepilog] Submit                    : 2025-10-27T11:52:29
+[ECMWF-INFO -ecepilog] Start                     : 2025-10-27T11:52:43
+[ECMWF-INFO -ecepilog] End                       : 2025-10-27T12:58:27
+[ECMWF-INFO -ecepilog] QueuedTime                : 14.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 3944
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : nlchekli
+[ECMWF-INFO -ecepilog] QOS                       : np
+[ECMWF-INFO -ecepilog] User                      : nld6854
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS.34821031.log
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS.34821031.log
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 256
+[ECMWF-INFO -ecepilog] SBU                       : 2392.857
+[ECMWF-INFO -ecepilog] jobtag                    : nld6854-2saveCAMS-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/2_extinction_prof/2saveCAMS._JOBID_.log
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

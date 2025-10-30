@@ -1,0 +1,370 @@
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] -  This is the ECMWF jobfilter
+[ECMWF-INFO -sbatch] -  +++ Please report issues using the Support portal +++
+[ECMWF-INFO -sbatch] -  +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -sbatch] -  /usr/local/bin/ecsbatch: size: 53180, mtime: Wed Sep 24 13:03:55 2025
+[ECMWF-INFO -sbatch] - -------------------------------------------------------------------------------------
+[ECMWF-INFO -sbatch] - Time at submit: Thu Oct 30 10:24:30 2025 (1761819870.034105) on ac6-101.bullx:/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB
+[ECMWF-INFO -sbatch] - --- SLURM VARIABLES ---
+[ECMWF-INFO -sbatch] - EC_CLUSTER=ac
+[ECMWF-INFO -sbatch] - SLURM_EXPORT_ENV=ALL
+[ECMWF-INFO -sbatch] - SBATCH_EXPORT=NONE
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - jobscript: /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB/sbatch_uncertainty.job
+[ECMWF-INFO -sbatch] - --- SCRIPT OPTIONS ---
+[ECMWF-INFO -sbatch] - #SBATCH --output=%x.%j.log
+[ECMWF-INFO -sbatch] - #SBATCH --job-name=1_uncertainty
+[ECMWF-INFO -sbatch] - #SBATCH --qos=np
+[ECMWF-INFO -sbatch] - #SBATCH --nodes=1
+[ECMWF-INFO -sbatch] - #SBATCH --ntasks-per-node=32
+[ECMWF-INFO -sbatch] - #SBATCH --cpus-per-task=4
+[ECMWF-INFO -sbatch] - #SBATCH --hint=nomultithread
+[ECMWF-INFO -sbatch] - -----------------------
+[ECMWF-INFO -sbatch] - --- POST-PROCESSED OPTIONS ---
+[ECMWF-INFO -sbatch] - ARG --positional=['sbatch_uncertainty.job']
+[ECMWF-INFO -sbatch] - ARG --cpus_per_task=4
+[ECMWF-INFO -sbatch] - ARG --job_name=1_uncertainty
+[ECMWF-INFO -sbatch] - ARG --ntasks_per_node=32
+[ECMWF-INFO -sbatch] - ARG --nodes=1
+[ECMWF-INFO -sbatch] - ARG --output=%x.%j.log
+[ECMWF-INFO -sbatch] - ARG --qos=np
+[ECMWF-INFO -sbatch] - ARG --hint=nomultithread
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - jobtag: nld6854-1_uncertainty-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB/1_uncertainty._JOBID_.log
+[ECMWF-INFO -sbatch] - ------------------------------
+[ECMWF-INFO -sbatch] - Average Walltime 1621 with a Standard Deviation 555
+[ECMWF-INFO -sbatch] - Runtime history
+[ECMWF-INFO -sbatch] -   Date               | Cores   Cluster   Walltime       Mem
+[ECMWF-INFO -sbatch] -   30.10.2025 - 09:10 | 256        ac         2566       240000M   
+[ECMWF-INFO -sbatch] -   30.10.2025 - 08:14 | 256        ac         1882       240000M   
+[ECMWF-INFO -sbatch] -   29.10.2025 - 15:46 | 256        ac         2569       240000M   
+[ECMWF-INFO -sbatch] -   29.10.2025 - 14:46 | 256        ac         1526       240000M   
+[ECMWF-INFO -sbatch] -   29.10.2025 - 13:15 | 256        ac         1312       240000M   
+[ECMWF-INFO -sbatch] -   29.10.2025 - 11:44 | 256        ac         1042       240000M   
+[ECMWF-INFO -sbatch] -   29.10.2025 - 09:56 | 256        ac         1226       240000M   
+[ECMWF-INFO -sbatch] -   29.10.2025 - 07:50 | 256        ac         1302       240000M   
+[ECMWF-INFO -sbatch] -   28.10.2025 - 13:18 | 256        ac         1166       240000M   
+[ECMWF-INFO -sbatch] - ['/usr/bin/sbatch', '--cpus-per-task=4', '--job-name=1_uncertainty', '--ntasks-per-node=32', '--nodes=1', '--output=%x.%j.log', '--qos=np', '--hint=nomultithread', '--licenses=h2resw01', '--time=00:36:16', '/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB/sbatch_uncertainty.job']
+[ECMWF-INFO -sbatch] - sbatch executed on ac
+[ECMWF-INFO -sbatch] - Job queued on ac using method local
+[ECMWF-INFO -sbatch] - Submitted batch job 36336899
+[ECMWF-INFO -ecprofile] /usr/bin/bash NON_INTERACTIVE on ac1-2070 at 20251030_102526.069, PID: 1357452, JOBID: 36336899
+[ECMWF-INFO -ecprofile] $SCRATCH=/ec/res4/scratch/nld6854
+[ECMWF-INFO -ecprofile] $PERM=/perm/nld6854
+[ECMWF-INFO -ecprofile] $HPCPERM=/ec/res4/hpcperm/nld6854
+[ECMWF-INFO -ecprofile] $TMPDIR=/dev/shm/_tmpdir_.nld6854.36336899
+[ECMWF-INFO -ecprofile] $SCRATCHDIR=/ec/res4/scratchdir/nld6854/3/36336899
+<IPython.core.display.HTML object>
+<xarray.Dataset> Size: 1GB
+Dimensions:                  (forecast_period: 12, forecast_reference_time: 62,
+                              latitude: 451, longitude: 900)
+Coordinates:
+  * forecast_period          (forecast_period) timedelta64[ns] 96B 00:00:00 ....
+  * forecast_reference_time  (forecast_reference_time) datetime64[ns] 496B 20...
+  * latitude                 (latitude) float64 4kB 90.0 89.6 ... -89.6 -90.0
+  * longitude                (longitude) float64 7kB 0.0 0.4 0.8 ... 359.2 359.6
+    valid_time               (forecast_reference_time, forecast_period) datetime64[ns] 6kB ...
+Data variables:
+    aod355                   (forecast_period, forecast_reference_time, latitude, longitude) float32 1GB ...
+Attributes:
+    GRIB_centre:             ecmf
+    GRIB_centreDescription:  European Centre for Medium-Range Weather Forecasts
+    GRIB_subCentre:          0
+    Conventions:             CF-1.7
+    institution:             European Centre for Medium-Range Weather Forecasts
+    history:                 2025-08-06T15:07 GRIB to CDM+CF via cfgrib-0.9.1...
+<xarray.DataArray 'forecast_reference_time' (forecast_reference_time: 62)> Size: 496B
+array(['2025-07-01T00:00:00.000000000', '2025-07-01T12:00:00.000000000',
+       '2025-07-02T00:00:00.000000000', '2025-07-02T12:00:00.000000000',
+       '2025-07-03T00:00:00.000000000', '2025-07-03T12:00:00.000000000',
+       '2025-07-04T00:00:00.000000000', '2025-07-04T12:00:00.000000000',
+       '2025-07-05T00:00:00.000000000', '2025-07-05T12:00:00.000000000',
+       '2025-07-06T00:00:00.000000000', '2025-07-06T12:00:00.000000000',
+       '2025-07-07T00:00:00.000000000', '2025-07-07T12:00:00.000000000',
+       '2025-07-08T00:00:00.000000000', '2025-07-08T12:00:00.000000000',
+       '2025-07-09T00:00:00.000000000', '2025-07-09T12:00:00.000000000',
+       '2025-07-10T00:00:00.000000000', '2025-07-10T12:00:00.000000000',
+       '2025-07-11T00:00:00.000000000', '2025-07-11T12:00:00.000000000',
+       '2025-07-12T00:00:00.000000000', '2025-07-12T12:00:00.000000000',
+       '2025-07-13T00:00:00.000000000', '2025-07-13T12:00:00.000000000',
+       '2025-07-14T00:00:00.000000000', '2025-07-14T12:00:00.000000000',
+       '2025-07-15T00:00:00.000000000', '2025-07-15T12:00:00.000000000',
+       '2025-07-16T00:00:00.000000000', '2025-07-16T12:00:00.000000000',
+       '2025-07-17T00:00:00.000000000', '2025-07-17T12:00:00.000000000',
+       '2025-07-18T00:00:00.000000000', '2025-07-18T12:00:00.000000000',
+       '2025-07-19T00:00:00.000000000', '2025-07-19T12:00:00.000000000',
+       '2025-07-20T00:00:00.000000000', '2025-07-20T12:00:00.000000000',
+       '2025-07-21T00:00:00.000000000', '2025-07-21T12:00:00.000000000',
+       '2025-07-22T00:00:00.000000000', '2025-07-22T12:00:00.000000000',
+       '2025-07-23T00:00:00.000000000', '2025-07-23T12:00:00.000000000',
+       '2025-07-24T00:00:00.000000000', '2025-07-24T12:00:00.000000000',
+       '2025-07-25T00:00:00.000000000', '2025-07-25T12:00:00.000000000',
+       '2025-07-26T00:00:00.000000000', '2025-07-26T12:00:00.000000000',
+       '2025-07-27T00:00:00.000000000', '2025-07-27T12:00:00.000000000',
+       '2025-07-28T00:00:00.000000000', '2025-07-28T12:00:00.000000000',
+       '2025-07-29T00:00:00.000000000', '2025-07-29T12:00:00.000000000',
+       '2025-07-30T00:00:00.000000000', '2025-07-30T12:00:00.000000000',
+       '2025-07-31T00:00:00.000000000', '2025-07-31T12:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * forecast_reference_time  (forecast_reference_time) datetime64[ns] 496B 20...
+Attributes:
+    long_name:      initial time of forecast
+    standard_name:  forecast_reference_time
+<xarray.DataArray 'forecast_period' (forecast_period: 12)> Size: 96B
+array([             0,  3600000000000,  7200000000000, 10800000000000,
+       14400000000000, 18000000000000, 21600000000000, 25200000000000,
+       28800000000000, 32400000000000, 36000000000000, 39600000000000],
+      dtype='timedelta64[ns]')
+Coordinates:
+  * forecast_period  (forecast_period) timedelta64[ns] 96B 00:00:00 ... 11:00:00
+Attributes:
+    long_name:      time since forecast_reference_time
+    standard_name:  forecast_period
+    dtype:          timedelta64[ns]
+<xarray.DataArray (forecast_period: 12, forecast_reference_time: 62)> Size: 6kB
+array([['2025-07-01T00:00:00.000000000', '2025-07-01T12:00:00.000000000',
+        '2025-07-02T00:00:00.000000000', '2025-07-02T12:00:00.000000000',
+        '2025-07-03T00:00:00.000000000', '2025-07-03T12:00:00.000000000',
+        '2025-07-04T00:00:00.000000000', '2025-07-04T12:00:00.000000000',
+        '2025-07-05T00:00:00.000000000', '2025-07-05T12:00:00.000000000',
+        '2025-07-06T00:00:00.000000000', '2025-07-06T12:00:00.000000000',
+        '2025-07-07T00:00:00.000000000', '2025-07-07T12:00:00.000000000',
+        '2025-07-08T00:00:00.000000000', '2025-07-08T12:00:00.000000000',
+        '2025-07-09T00:00:00.000000000', '2025-07-09T12:00:00.000000000',
+        '2025-07-10T00:00:00.000000000', '2025-07-10T12:00:00.000000000',
+        '2025-07-11T00:00:00.000000000', '2025-07-11T12:00:00.000000000',
+        '2025-07-12T00:00:00.000000000', '2025-07-12T12:00:00.000000000',
+        '2025-07-13T00:00:00.000000000', '2025-07-13T12:00:00.000000000',
+        '2025-07-14T00:00:00.000000000', '2025-07-14T12:00:00.000000000',
+        '2025-07-15T00:00:00.000000000', '2025-07-15T12:00:00.000000000',
+        '2025-07-16T00:00:00.000000000', '2025-07-16T12:00:00.000000000',
+        '2025-07-17T00:00:00.000000000', '2025-07-17T12:00:00.000000000',
+        '2025-07-18T00:00:00.000000000', '2025-07-18T12:00:00.000000000',
+        '2025-07-19T00:00:00.000000000', '2025-07-19T12:00:00.000000000',
+        '2025-07-20T00:00:00.000000000', '2025-07-20T12:00:00.000000000',
+...
+        '2025-07-13T11:00:00.000000000', '2025-07-13T23:00:00.000000000',
+        '2025-07-14T11:00:00.000000000', '2025-07-14T23:00:00.000000000',
+        '2025-07-15T11:00:00.000000000', '2025-07-15T23:00:00.000000000',
+        '2025-07-16T11:00:00.000000000', '2025-07-16T23:00:00.000000000',
+        '2025-07-17T11:00:00.000000000', '2025-07-17T23:00:00.000000000',
+        '2025-07-18T11:00:00.000000000', '2025-07-18T23:00:00.000000000',
+        '2025-07-19T11:00:00.000000000', '2025-07-19T23:00:00.000000000',
+        '2025-07-20T11:00:00.000000000', '2025-07-20T23:00:00.000000000',
+        '2025-07-21T11:00:00.000000000', '2025-07-21T23:00:00.000000000',
+        '2025-07-22T11:00:00.000000000', '2025-07-22T23:00:00.000000000',
+        '2025-07-23T11:00:00.000000000', '2025-07-23T23:00:00.000000000',
+        '2025-07-24T11:00:00.000000000', '2025-07-24T23:00:00.000000000',
+        '2025-07-25T11:00:00.000000000', '2025-07-25T23:00:00.000000000',
+        '2025-07-26T11:00:00.000000000', '2025-07-26T23:00:00.000000000',
+        '2025-07-27T11:00:00.000000000', '2025-07-27T23:00:00.000000000',
+        '2025-07-28T11:00:00.000000000', '2025-07-28T23:00:00.000000000',
+        '2025-07-29T11:00:00.000000000', '2025-07-29T23:00:00.000000000',
+        '2025-07-30T11:00:00.000000000', '2025-07-30T23:00:00.000000000',
+        '2025-07-31T11:00:00.000000000', '2025-07-31T23:00:00.000000000']],
+      dtype='datetime64[ns]')
+Coordinates:
+  * forecast_period          (forecast_period) timedelta64[ns] 96B 00:00:00 ....
+  * forecast_reference_time  (forecast_reference_time) datetime64[ns] 496B 20...
+(12, 62)
+<xarray.Dataset> Size: 1GB
+Dimensions:                  (latitude: 451, longitude: 900, time: 744)
+Coordinates:
+  * latitude                 (latitude) float64 4kB 90.0 89.6 ... -89.6 -90.0
+  * longitude                (longitude) float64 7kB 0.0 0.4 0.8 ... 359.2 359.6
+  * time                     (time) datetime64[ns] 6kB 2025-07-01 ... 2025-07...
+    forecast_reference_time  (time) datetime64[ns] 6kB 2025-07-01 ... 2025-07...
+    forecast_period          (time) timedelta64[ns] 6kB 00:00:00 ... 11:00:00
+    forecast_time            (time) datetime64[ns] 6kB 2025-07-01 ... 2025-07...
+Data variables:
+    aod355                   (latitude, longitude, time) float32 1GB 0.1394 ....
+Attributes:
+    GRIB_centre:             ecmf
+    GRIB_centreDescription:  European Centre for Medium-Range Weather Forecasts
+    GRIB_subCentre:          0
+    Conventions:             CF-1.7
+    institution:             European Centre for Medium-Range Weather Forecasts
+    history:                 2025-08-06T15:07 GRIB to CDM+CF via cfgrib-0.9.1...
+<xarray.DataArray 'time' (time: 744)> Size: 6kB
+array(['2025-07-01T00:00:00.000000000', '2025-07-01T01:00:00.000000000',
+       '2025-07-01T02:00:00.000000000', ..., '2025-07-31T21:00:00.000000000',
+       '2025-07-31T22:00:00.000000000', '2025-07-31T23:00:00.000000000'],
+      dtype='datetime64[ns]')
+Coordinates:
+  * time                     (time) datetime64[ns] 6kB 2025-07-01 ... 2025-07...
+    forecast_reference_time  (time) datetime64[ns] 6kB 2025-07-01 ... 2025-07...
+    forecast_period          (time) timedelta64[ns] 6kB 00:00:00 ... 11:00:00
+    forecast_time            (time) datetime64[ns] 6kB 2025-07-01 ... 2025-07...
+cams_aod_r (451, 900, 248)
+lwc_cams.shape (4, 62, 451, 900)
+(4, 62)
+valid_time_flat.shape,lwc_flat.shape (248,) (248, 451, 900)
+(451, 900, 248)
+(451, 900, 248)
+(451, 900, 248)
+<xarray.Dataset> Size: 403MB
+Dimensions:    (latitude: 451, longitude: 900, timeN: 248)
+Coordinates:
+  * latitude   (latitude) float64 4kB 90.0 89.6 89.2 88.8 ... -89.2 -89.6 -90.0
+  * longitude  (longitude) float64 7kB 0.0 0.4 0.8 1.2 ... -1.6 -1.2 -0.8 -0.4
+  * timeN      (timeN) datetime64[ns] 2kB 2025-07-01 ... 2025-07-31T21:00:00
+Data variables:
+    aod355     (latitude, longitude, timeN) float32 403MB 0.1394 ... 0.01491
+longitude <xarray.DataArray 'longitude' (longitude: 900)> Size: 7kB
+array([ 0. ,  0.4,  0.8, ..., -1.2, -0.8, -0.4])
+Coordinates:
+  * longitude  (longitude) float64 7kB 0.0 0.4 0.8 1.2 ... -1.6 -1.2 -0.8 -0.4
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 100 to 4768
+Selecting frame from 100 to 4768
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+Selecting frame from 96 to 5040
+Selecting frame from 96 to 5040
+Selecting frame from 99 to 4967
+Selecting frame from 99 to 4967
+Selecting frame from 95 to 5056
+Selecting frame from 95 to 5056
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 5062
+Selecting frame from 99 to 4745
+Selecting frame from 99 to 4745
+Selecting frame from 97 to 5042
+Selecting frame from 97 to 5042
+Selecting frame from 99 to 4966
+Selecting frame from 99 to 4966
+Selecting frame from 96 to 5058
+Selecting frame from 96 to 5058
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 4746
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 96 to 4963
+Selecting frame from 96 to 4963
+Selecting frame from 99 to 5060
+Selecting frame from 99 to 5060
+Selecting frame from 96 to 4764
+Selecting frame from 96 to 4764
+Selecting frame from 95 to 5057
+Selecting frame from 95 to 5057
+Selecting frame from 97 to 4744
+Selecting frame from 97 to 4744
+Selecting frame from 97 to 4766
+Selecting frame from 97 to 4766
+Selecting frame from 96 to 4743
+Selecting frame from 96 to 4743
+Selecting frame from 99 to 5044
+Selecting frame from 99 to 5044
+Selecting frame from 98 to 4965
+Selecting frame from 98 to 4965
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 5061
+Selecting frame from 99 to 4767
+Selecting frame from 99 to 4767
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 5060
+Selecting frame from 98 to 4745
+Selecting frame from 98 to 4745
+Selecting frame from 96 to 5041
+Selecting frame from 96 to 5041
+Selecting frame from 99 to 4966
+Selecting frame fr<IPython.core.display.HTML object>
+Selecting frame from 99 to 5044
+/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB/3_co-located_cams_atlid_uncertainty.py:140: RuntimeWarning: All-NaN slice encountered
+  med_meas = np.nanmedian(draws, axis=1)
+/usr/local/apps/python3/3.12.9-01/lib/python3.12/site-packages/numpy/lib/_nanfunctions_impl.py:2053: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+Month= july
+max and min of latitude before mask 83.02614508604651 -83.02604443368115
+Month= july
+max and min of latitude before mask 83.02614508604651 -83.02604443368115
+Percentage of NaNs in regridded data: 7.54%
+aod_cams.max()= nan
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+ATLID land= 0.20690593123435977 sea= 0.14436602592468262
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS land= 0.17936593294143677 sea= 0.11417480558156969
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS-ATLID land= -0.021646223962306976 sea= -0.03029663860797885
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS-ATLID/ATLID land= -0.24611604192327777 sea= -0.20276323342793218
+CAMS AOD median= 0.1184641495347023
+ATLID AOD median= 0.14266911149024963
+CAMS-ATLID median= -0.023204486817121506
+CAMS-ATLID/ATLID median= -0.2032652352727012
+CAMS,ATLID NMB= -14.500127532615453
+Estimated modes from histogram: [np.float64(0.016390142824825826), np.float64(0.09287747600734633), np.float64(0.11473099977378076), np.float64(0.2021450948395185)]
+Estimated modes from histogram: [np.float64(0.04215963814882624), np.float64(0.11711010596896178), np.float64(0.14521653140151258), np.float64(0.16395414835654648)]
+Month= july
+max and min of latitude before mask 83.02614508604651 -83.02604443368115
+Percentage of NaNs in regridded data: 7.54%
+aod_cams.max()= nan
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+ATLID land= 0.2088773250579834 sea= 0.1446974128484726
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS land= 0.1806774139404297 sea= 0.11475360393524169
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS-ATLID land= -0.021646223962306976 sea= -0.030372146517038356
+(451, 900)
+(90, 180) (90, 180)
+not weighted by area
+CAMS-ATLID/ATLID land= -0.24129634123419116 sea= -0.2023416143049492
+CAMS AOD median= 0.11957535892724991
+ATLID AOD median= 0.1433654986321926
+CAMS-ATLID median= -0.023204198107123375
+CAMS-ATLID/ATLID median= -0.20206199968836286
+CAMS,ATLID NMB= -14.397939066437788
+Estimated modes from histogram: [np.float64(0.016390142824825826), np.float64(0.09287747600734633), np.float64(0.11473099977378076), np.float64(0.2021450948395185)]
+Estimated modes from histogram: [np.float64(0.04322420870697738), np.float64(0.1200672464082705), np.float64(0.17769952468424033), np.float64(0.19691028410956363)]
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] This is the ECMWF job Epilogue
+[ECMWF-INFO -ecepilog] +++ Please report issues using the Support portal +++
+[ECMWF-INFO -ecepilog] +++ https://support.ecmwf.int                     +++
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+[ECMWF-INFO -ecepilog] Run at 2025-10-30T11:10:44 on ac
+[ECMWF-INFO -ecepilog] JobName                   : 1_uncertainty
+[ECMWF-INFO -ecepilog] JobID                     : 36336899
+[ECMWF-INFO -ecepilog] Submit                    : 2025-10-30T10:24:36
+[ECMWF-INFO -ecepilog] Start                     : 2025-10-30T10:24:39
+[ECMWF-INFO -ecepilog] End                       : 2025-10-30T11:10:44
+[ECMWF-INFO -ecepilog] QueuedTime                : 3.0
+[ECMWF-INFO -ecepilog] ElapsedRaw                : 2765
+[ECMWF-INFO -ecepilog] ExitCode                  : 0:0
+[ECMWF-INFO -ecepilog] DerivedExitCode           : 0:0
+[ECMWF-INFO -ecepilog] State                     : COMPLETED
+[ECMWF-INFO -ecepilog] Account                   : nlchekli
+[ECMWF-INFO -ecepilog] QOS                       : np
+[ECMWF-INFO -ecepilog] User                      : nld6854
+[ECMWF-INFO -ecepilog] StdOut                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB/1_uncertainty.36336899.log
+[ECMWF-INFO -ecepilog] StdErr                    : /etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB/1_uncertainty.36336899.log
+[ECMWF-INFO -ecepilog] NNodes                    : 1
+[ECMWF-INFO -ecepilog] NCPUS                     : 256
+[ECMWF-INFO -ecepilog] SBU                       : 1677.548
+[ECMWF-INFO -ecepilog] jobtag                    : nld6854-1_uncertainty-1x256-/etc/ecmwf/nfs/dh1_home_b/nld6854/earthcare_scripts/scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB/1_uncertainty._JOBID_.log
+[ECMWF-INFO -ecepilog] ----------------------------------------------------------------------------------------------------
+

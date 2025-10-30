@@ -137,6 +137,11 @@ cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC
 
 ebd_files = sorted(glob.glob(srcdir+'*h5'))
 def process_file(filen):
+    outpath = filen.replace("EBD","CAMS").replace("h5","nc")
+    if os.path.exists(outpath):
+        print(f"Skipping {filen}, already processed.")
+        return
+
     try:
         if filen[-34:-32] not in utcs:
             return None

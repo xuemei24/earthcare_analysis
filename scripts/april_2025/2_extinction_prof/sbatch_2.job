@@ -12,6 +12,6 @@ module load python3
 module load ecmwf-toolbox
 
 python3 2_save_cams_extinction_all_orbits.py
-python3 2_temp6.py
-python3 2_temp9.py
-python3 2_temp0.py
+#python3 2_temp6.py
+#python3 2_temp9.py
+#python3 2_temp0.py

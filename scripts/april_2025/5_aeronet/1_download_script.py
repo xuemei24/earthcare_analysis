@@ -8,10 +8,10 @@ data_dict = {
     'endpoint': 'https://aeronet.gsfc.nasa.gov/cgi-bin/print_web_data_v3',
     #'station': '',#'Palma_de_Mallorca',
     'year': 2025,
-    'month': 3,
-    'day': 11,
+    'month': 8,
+    'day': 1,
     'year2': 2025,
-    'month2': 3,
+    'month2': 8,
     'day2': 31,
     #'lat1': -8,
     #'lon1': -33,
@@ -28,7 +28,7 @@ url = '{endpoint}?year={year}&month={month}&day={day}&year2={year2}&month2={mont
 
 
 print(url)
-wget.download(url, '/net/pc190625/nobackup_1/users/wangxu/aeronet/{year}0{month}_all_sites_aod15_allpoints.txt'.format(**data_dict))
+wget.download(url, '/scratch/nld6854/earthcare/aeronet/{year}0{month}_all_sites_aod15_allpoints.txt'.format(**data_dict))
 
 #wget.download(url, '{year}0{month}_africa_aod20_10.txt'.format(**data_dict))
 
