@@ -1,1 +1,0 @@
-/usr/people/wangxu/Desktop/earthcare_scripts/scripts/april_2025/4_composition_specific/2_compare_aod/1_aod_per_composition_mmr.py 
