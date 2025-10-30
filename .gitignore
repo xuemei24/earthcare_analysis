@@ -1,0 +1,6 @@
+!*.py
+!.gitignore
+!README.md
+!*.nc
+!*.csv
+!aerosol_ifs_rrtm_49R1_20230119.nc
