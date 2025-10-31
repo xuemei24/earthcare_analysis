@@ -54,7 +54,7 @@ forecast_period = '3'
 # CAMS Data (xxx)
 fcams = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/aerosol_extinction_coe_355nm_'+month+'_2025_'+str(int(forecast_period))+'.nc'
 
-if fcams[-4:-3] == '12':#'0':
+if fcams[-4:-3] == '0':
     utcs = ['00','01','11','12','13','23']
 elif fcams[-4:-3] == '3':
     utcs = ['02','03','04','14','15','16']

@@ -105,40 +105,40 @@ def landsea_mean(var):
 
 mask = (~np.isnan(aod_cams)) & (~np.isnan(aod_atlid))
 aland,asea = landsea_mean(np.where(mask,aod_atlid,np.nan))
-print('ATLID land=',aland,'sea=',asea)
+print('ATLID land=',round(aland,4),'sea=',round(asea,4))
 cland,csea = landsea_mean(np.where(mask,aod_cams,np.nan))
-print('CAMS land=',cland,'sea=',csea)
+print('CAMS land=',round(cland,4),'sea=',round(csea,4))
 acland,acsea = landsea_mean(np.where(mask,aod_cams-aod_atlid,np.nan))
-print('CAMS-ATLID land=',acland,'sea=',acsea)
+print('CAMS-ATLID land=',round(acland,4),'sea=',round(acsea,4))
 
 aod_atlid_temp = aod_atlid.copy()
 if len(aod_atlid_temp[aod_atlid_temp==0]) > 0:
     aod_atlid_temp[aod_atlid_temp==0] = np.nan
     print('excludes 0')
 acpland,acpsea = landsea_mean(np.where(mask,(aod_cams-aod_atlid)/aod_atlid_temp,np.nan))
-print('CAMS-ATLID/ATLID land=',acpland,'sea=',acpsea)
+print('CAMS-ATLID/ATLID land=',round(acpland,4),'sea=',round(acpsea,4))
 
 
 if mean_or_std == 'mean':
-    print('CAMS AOD mean=',np.nanmean(aod_cams[mask]))
-    print('ATLID AOD mean=',np.nanmean(aod_atlid[mask]))
-    print('CAMS-ATLID mean=',np.nanmean(aod_cams[mask]-aod_atlid[mask]))
-    print('CAMS-ATLID/ATLID mean=',np.nanmean((aod_cams[mask]-aod_atlid[mask])/aod_atlid[mask]))
+    print('CAMS AOD mean=',round(np.nanmean(aod_cams[mask]),4))
+    print('ATLID AOD mean=',round(np.nanmean(aod_atlid[mask]),4))
+    print('CAMS-ATLID mean=',round(np.nanmean(aod_cams[mask]-aod_atlid[mask]),4))
+    print('CAMS-ATLID/ATLID mean=',round(np.nanmean((aod_cams[mask]-aod_atlid[mask])/aod_atlid[mask]),4))
 else: 
-    print('CAMS AOD median=',np.nanmedian(aod_cams[mask]))
-    print('ATLID AOD median=',np.nanmedian(aod_atlid[mask]))
-    print('CAMS-ATLID median=',np.nanmedian(aod_cams[mask]-aod_atlid[mask]))
+    print('CAMS AOD median=',round(np.nanmedian(aod_cams[mask]),4))
+    print('ATLID AOD median=',round(np.nanmedian(aod_atlid[mask]),4))
+    print('CAMS-ATLID median=',round(np.nanmedian(aod_cams[mask]-aod_atlid[mask]),4))
     aod_atlid_mask = aod_atlid[mask]
     if len(aod_atlid_mask[aod_atlid_mask==0]) > 0:
         aod_atlid_mask[aod_atlid_mask==0] = np.nan
         print('excludes 0')
-    print('CAMS-ATLID/ATLID median=',np.nanmedian((aod_cams[mask]-aod_atlid[mask])/aod_atlid_mask))
-print('CAMS,ATLID NMB=',statistics.normalized_mean_bias(aod_cams,aod_atlid))
+    print('CAMS-ATLID/ATLID median=',round(np.nanmedian((aod_cams[mask]-aod_atlid[mask])/aod_atlid_mask),4))
+print('CAMS,ATLID NMB=',round(statistics.normalized_mean_bias(aod_cams,aod_atlid),4))
 
 #fig,(ax1,ax2,ax3)=plt.subplots(3,1,figsize=(20,30),subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=0)))
-fig,(ax1,ax2,ax3)=plt.subplots(3,1,figsize=(20,30),subplot_kw=dict(projection=ccrs.PlateCarree()))
+fig,(ax1,ax2,ax3)=plt.subplots(3,1,figsize=(8,12),subplot_kw=dict(projection=ccrs.PlateCarree()))
 cmap = plt.colormaps['plasma']
-bounds = np.logspace(np.log10(0.02),0,num=10)
+bounds = np.logspace(np.log10(0.02),0,num=11)
 norm = colors.BoundaryNorm(bounds, ncolors=cmap.N, clip=True)
 #plt.figure(figsize=(6,3))
 #ax = plt.axes(projection=ccrs.PlateCarree(central_longitude=180))
@@ -150,17 +150,16 @@ im=ax1.pcolormesh(all_lon,clats,aod_atlid,cmap='plasma',transform=ccrs.PlateCarr
 
 gl = ax1.gridlines(crs=ccrs.PlateCarree(central_longitude=0), draw_labels=True,
              linewidth=2, color='gray', alpha=0.5, linestyle='--')
-gl.xlabels_top = False
-gl.ylabels_right = False
-gl.xlines = False
+gl.top_labels = False
+gl.right_labels = False
 
-ax1.coastlines(resolution='110m')#,color='white')
-ax1.gridlines()
+ax1.coastlines(resolution='110m')
 gl.xlabel_style = {'size': 15}
 gl.ylabel_style = {'size': 15}
 
 bar = plt.colorbar(im, orientation='vertical',ax=ax1,shrink=0.7, pad=0.1)
-bar.ax.set_ylabel('ATLID Particle optical depth / -',fontsize=15)
+bar.ax.set_ylabel('-',fontsize=15)
+bar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
 bar.ax.tick_params(labelsize=15)
 
 ax1.set_title('ATLID integrated AOD '+fmonth+' 2025',fontsize=15)
@@ -174,37 +173,35 @@ im=ax2.pcolormesh(clons,clats,aod_cams,cmap='plasma',transform=ccrs.PlateCarree(
 
 gl = ax2.gridlines(crs=ccrs.PlateCarree(central_longitude=0), draw_labels=True,
              linewidth=2, color='gray', alpha=0.5, linestyle='--')
-gl.xlabels_top = False
-gl.ylabels_right = False
-gl.xlines = False
+gl.top_labels = False
+gl.right_labels = False
 
 ax2.coastlines(resolution='110m')
-ax2.gridlines()
 gl.xlabel_style = {'size': 15}
 gl.ylabel_style = {'size': 15}
 
 bar = plt.colorbar(im, orientation='vertical',ax=ax2,shrink=0.7, pad=0.1)
-bar.ax.set_ylabel('CAMS Particle optical depth / -',fontsize=15)
+bar.ax.set_ylabel('-',fontsize=15)
+bar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
 bar.ax.tick_params(labelsize=15)
 ax2.set_title('CAMS total AOD',fontsize=15)
 
 ax3.set_extent([-180, 180, -89.9, 89.9])
-bounds2 = np.linspace(-vmax,vmax,10)
+bounds2 = np.linspace(-vmax,vmax,11)
 norm2 = colors.BoundaryNorm(bounds2,ncolors=plt.colormaps['RdYlBu_r'].N,clip=True)
 im=ax3.pcolormesh(clons,clats,aod_cams-aod_atlid,cmap='RdYlBu_r',transform=ccrs.PlateCarree(),norm=norm2)
 gl = ax3.gridlines(crs=ccrs.PlateCarree(central_longitude=0), draw_labels=True,
              linewidth=2, color='gray', alpha=0.5, linestyle='--')
-gl.xlabels_top = False
-gl.ylabels_right = False
-gl.xlines = False
+gl.top_labels = False
+gl.right_labels = False
 
 ax3.coastlines(resolution='110m')
-ax3.gridlines()
 gl.xlabel_style = {'size': 15}
 gl.ylabel_style = {'size': 15}
 
 bar = plt.colorbar(im, orientation='vertical',ax=ax3,shrink=0.7, pad=0.1)
-bar.ax.set_ylabel('CAMS-ATLID Particle optical depth / -',fontsize=15)
+bar.ax.set_ylabel('-',fontsize=15)
+bar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
 bar.ax.tick_params(labelsize=15)
 ax3.set_title('CAMS-ATLID AOD',fontsize=15)
 
@@ -274,7 +271,7 @@ def find_mode(counts,bin_edges):
         
     top_peaks = peaks[sorted_indices[:nsel]]
 
-    modes = [(bin_edges[i] + bin_edges[i+1]) / 2 for i in top_peaks]
+    modes = [round((bin_edges[i] + bin_edges[i+1]) / 2,4) for i in top_peaks]
     print("Estimated modes from histogram:", modes)
     return modes,counts[top_peaks]
 
