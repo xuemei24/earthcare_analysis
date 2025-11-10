@@ -22,8 +22,8 @@ which_aerosol = 'total'
 def read_hdf5(file_path):
     tc_file = file_path.replace('EBD','TC_')
 
-    ATC = ecio.load_ATC(tc_file, prodmod_code="ECA_EXAC")
-    AEBD = ecio.load_AEBD(file_path,prodmod_code="ECA_EXAC")
+    ATC = ecio.load_ATC(tc_file, prodmod_code="ECA_EXBA")
+    AEBD = ecio.load_AEBD(file_path,prodmod_code="ECA_EXBA")
     print(tc_file,file_path)
  
     #Read ATC

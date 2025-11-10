@@ -62,7 +62,7 @@ cams_data = ['sea_salt_0.03-0.5', 'sea_salt_0.5-5', 'sea_salt_5-20','dust_0.03-0
 
 
 
-month = 'june'
+month = 'march'
 ### Forecast periods
 suffix1 = '_mmr_'+month+'_2025_'
 suffix2 = '.nc'

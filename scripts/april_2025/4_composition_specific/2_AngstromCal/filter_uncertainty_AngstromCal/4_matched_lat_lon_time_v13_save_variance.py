@@ -46,9 +46,9 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors
 
-month = 'april'
+month = 'may'
 which_aerosol = 'dust'
-#which_aerosol = 'ssa'
+which_aerosol = 'ssa'
 fname = 'sea_salt' if which_aerosol == 'ssa' else 'dust'
 tcs   = [11] if which_aerosol == 'ssa' else [10,13,14,15,27] #12=continental pollution?
 
@@ -59,7 +59,7 @@ cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/TTcal/'
 srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
-ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXAE_ATL_TC__2A_20250321T133730Z_20250321T152847Z_04615D.h5', prodmod_code="ECA_EXAE")
+ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
 
 cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC,'classification_low_resolution')
 #category_colors = ecplt.ATC_category_colors

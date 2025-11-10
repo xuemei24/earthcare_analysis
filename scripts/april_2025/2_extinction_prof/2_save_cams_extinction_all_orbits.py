@@ -49,7 +49,7 @@ from pathlib import Path
 
 from multiprocessing import Pool
 
-month = 'august'
+month = 'march'
 forecast_period = '3'
 # CAMS Data (xxx)
 fcams = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/aerosol_extinction_coe_355nm_'+month+'_2025_'+str(int(forecast_period))+'.nc'
@@ -119,7 +119,7 @@ def where_cloudy(cloud,data):
 cams_extcoe_clear = where_cloudy(lwc,cams_extcoe)
 '''
 #the lines below keeps more aerosol grids than above
-cams_extcoe_clear = np.where(lwc<0.0001,cams_extcoe,np.nan)
+cams_extcoe_clear = np.where(lwc<0.0001,cams_extcoe,0) # was np.nan
 cams_extcoe_clear = np.expand_dims(cams_extcoe_clear,axis=0)
 print(cams_extcoe_clear.shape)
 
@@ -129,7 +129,7 @@ ds_clear['aerext355'].values = cams_extcoe_clear[:,:,::-1,:,:]
 srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
-ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXAE_ATL_TC__2A_20250321T133730Z_20250321T152847Z_04615D.h5', prodmod_code="ECA_EXAE")
+ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
 
 cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC,'classification_low_resolution')
 #category_colors = ecplt.ATC_category_colors
@@ -151,7 +151,7 @@ def process_file(filen):
             return None
 
         orbit_sequence = filen[-9:-3]
-        atlid_extcoe, atlid_lats, atlid_lons, atlid_times, atlid_h, tc_cld, tc_all, err = read_h5.get_ext_col(filen)
+        atlid_extcoe, atlid_lats, atlid_lons, atlid_times, atlid_h, tc_cld, tc_all, err = read_h5.get_ext(filen,np.array([10,11,12,13,14,15,25,26,27]))
 
         # Interpolate CAMS data to ATLID positions
         cams_interp = ds_clear.interp(

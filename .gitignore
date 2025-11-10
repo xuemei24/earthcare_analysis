@@ -13,6 +13,8 @@
 *temp*
 *test*
 ectools
+3may.py
+4may.py
 
 scripts/april_2025/1_global_aod/histograms/
 scripts/april_2025/1_global_aod/march.py
@@ -21,8 +23,8 @@ scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/2_matched_lat_lon_
 scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/3_co-located_cams_atlid_uncertainty.py
 scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/4_uncertainty_co-located_cams_atlid.py
 scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/2025_statistics.txt
-scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB/2025_day_statics.txt
-scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/night_AB/2025_night_statics.txt
+scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/2025_day_statics.txt
+scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/filter_uncertainty_total_aod/2025_night_statics.txt
 scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/march.py
 scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/may.py
 scripts/april_2025/1_global_aod/regrid_based_on_the_saved_txt/multiple_h5_TROPOMI_vs_CAMS.py

@@ -43,6 +43,7 @@ def get_wind(file_path):
 
     return u_along,w_wind
 
+#remove any column with liquid water
 def get_ext_col(file_path,include_xmet=0):
     try:
         tc_file = file_path.replace('EBD','TC_')
@@ -83,6 +84,11 @@ def get_ext_col(file_path,include_xmet=0):
                 return dt
 
             data = filter_data_col(data)
+
+            #filter data with deploarisation <=0.2
+            depol_err = AEBD['particle_linear_depol_ratio_355nm_low_resolution_error'].values
+            data = np.where(depol_err<=0.2,data,0)
+
             data = np.where(data<1e-3,data,0)
             data = np.where(data>=0,data,0)
 
@@ -127,19 +133,23 @@ def get_ext(file_path,aer_index,include_xmet=0):
             time = AEBD['time'].values
 
             ### filter with snr and replace with nan
-            snr_threshold = 2                                       #20251020
-            snr = np.where(err != 0, data / err, snr_threshold+1)   #20251020
-            data = np.where(snr>=snr_threshold,data,np.nan) #was 0  #20251020
+            snr_threshold = 2                                       
+            snr = np.where(err != 0, data / err, snr_threshold+1)   
+            data = np.where(snr>=snr_threshold,data,0)
+
+            #filter data with deploarisation <=0.2
+            depol_err = AEBD['particle_linear_depol_ratio_355nm_low_resolution_error'][:,select_height:].values
+            data = np.where(depol_err<=0.2,data,0)
 
             def filter_data(dt):
-                dt = np.where(qc<2,dt,np.nan)                               #was 0  #20251020
-                dt = np.where(tc>0,dt,np.nan)  #only keep aerosol particles #was 0  #20251020
+                dt = np.where(qc<2,dt,0)                                 
+                dt = np.where(tc>0,dt,0)  #only keep aerosol particles   
 
                 return dt
 
             data = filter_data(data)
-            data = np.where(data<1e-3,data,np.nan)                  #was 0  #20251020
-            data = np.where(data>=0,data,np.nan)                    #was 0  #20251020
+            data = np.where(data<1e-3,data,0)                  
+            data = np.where(data>=0,data,0)                    
 
             err  = filter_data(err)
 
@@ -157,6 +167,7 @@ def get_ext(file_path,aer_index,include_xmet=0):
         print(f"Error processing file {file_path}: {e}")
         return None
 
+#This function is now replaced by get_aod_snr remove any column if liquid water exists
 def get_aod(file_path,aer_index):
     try:
         tc_file = file_path.replace('EBD','TC_')
@@ -212,6 +223,7 @@ def get_aod(file_path,aer_index):
         return None
 
 #keep all ext data (including columns with liquid clouds and/or fully attenuated)
+#filter with SNR>=2 and depolarisation err <= 0.2
 def get_aod_var(file_path,aer_index,include_xmet=0):
     try:
         tc_file = file_path.replace('EBD','TC_')
@@ -235,14 +247,12 @@ def get_aod_var(file_path,aer_index,include_xmet=0):
         with ecio.load_AEBD(file_path) as AEBD:
             data = AEBD['particle_extinction_coefficient_355nm_low_resolution'].values
             err  = AEBD['particle_extinction_coefficient_355nm_low_resolution_error'].values
-            print(data.shape,err.shape)
             lat = AEBD['latitude'].values
             lon = AEBD['longitude'].values
             time = AEBD['time'].values
             def filter_data(dt):
                 dt = np.where(qc<2,dt,np.nan) #was 0
                 dt = np.where(tc>0,dt,np.nan) #was 0 #only keep aerosol particles
-
                 return dt
 
             err  = filter_data(err)
@@ -251,6 +261,10 @@ def get_aod_var(file_path,aer_index,include_xmet=0):
             snr_threshold = 2
             snr = np.where(err != 0, data / err, snr_threshold+1)
             err = np.where(snr>=snr_threshold,err,np.nan) #was 0
+
+            #filter data with deploarisation <=0.2
+            depol_err = AEBD['particle_linear_depol_ratio_355nm_low_resolution_error'].values
+            err = np.where(depol_err<=0.2,err,np.nan)
 
             #Trim the rows when height is negative
             #height = file['ScienceData/height'][:,select_height:]-file['ScienceData/geoid_offset'][:][:,np.newaxis]
@@ -288,6 +302,7 @@ def get_aod_var(file_path,aer_index,include_xmet=0):
         print(f"Error processing file {file_path}: {e}")
         return None
 
+#filter aod with snr>=2 and depolarisation err <= 0.2
 def get_aod_snr(file_path,aer_index):
     try:
         tc_file = file_path.replace('EBD','TC_')
@@ -314,11 +329,16 @@ def get_aod_snr(file_path,aer_index):
 
         with ecio.load_AEBD(file_path) as AEBD:
             data = AEBD['particle_extinction_coefficient_355nm_low_resolution'].values
+
+            #filter data with SNR>=2
             err  = AEBD['particle_extinction_coefficient_355nm_low_resolution_error'].values           
             snr_threshold = 2
             snr = np.where(err != 0, data / err, snr_threshold+1)
-
             data = np.where(snr>=snr_threshold,data,0)
+
+            #filter data with deploarisation <=0.2
+            depol_err = AEBD['particle_linear_depol_ratio_355nm_low_resolution_error'].values
+            data = np.where(depol_err<=0.2,data,0)
 
             lat = AEBD['latitude'].values
             lon = AEBD['longitude'].values

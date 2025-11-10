@@ -20,11 +20,14 @@ from plotting_tools import statistics
 
 # Load your dataset (assuming it's a CSV with 'lat', 'lon', 'aod')
 file_dir = '/scratch/nld6854/earthcare/cams_data/'
-month = 'september'
-fmonth = 'September'
-print('Month=',month)
-dfaod = pd.read_csv(file_dir+month+'_2025/'+"2025_"+month+"_cams_atlid_co-located_aod_snr_gr_2.txt", delimiter=",")
-dfaod_var = pd.read_csv(file_dir+month+'_2025/'+"2025_"+month+"_cams_atlid_co-located_aod_variance_snr_gr_2.txt", delimiter=",")
+month = 'april'
+fmonth = 'April'
+day_or_night = 'day_'
+day_or_night = ''
+
+print('Month=',month,'day or night=',day_or_night)
+dfaod = pd.read_csv(file_dir+month+'_2025/'+"2025_"+month+"_cams_atlid_co-located_"+day_or_night+"aod_snr_gr_2.txt", delimiter=",")
+dfaod_var = pd.read_csv(file_dir+month+'_2025/'+"2025_"+month+"_cams_atlid_co-located_"+day_or_night+"aod_variance_snr_gr_2.txt", delimiter=",")
 
 
 AOD = dfaod['aod355nm_atlid'].values
@@ -178,7 +181,7 @@ ds = xr.Dataset(
     }
 )
 cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
-ds.to_netcdf(cams_dir+'2025_'+month+'_atlid_uncertainty_snr_gr_2.nc', format="NETCDF4")
+ds.to_netcdf(cams_dir+'2025_'+month+'_atlid_'+day_or_night+'uncertainty_snr_gr_2.nc', format="NETCDF4")
 
 #fig,(ax1,ax2,ax3)=plt.subplots(3,1,figsize=(20,30),subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=0)))
 fig,(ax1,ax2,ax3)=plt.subplots(3,1,figsize=(20,30),subplot_kw=dict(projection=ccrs.PlateCarree()))
@@ -250,6 +253,6 @@ bar.ax.tick_params(labelsize=15)
 ax3.set_title('ATLID AOD sampling std',fontsize=15)
 
 plt.tight_layout()
-fig.savefig('global_aod_uncertainty_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located.jpg',bbox_inches='tight')
+fig.savefig('figures/global_'+day_or_night+'aod_uncertainty_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located.jpg',bbox_inches='tight')
 
 

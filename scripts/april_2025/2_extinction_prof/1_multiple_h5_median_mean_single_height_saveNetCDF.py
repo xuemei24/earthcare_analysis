@@ -22,11 +22,11 @@ from plotting_tools import read_h5
 def get_ext_wrapper(args):
     return read_h5.get_ext(*args)
 
-month = 'april'
+month = 'march'
 #simple_classification
 which_aerosol='total'
 
-mean_or_std = 'median'
+mean_or_std = 'mean'
 # List of file paths you want to read concurrently
 cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
 file_paths = glob.glob('/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/*.h5')

@@ -26,14 +26,14 @@ def read_cams_ext(filen):
     a.close()
     febd = filen.replace('CAMS','EBD')
     febd = febd.replace('.nc','.h5')
-    _,lat,lon,_,h,_,_,_ = read_h5.get_ext_col(febd)
+    _,lat,lon,_,h,_,_,_ = read_h5.get_ext(febd,np.array([10,11,12,13,14,15,25,26,27]))
     return ext,lat,lon,h
 
-month = 'may'
+month = 'march'
 #simple_classification
 which_aerosol='total'
 
-mean_or_std = 'median'
+mean_or_std = 'mean'
 
 # List of file paths you want to read concurrently
 file_paths = glob.glob('/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/CAMS/*.nc')

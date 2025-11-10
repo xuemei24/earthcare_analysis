@@ -19,11 +19,11 @@ sys.path.append(script_path)
 from plotting_tools import statistics
 
 # Load your dataset (assuming it's a CSV with 'lat', 'lon', 'aod')
-month = 'april'
-fmonth = 'April'
+month = 'may'
+fmonth = 'May'
 print('Month=',month)
 which_aerosol = 'dust'
-#which_aerosol = 'ssa'
+which_aerosol = 'ssa'
 fname = 'sea_salt' if which_aerosol == 'ssa' else 'dust'
 figname = 'Sea salt'  if which_aerosol=='ssa' else 'Dust+BC+OM'
 if which_aerosol == 'dust':

@@ -46,7 +46,10 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors
 
-month = 'september'
+month = 'april'
+day_or_night = 'day_'
+day_or_night = ''
+print('Month=',month,'day or night=',day_or_night)
 
 # CAMS Data (xxx)
 cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
@@ -147,7 +150,7 @@ orography = orography.assign_coords(longitude=(('longitude',), cams_lon))
 srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
-ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXAE_ATL_TC__2A_20250321T133730Z_20250321T152847Z_04615D.h5', prodmod_code="ECA_EXAE")
+ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
 
 cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC,'classification_low_resolution')
 #category_colors = ecplt.ATC_category_colors
@@ -185,7 +188,17 @@ def process_file(filen):
     return (atlid_lats, atlid_lons, atlid_aod, cams_aod)
 
 # run in parallel
-ebd_files = sorted(glob.glob(srcdir+'*h5'))
+if day_or_night == 'night_':
+    ebd_files = sorted([
+        f for f in glob.glob(srcdir + '*.h5')
+        if os.path.basename(f).endswith(('A.h5', 'B.h5'))])
+elif day_or_night == 'day_':
+    ebd_files = sorted([
+        f for f in glob.glob(srcdir + '*.h5')
+        if os.path.basename(f).endswith(('C.h5', 'D.h5','E.h5', 'F.h5','G.h5', 'H.h5'))])
+elif day_or_night == '':
+    ebd_files = sorted(glob.glob(srcdir+'*h5'))
+
 with Pool(processes=8) as pool:  # adjust number of processes
     results = pool.map(process_file, ebd_files)
 
@@ -201,7 +214,7 @@ for res in results:
     c_aod.extend(caod)
 
 # save once
-np.savetxt(cams_dir+'2025_'+month+'_cams_atlid_co-located_aod_snr_gr_2.txt',
+np.savetxt(cams_dir+'2025_'+month+'_cams_atlid_co-located_'+day_or_night+'aod_snr_gr_2.txt',
            np.array([all_lat, all_lon, a_aod, c_aod]).T,
            header='latitude,longitude,aod355nm_atlid,aod355nm_cams',
            delimiter=',')

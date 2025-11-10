@@ -19,12 +19,12 @@ sys.path.append(script_path)
 from plotting_tools import statistics
 
 # Load your dataset (assuming it's a CSV with 'lat', 'lon', 'aod')
-month = 'april'
-fmonth = 'April'
+month = 'may'
+fmonth = 'May'
 print('Month=',month)
 #simple_classification
 which_aerosol='sea_salt'
-which_aerosol='dust'
+#which_aerosol='dust'
 vname = 'ssa' if which_aerosol=='sea_salt' else 'dust'
 fname = 'Sea salt'  if which_aerosol=='sea_salt' else 'Dust+BC+OM'
 
@@ -234,36 +234,8 @@ binsa0_ = np.linspace(0,np.nanmax(a_aod),nbins)
 hista0_,binsa0_ = np.histogram(a_aod,bins=binsa0_,density=True)
 bca0_ = 0.5*(binsa0_[1:] + binsa0_[:-1])
 
-fig,(ax1,ax2,ax3) = plt.subplots(1,3,figsize=(15,5),sharey=False)
-ax1.plot(bcc,histc,label='CAMS')
-ax1.plot(bca,hista,label='regridded ATLID')
-
-ax2.plot(bca0,hista0,label='original ATLID')
-ax3.plot(bca0_,hista0_,label='original ATLID')
-ax3.plot(bca_,hista_,label='regridded ATLID')
-ax2.set_ylim(1e1,1e7)
-ax2.set_yscale('log')
-#ax3.set_ylim(1e1,1e7)
-#ax3.set_yscale('log')
-
-ax1.set_xlabel('AOD',fontsize=15) 
-ax1.set_ylabel('Counts',fontsize=15)
-ax2.set_xlabel('AOD',fontsize=15)
-ax2.set_ylabel('Counts',fontsize=15)
-ax3.set_xlabel('AOD',fontsize=15)
-ax3.set_ylabel('Density',fontsize=15)
-
-ax1.tick_params(labelsize=12)
-ax2.tick_params(labelsize=12)
-ax3.tick_params(labelsize=12)
-
-ax1.set_title(fmonth+' 2025',fontsize=15)
-ax1.legend(frameon=False,fontsize=15)
-ax2.legend(frameon=False,fontsize=15)
-ax3.legend(frameon=False,fontsize=15)
-fig.savefig('figures/histograms_CAMS_ATLID_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located_filtered_uncertainty_AngstromCal_snr_gr_2_uncertainty.jpg')
-
-fig,(ax1,ax2,ax3) = plt.subplots(1,3,figsize=(15,5),gridspec_kw={'width_ratios': [2, 1, 1]},sharey=False)
+#fig,(ax1,ax2,ax3) = plt.subplots(1,3,figsize=(15,5),gridspec_kw={'width_ratios': [2, 1, 1]},sharey=False)
+fig,ax1 = plt.subplots(1,figsize=(6,5))
 ax1.plot(bcc,histc,label='CAMS')
 ax1.plot(bca,hista,label='regridded ATLID')
 
@@ -289,6 +261,21 @@ for i,m in enumerate(cmodes):
 for i,m in enumerate(amodes):
     ax1.scatter(m,ahpeaks[i], color='orange', zorder=5, label=f'Mode ~ {m:.2f}')
 
+
+ax1.set_xlim(1e-3,2)
+ax1.set_xscale('log')
+
+ax1.set_xlabel('AOD',fontsize=15) 
+ax1.set_ylabel('Counts',fontsize=15)
+
+ax1.tick_params(labelsize=12)
+ax1.set_title(fmonth+' 2025',fontsize=15)
+ax1.legend(frameon=False,fontsize=15)
+
+fig.savefig('figures/histograms_CAMS_ATLID_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located_filtered_uncertainty_with_modes_AngstromCal_snr_gr_2_uncertainty.jpg')
+print(plt.rcParams['axes.prop_cycle'].by_key()['color'])
+print(plt.rcParams['axes.facecolor'])
+sys.exit()
 '''
 Cmax_index = np.argmax(histc[1:])
 Cmode_estimate = (binsc[1:][Cmax_index] + binsc[1:][Cmax_index + 1]) / 2
@@ -307,23 +294,14 @@ ax3.plot(bca0_,hista0_,label='original ATLID')
 ax3.plot(bca_,hista_,label='regridded ATLID')
 ax2.set_ylim(1e1,1e7)
 ax2.set_yscale('log')
-ax1.set_xlim(1e-3,2)
-ax1.set_xscale('log')
-
-ax1.set_xlabel('AOD',fontsize=15) 
-ax1.set_ylabel('Counts',fontsize=15)
 ax2.set_xlabel('AOD',fontsize=15)
 ax2.set_ylabel('Counts',fontsize=15)
 ax3.set_xlabel('AOD',fontsize=15)
 ax3.set_ylabel('Density',fontsize=15)
 
-ax1.tick_params(labelsize=12)
 ax2.tick_params(labelsize=12)
 ax3.tick_params(labelsize=12)
 
-ax1.set_title(fmonth+' 2025',fontsize=15)
-ax1.legend(frameon=False,fontsize=15)
 ax2.legend(frameon=False,fontsize=15)
 ax3.legend(frameon=False,fontsize=15)
-fig.savefig('figures/histograms_CAMS_ATLID_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located_filtered_uncertainty_with_modes_AngstromCal_snr_gr_2_uncertainty.jpg')
 
