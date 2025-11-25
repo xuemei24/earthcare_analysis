@@ -46,14 +46,16 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors
 
-month = 'april'
+month = 'october'
 day_or_night = 'day_'
 day_or_night = ''
 print('Month=',month,'day or night=',day_or_night)
 
 # CAMS Data (xxx)
-cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
-fcams = cams_dir+'total_aerosol_optical_depth_355nm_'+month+'_2025.nc'
+year = '2024' if month == 'december' else '2025'
+
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
+fcams = cams_dir+'total_aerosol_optical_depth_355nm_'+month+'_'+year+'.nc'
 
 ds = xr.open_dataset(fcams)
 print(ds)
@@ -86,7 +88,7 @@ cams_lon[ilon] = cams_lon[ilon]-360.
 ds = ds.assign_coords(longitude=(('longitude',), cams_lon))
 
 #this file should be merged
-dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_2025/specific_cloud_liquid_water_content_'+month+'_2025.nc')
+dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_cloud_liquid_water_content_'+month+'_'+year+'.nc')
 lwc = dslwc['clwc'].values[:,:]
 def collapse_lwc(cloud,data):
     for i in range(data.shape[0]):
@@ -147,7 +149,7 @@ orography = orography.assign_coords(longitude=(('longitude',), cams_lon))
 
 
 
-srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/'
+srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
 ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
@@ -214,7 +216,7 @@ for res in results:
     c_aod.extend(caod)
 
 # save once
-np.savetxt(cams_dir+'2025_'+month+'_cams_atlid_co-located_'+day_or_night+'aod_snr_gr_2.txt',
+np.savetxt(cams_dir+year+'_'+month+'_cams_atlid_co-located_'+day_or_night+'aod_snr_gr_2.txt',
            np.array([all_lat, all_lon, a_aod, c_aod]).T,
            header='latitude,longitude,aod355nm_atlid,aod355nm_cams',
            delimiter=',')

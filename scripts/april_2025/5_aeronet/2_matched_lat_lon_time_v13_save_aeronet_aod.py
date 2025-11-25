@@ -62,16 +62,19 @@ def latlon_to_xyz(lat, lon):
     z = np.sin(lat)
     return np.vstack((x, y, z)).T
 
-month = 'april'
-month2 = '04'
+month = 'december'
+month2 = '12'
+print('month=',month)
+
+year = '2024' if month == 'december' else '2025'
 time_tol = pd.Timedelta("30min")
 
 #####Constants#####
 EARTH_RADIUS = 6371000  # meters
 
 #####AERONET#####
-aeronet_path = '/net/pc190625/nobackup_1/users/wangxu/aeronet/'
-df = pd.read_table(aeronet_path+'2025'+month2+'_all_sites_aod15_allpoints.txt', delimiter=',', header=[7])
+aeronet_path = '/scratch/nld6854/earthcare/aeronet/'
+df = pd.read_table(aeronet_path+year+month2+'_all_sites_aod15_allpoints.txt', delimiter=',', header=[7])
 df = df.replace(-999,np.nan)
 
 sites = df['AERONET_Site']
@@ -109,7 +112,7 @@ def find_nearest_time(t):
 
 
 ######ATLID#####
-srcdir = '/net/pc190625/nobackup_1/users/wangxu/earthcare_data/'+month+'_2025/EBD/'
+srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/EBD/'
 cmap = ecplt.colormaps.chiljet2
 ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
 
@@ -121,7 +124,7 @@ def process_file(filen,df_aeronet):
         return None  # skip missing files
 
     orbit_sequence = filen[-9:-3]
-    atlid_aod, atlid_lats, atlid_lons, atlid_times = read_h5.get_aod(filen, np.array([10,11,12,13,14,15,25,26,27]))
+    atlid_aod, atlid_lats, atlid_lons, atlid_times = read_h5.get_aod_snr(filen, np.array([10,11,12,13,14,15,25,26,27]))
     df_atlid = pd.DataFrame({
         "time": atlid_times,
         "lat": atlid_lats,
@@ -152,8 +155,10 @@ def process_file(filen,df_aeronet):
         aeronet_xyz = latlon_to_xyz(group_aeronet["lat"].values, group_aeronet["lon"].values)
 
         # one KDTree build per group (fast)
-        tree = cKDTree(aeronet_xyz)
-        distances_rad, indices = tree.query(atlid_xyz, k=10)
+        tree = cKDTree(atlid_xyz)
+        k = 10
+        distances_rad, indices = tree.query(aeronet_xyz, k=k)
+        indices = np.clip(indices, 0, group_atlid.shape[0]-1)
         distances_m = distances_rad * EARTH_RADIUS
 
         # filter within cutoff (vectorized mask)
@@ -161,18 +166,44 @@ def process_file(filen,df_aeronet):
         if not np.any(mask):
             continue
 
-        # pre-collect rows
-        df_tmp = pd.DataFrame({
-            "time": t,
-            "atlid_lat": group_atlid["lat"].values[mask],
-            "atlid_lon": group_atlid["lon"].values[mask],
-            "atlid_aod": group_atlid["atlid_aod"].values[mask],
-            "aeronet_lat": group_aeronet["lat"].values[indices[mask]],
-            "aeronet_lon": group_aeronet["lon"].values[indices[mask]],
-            "aeronet_aod": group_aeronet["aeronet_aod"].values[indices[mask]],
-            "distance_m": distances_m[mask]
-        })
+        if k == 1:
+            # pre-collect rows
+            df_tmp = pd.DataFrame({
+                "time": t,
+                "aeronet_lat": group_aeronet["lat"].values[mask],
+                "aeronet_lon": group_aeronet["lon"].values[mask],
+                "aeronet_aod": group_aeronet["aeronet_aod"].values[mask],
+                "atlid_lat": group_atlid["lat"].values[indices[mask]],
+                "atlid_lon": group_atlid["lon"].values[indices[mask]],
+                "atlid_aod": group_atlid["atlid_aod"].values[indices[mask]],
+                "distance_m": distances_m[mask]
+            })
 
+        elif k > 1:
+            # Expand AERONET values to match shape (n_aeronet, k)
+            aeronet_lat = np.repeat(group_aeronet["lat"].values[:, None], indices.shape[1], axis=1)[mask]
+            aeronet_lon = np.repeat(group_aeronet["lon"].values[:, None], indices.shape[1], axis=1)[mask]
+            aeronet_aod = np.repeat(group_aeronet["aeronet_aod"].values[:, None], indices.shape[1], axis=1)[mask]
+           
+            # Select ATLID values with indices (also (n_aeronet, k))
+            atlid_lat = group_atlid["lat"].values[indices][mask]
+            atlid_lon = group_atlid["lon"].values[indices][mask]
+            atlid_aod = group_atlid["atlid_aod"].values[indices][mask]
+           
+            # Distances
+            distances = distances_m[mask]
+         
+            # Build dataframe
+            df_tmp = pd.DataFrame({
+                "time": t,
+                "aeronet_lat": aeronet_lat,
+                "aeronet_lon": aeronet_lon,
+                "aeronet_aod": aeronet_aod,
+                "atlid_lat": atlid_lat,
+                "atlid_lon": atlid_lon,
+                "atlid_aod": atlid_aod,
+                "distance_m": distances
+            })
         matched.append(df_tmp)
 
     if matched:
@@ -190,4 +221,4 @@ with Pool(processes=8) as pool:
     results = pool.map(process_file_wrapper, ebd_files)
 
 df_all = pd.concat([r for r in results if r is not None], ignore_index=True)
-df_all.to_csv("/net/pc190625/nobackup_1/users/wangxu/cams_data/2025_"+month+"_atlid_aeronet_co-located_100km.csv", index=False)
+df_all.to_csv("/scratch/nld6854/earthcare/cams_data/"+month+"_"+year+"/"+year+"_"+month+"_atlid_aeronet_co-located_100km_10atlid_per_aeronet.csv", index=False)

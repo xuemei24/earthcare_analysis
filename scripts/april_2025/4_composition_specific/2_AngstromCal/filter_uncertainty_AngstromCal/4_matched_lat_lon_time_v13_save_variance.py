@@ -46,17 +46,18 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors
 
-month = 'may'
+month = 'december'
 which_aerosol = 'dust'
-which_aerosol = 'ssa'
+#which_aerosol = 'ssa'
 fname = 'sea_salt' if which_aerosol == 'ssa' else 'dust'
 tcs   = [11] if which_aerosol == 'ssa' else [10,13,14,15,27] #12=continental pollution?
 
 if which_aerosol == 'dust':
     fname = 'dust_om'
 
-cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/TTcal/'
-srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/'
+year = '2024' if month == 'december' else '2025'
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/TTcal/'
+srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
 ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
@@ -95,7 +96,7 @@ for res in results:
     a_aod.extend(aod)
 
 # save once
-np.savetxt(cams_dir+fname+'_aod355nm_per_composition_'+month+'_2025_cams_atlid_co-located_aod_variance_snr_gr_2.txt',
+np.savetxt(cams_dir+fname+'_aod355nm_per_composition_'+month+'_'+year+'_cams_atlid_co-located_aod_variance_snr_gr_2.txt',
            np.array([all_lat, all_lon, a_aod]).T,
            header='latitude,longitude,aod_355nm_var_atlid',
            delimiter=',')

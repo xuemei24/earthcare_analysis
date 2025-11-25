@@ -46,16 +46,17 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors,projections
 
-month = 'may'
+month = 'december'
 which_aerosol = 'dust'
-which_aerosol = 'ssa'
+#which_aerosol = 'ssa'
 fname = 'sea_salt' if which_aerosol == 'ssa' else 'dust'
 tcs   = [11] if which_aerosol == 'ssa' else [10,13,14,15,27] #12=continental pollution?
 if which_aerosol == 'dust':
     fname = 'dust_om'
 
-cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/TTcal/'
-fcams = cams_dir+'TTcal_aod355nm_per_composition_'+month+"_2025.nc"
+year = '2024' if month == 'december' else '2025'
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/TTcal/'
+fcams = cams_dir+'TTcal_aod355nm_per_composition_'+month+"_"+year+".nc"
 
 ds = xr.open_dataset(fcams)
 print(ds)
@@ -93,7 +94,7 @@ cams_lon[ilon] = cams_lon[ilon]-360.
 ds = ds.assign_coords(longitude=(('longitude',), cams_lon))
 
 #this file should be merged
-dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_2025/specific_cloud_liquid_water_content_'+month+'_2025.nc')
+dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_cloud_liquid_water_content_'+month+'_'+year+'.nc')
 lwc = dslwc['clwc'].values[:,:]
 def collapse_lwc(cloud,data):
     for i in range(data.shape[0]):
@@ -155,7 +156,7 @@ orography = orography.assign_coords(longitude=(('longitude',), cams_lon))
 
 
 
-srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/'
+srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
 ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
@@ -202,7 +203,7 @@ for res in results:
     c_aod = np.append(c_aod,c_s_aod)
 
 # save once
-np.savetxt(cams_dir+'TTcal_'+fname+'_aod355nm_per_composition_'+month+'_2025_cams_atlid_co-located_snr_gr_2.txt',
+np.savetxt(cams_dir+'TTcal_'+fname+'_aod355nm_per_composition_'+month+'_'+year+'_cams_atlid_co-located_snr_gr_2.txt',
            np.array([all_lat, all_lon, a_aod, c_aod]).T,
            header='latitude,longitude,aod355nm_atlid,aod355nm_cams',
            delimiter=',')

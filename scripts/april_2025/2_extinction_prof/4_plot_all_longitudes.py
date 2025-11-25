@@ -31,13 +31,14 @@ def landsea_mean(var):
     print('not weighted by area')
     return land,sea
 
-month='march'
-fmonth='March'
+month='february'
+fmonth='February'
 vname = 'extinction_coefficient'
 figname = 'extinction_coefficient'
 
-cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
-file_name = cams_dir+'regridded_satellite_total_extinction_coe_2deg_masknan_mean_single_alt_'+month+'_2025_snr_gr_2.nc'
+year = '2024' if month == 'december' else '2025'
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
+file_name = cams_dir+'regridded_satellite_total_extinction_coe_2deg_masknan_mean_single_alt_'+month+'_'+year+'_snr_gr_2.nc'
 cams_file = file_name.replace('satellite','CAMS')#'regridded_CAMS_total_extinction_coe_2deg_masknan_mean_single_alt_'+month+'_2025.nc'
 
 cams_ha = Dataset(cams_file)
@@ -49,6 +50,7 @@ print(var_atlid.shape)
 var_zonal_atlid = np.nanmean(var_atlid,axis=1) #zonal mean
 lon_atlid = atlid.variables['longitude'][:]
 lat_atlid = atlid.variables['latitude'][:]
+print(lat_atlid)
 atlid_h = atlid.variables['height'][:]
 print(var_zonal_atlid.shape) #(451, 900, 254)
 
@@ -57,6 +59,7 @@ var_cams = cams.variables[vname][:,:,:]
 var_zonal_cams = np.nanmean(var_cams,axis=1) #zonal mean
 lon_cams = cams.variables['longitude'][:]
 lat_cams = cams.variables['latitude'][:]
+print(lat_cams)
 cams_h = cams.variables['height'][:]
 print(var_cams.shape) #(451, 900, 254)
 print(var_zonal_cams.shape)
@@ -64,14 +67,16 @@ print(var_zonal_cams.shape)
 vmax = 1.e-4
 
 atlid_hpx,lat_atlidpa = np.meshgrid(atlid_h,lat_atlid)
-cams_hpx,lat_atlidpc  = np.meshgrid(cams_h,lat_atlid)
+cams_hpx,lat_atlidpc  = np.meshgrid(cams_h,lat_cams)
 
+print(lat_atlidpa)
+print(lat_atlidpc)
 fig,(ax1,ax2,ax3)=plt.subplots(3,1,figsize=(8,12))
 im=ax1.pcolormesh(lat_atlidpa,atlid_hpx//1000,var_zonal_atlid,cmap=ecplt.colormaps.calipso,norm=matplotlib.colors.LogNorm(vmax=vmax,vmin=vmax/100.))
 bar = plt.colorbar(im, orientation='vertical',ax=ax1,shrink=0.7, pad=0.1)
 bar.ax.set_ylabel('m$^{-1}$',fontsize=15)
 bar.ax.tick_params(labelsize=15)
-ax1.set_title('Zonal mean extinction coefficient ATLID '+fmonth+' 2025',fontsize=15)
+ax1.set_title('Zonal mean extinction coefficient ATLID '+fmonth+' '+year,fontsize=15)
 ax1.tick_params(axis='x', labelsize=15)
 ax1.tick_params(axis='y', labelsize=15)
 ax1.set_ylim(0,20)
@@ -81,7 +86,7 @@ im=ax2.pcolormesh(lat_atlidpc,cams_hpx//1000,var_zonal_cams,cmap=ecplt.colormaps
 bar = plt.colorbar(im, orientation='vertical',ax=ax2,shrink=0.7, pad=0.1)
 bar.ax.set_ylabel('m$^{-1}$',fontsize=15)
 bar.ax.tick_params(labelsize=15)
-ax2.set_title('Zonal mean extinction coefficient CAMS '+fmonth+' 2025',fontsize=15)
+ax2.set_title('Zonal mean extinction coefficient CAMS '+fmonth+' '+year,fontsize=15)
 ax2.tick_params(axis='x', labelsize=15)
 ax2.tick_params(axis='y', labelsize=15)
 ax2.set_ylim(0,20)
@@ -105,7 +110,7 @@ ax3.set_ylim(0,20)
 ax3.set_ylabel('Altitude / km',fontsize=15)
 
 plt.tight_layout()
-fig.savefig('time_lat_lon_co_located_zonal_nanmean_extinction_coefficient_'+figname+'_2deg_mean_'+month+'_2025.jpg',bbox_inches='tight')
+fig.savefig('time_lat_lon_co_located_zonal_nanmean_extinction_coefficient_'+figname+'_2deg_mean_'+month+'_'+year+'.jpg',bbox_inches='tight')
 
 lon_bins = np.arange(-180.1, 180.1, 2)
 lat_cams,cams_hp = np.meshgrid(lat_cams,cams_h)
@@ -120,7 +125,7 @@ for ilon in range(var_atlid.shape[1]):
     bar = plt.colorbar(im, orientation='vertical',ax=ax1,shrink=0.7, pad=0.1)
     bar.ax.set_ylabel('m$^{-1}$',fontsize=15)
     bar.ax.tick_params(labelsize=15)
-    ax1.set_title('Extinction coefficient ATLID at '+str(lon_atlid[ilon])+' '+fmonth+' 2025',fontsize=15)
+    ax1.set_title('Extinction coefficient ATLID at '+str(lon_atlid[ilon])+' '+fmonth+' '+year,fontsize=15)
     ax1.tick_params(axis='x', labelsize=15)
     ax1.tick_params(axis='y', labelsize=15)
     ax1.set_ylim(0,20)
@@ -129,7 +134,7 @@ for ilon in range(var_atlid.shape[1]):
     bar = plt.colorbar(im, orientation='vertical',ax=ax2,shrink=0.7, pad=0.1)
     bar.ax.set_ylabel('m$^{-1}$',fontsize=15)
     bar.ax.tick_params(labelsize=15)
-    ax2.set_title('Extinction coefficient CAMS at '+str(lon_cams[ilon])+' '+fmonth+' 2025',fontsize=15)
+    ax2.set_title('Extinction coefficient CAMS at '+str(lon_cams[ilon])+' '+fmonth+' '+year,fontsize=15)
     ax2.tick_params(axis='x', labelsize=15)
     ax2.tick_params(axis='y', labelsize=15)
     ax2.set_ylim(0,20)
@@ -146,5 +151,5 @@ for ilon in range(var_atlid.shape[1]):
     ax3.set_ylim(0,20)
 
     plt.tight_layout()
-    fig.savefig('all_lons/time_lat_lon_co_located_extinction_coefficient_'+figname+'_at_'+str(lon_bins[ilon])+'_0.4deg_masknan_'+month+'_2025.jpg',bbox_inches='tight')
+    fig.savefig('all_lons/time_lat_lon_co_located_extinction_coefficient_'+figname+'_at_'+str(lon_bins[ilon])+'_0.4deg_masknan_'+month+'_'+year+'.jpg',bbox_inches='tight')
 

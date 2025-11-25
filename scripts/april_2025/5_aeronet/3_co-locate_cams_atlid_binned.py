@@ -12,8 +12,8 @@ month = '04'
 month2 = 'April'
 month3 = 'april'
 
-aeronet_path = '/net/pc190625/nobackup_1/users/wangxu/aeronet/'
-df = pd.read_table(aeronet_path+'2025'+month+'_all_sites_aod15_dailyAVG.txt', delimiter=',', header=[7])
+aeronet_path = '/scratch/nld6854/earthcare/aeronet/'
+df = pd.read_table(aeronet_path+'2025'+month+'_all_sites_aod15_allpoints.txt', delimiter=',', header=[7])
 df = df.replace(-999.0, np.nan)
 
 print(df.keys())
@@ -43,6 +43,8 @@ df_final = monthly_avg[monthly_avg['Month'] == '2025-'+month]
 print(df_final,len(df_final))
 aod = df_final['AOD_355nm']
 
+print(aod)
+sys.exit()
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature

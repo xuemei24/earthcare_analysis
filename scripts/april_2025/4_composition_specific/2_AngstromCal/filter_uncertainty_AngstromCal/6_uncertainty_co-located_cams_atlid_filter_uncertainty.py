@@ -19,12 +19,12 @@ sys.path.append(script_path)
 from plotting_tools import statistics
 
 # Load your dataset (assuming it's a CSV with 'lat', 'lon', 'aod')
-month = 'may'
-fmonth = 'May'
+month = 'january'
+fmonth = 'January'
 print('Month=',month)
 #simple_classification
+which_aerosol='dust'
 which_aerosol='sea_salt'
-#which_aerosol='dust'
 vname = 'ssa' if which_aerosol=='sea_salt' else 'dust'
 fname = 'Sea salt'  if which_aerosol=='sea_salt' else 'Dust+BC+OM'
 
@@ -34,8 +34,9 @@ if which_aerosol == 'dust':
 print(fname)
 mean_or_std = 'median'
 
-file_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/TTcal/'
-dfaod = pd.read_csv(file_dir+'AngstromCal_'+which_aerosol+'_aod355nm_per_composition_'+month+'_2025_cams_atlid_co-located_snr_gr_2.txt', delimiter=",")
+year = '2024' if month == 'december' else '2025'
+file_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/TTcal/'
+dfaod = pd.read_csv(file_dir+'AngstromCal_'+which_aerosol+'_aod355nm_per_composition_'+month+'_'+year+'_cams_atlid_co-located_snr_gr_2.txt', delimiter=",")
 dfuncer = xr.open_dataset(file_dir+'AngstromCal_'+which_aerosol+'_aod355nm_per_composition_'+month+'_atlid_uncertainty_snr_gr_2.nc')
 uncertainty = dfuncer['sigma_total']
 count = dfuncer['count']
@@ -168,7 +169,7 @@ bar.ax.set_ylabel('-',fontsize=15)
 bar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
 bar.ax.tick_params(labelsize=15)
 
-ax1.set_title('ATLID integrated '+fname+' AOD '+fmonth+' 2025',fontsize=15)
+ax1.set_title('ATLID integrated '+fname+' AOD '+fmonth+' '+year,fontsize=15)
 
 
 ax2.set_extent([-180, 180, -89.9, 89.9])
@@ -192,7 +193,7 @@ bar.ax.tick_params(labelsize=15)
 ax2.set_title('CAMS '+fname+'AOD',fontsize=15)
 
 ax3.set_extent([-180, 180, -89.9, 89.9])
-bounds2 = np.linspace(-vmax,vmax,11)
+bounds2 = np.linspace(-vmax/5,vmax/5,11)
 norm2 = colors.BoundaryNorm(bounds2,ncolors=plt.colormaps['RdYlBu_r'].N,clip=True)
 im=ax3.pcolormesh(clons,clats,aod_cams-aod_atlid,cmap='RdYlBu_r',transform=ccrs.PlateCarree(),norm=norm2)
 gl = ax3.gridlines(crs=ccrs.PlateCarree(central_longitude=0), draw_labels=True,
@@ -211,7 +212,7 @@ bar.ax.tick_params(labelsize=15)
 ax3.set_title('CAMS-ATLID '+fname+' AOD',fontsize=15)
 
 plt.tight_layout()
-fig.savefig('figures/global_aod_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located_filtered_uncertainty_AngstromCal_snr_gr_2_uncertainty.jpg',bbox_inches='tight')
+fig.savefig('figures/global_aod_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_'+year+'_co-located_filtered_uncertainty_AngstromCal_snr_gr_2_uncertainty.jpg',bbox_inches='tight')
 
 nbins = 150
 binsc = np.linspace(0,np.nanmax(aod_cams.flatten()),nbins)
@@ -269,10 +270,10 @@ ax1.set_xlabel('AOD',fontsize=15)
 ax1.set_ylabel('Counts',fontsize=15)
 
 ax1.tick_params(labelsize=12)
-ax1.set_title(fmonth+' 2025',fontsize=15)
+ax1.set_title(fmonth+' '+year,fontsize=15)
 ax1.legend(frameon=False,fontsize=15)
 
-fig.savefig('figures/histograms_CAMS_ATLID_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located_filtered_uncertainty_with_modes_AngstromCal_snr_gr_2_uncertainty.jpg')
+fig.savefig('figures/histograms_CAMS_ATLID_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_'+year+'_co-located_filtered_uncertainty_with_modes_AngstromCal_snr_gr_2_uncertainty.jpg')
 print(plt.rcParams['axes.prop_cycle'].by_key()['color'])
 print(plt.rcParams['axes.facecolor'])
 sys.exit()

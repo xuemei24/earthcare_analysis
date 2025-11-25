@@ -20,14 +20,15 @@ from plotting_tools import statistics
 
 # Load your dataset (assuming it's a CSV with 'lat', 'lon', 'aod')
 file_dir = '/scratch/nld6854/earthcare/cams_data/'
-month = 'april'
-fmonth = 'April'
+month = 'december'
+fmonth = 'December'
 day_or_night = 'day_'
 day_or_night = ''
 
 print('Month=',month,'day or night=',day_or_night)
-dfaod = pd.read_csv(file_dir+month+'_2025/'+"2025_"+month+"_cams_atlid_co-located_"+day_or_night+"aod_snr_gr_2.txt", delimiter=",")
-dfaod_var = pd.read_csv(file_dir+month+'_2025/'+"2025_"+month+"_cams_atlid_co-located_"+day_or_night+"aod_variance_snr_gr_2.txt", delimiter=",")
+year = '2024' if month == 'december' else '2025'
+dfaod = pd.read_csv(file_dir+month+'_'+year+'/'+year+"_"+month+"_cams_atlid_co-located_"+day_or_night+"aod_snr_gr_2.txt", delimiter=",")
+dfaod_var = pd.read_csv(file_dir+month+'_'+year+'/'+year+"_"+month+"_cams_atlid_co-located_"+day_or_night+"aod_variance_snr_gr_2.txt", delimiter=",")
 
 
 AOD = dfaod['aod355nm_atlid'].values
@@ -180,8 +181,8 @@ ds = xr.Dataset(
         "longitude": lon_centers
     }
 )
-cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
-ds.to_netcdf(cams_dir+'2025_'+month+'_atlid_'+day_or_night+'uncertainty_snr_gr_2.nc', format="NETCDF4")
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
+ds.to_netcdf(cams_dir+year+'_'+month+'_atlid_'+day_or_night+'uncertainty_snr_gr_2.nc', format="NETCDF4")
 
 #fig,(ax1,ax2,ax3)=plt.subplots(3,1,figsize=(20,30),subplot_kw=dict(projection=ccrs.PlateCarree(central_longitude=0)))
 fig,(ax1,ax2,ax3)=plt.subplots(3,1,figsize=(20,30),subplot_kw=dict(projection=ccrs.PlateCarree()))
@@ -209,7 +210,7 @@ bar = plt.colorbar(im, orientation='vertical',ax=ax1,shrink=0.7, pad=0.1)
 bar.ax.set_ylabel('ATLID total std / -',fontsize=15)
 bar.ax.tick_params(labelsize=15)
 
-ax1.set_title('ATLID total std '+fmonth+' 2025',fontsize=15)
+ax1.set_title('ATLID total std '+fmonth+' '+year,fontsize=15)
 
 
 
@@ -253,6 +254,6 @@ bar.ax.tick_params(labelsize=15)
 ax3.set_title('ATLID AOD sampling std',fontsize=15)
 
 plt.tight_layout()
-fig.savefig('figures/global_'+day_or_night+'aod_uncertainty_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located.jpg',bbox_inches='tight')
+fig.savefig('figures/global_'+day_or_night+'aod_uncertainty_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_'+year+'_co-located.jpg',bbox_inches='tight')
 
 

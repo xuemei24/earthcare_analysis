@@ -19,11 +19,11 @@ sys.path.append(script_path)
 from plotting_tools import statistics
 
 # Load your dataset (assuming it's a CSV with 'lat', 'lon', 'aod')
-month = 'may'
-fmonth = 'May'
+month = 'december'
+fmonth = 'December'
 print('Month=',month)
 which_aerosol = 'dust'
-which_aerosol = 'ssa'
+#which_aerosol = 'ssa'
 fname = 'sea_salt' if which_aerosol == 'ssa' else 'dust'
 figname = 'Sea salt'  if which_aerosol=='ssa' else 'Dust+BC+OM'
 if which_aerosol == 'dust':
@@ -32,9 +32,10 @@ if which_aerosol == 'dust':
 print(fname)
 mean_or_std = 'median'
 
-file_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/TTcal/'
-dfaod = pd.read_csv(file_dir+'TTcal_'+fname+'_aod355nm_per_composition_'+month+'_2025_cams_atlid_co-located_snr_gr_2.txt', delimiter=",")
-dfaod_var = pd.read_csv(file_dir+fname+'_aod355nm_per_composition_'+month+'_2025_cams_atlid_co-located_aod_variance_snr_gr_2.txt', delimiter=",")
+year = '2024' if month == 'december' else '2025'
+file_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/TTcal/'
+dfaod = pd.read_csv(file_dir+'TTcal_'+fname+'_aod355nm_per_composition_'+month+'_'+year+'_cams_atlid_co-located_snr_gr_2.txt', delimiter=",")
+dfaod_var = pd.read_csv(file_dir+fname+'_aod355nm_per_composition_'+month+'_'+year+'_cams_atlid_co-located_aod_variance_snr_gr_2.txt', delimiter=",")
 
 
 AOD = dfaod['aod355nm_atlid'].values
@@ -212,7 +213,7 @@ bar = plt.colorbar(im, orientation='vertical',ax=ax1,shrink=0.7, pad=0.1)
 bar.ax.set_ylabel('ATLID total std / -',fontsize=15)
 bar.ax.tick_params(labelsize=15)
 
-ax1.set_title('ATLID total std '+fmonth+' 2025',fontsize=15)
+ax1.set_title('ATLID total std '+fmonth+' '+year,fontsize=15)
 
 
 
@@ -256,6 +257,6 @@ bar.ax.tick_params(labelsize=15)
 ax3.set_title('ATLID AOD sampling std',fontsize=15)
 
 plt.tight_layout()
-fig.savefig('global_'+which_aerosol+'aod_uncertainty_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located.jpg',bbox_inches='tight')
+fig.savefig('global_'+which_aerosol+'aod_uncertainty_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_'+year+'_co-located.jpg',bbox_inches='tight')
 
 

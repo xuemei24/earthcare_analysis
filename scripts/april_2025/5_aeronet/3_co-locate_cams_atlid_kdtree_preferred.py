@@ -13,13 +13,14 @@ def get_AOD(aod_old, wave_old, wave_new, angstrom):
     return ((wave_new / wave_old) ** (-angstrom)) * aod_old
 
 #Use this script after ATLID AOD has been processed
-month = '07'
-month2 = 'July'
-month3 = 'july'
+month = '12'
+month2 = 'December'
+month3 = 'december'
 
+year = '2024' if month3 == 'december' else '2025'
 print('month=',month2)
-aeronet_path = '/net/pc190625/nobackup_1/users/wangxu/aeronet/'
-df = pd.read_table(aeronet_path+'2025'+month+'_all_sites_aod15_dailyAVG.txt', delimiter=',', header=[7])
+aeronet_path = '/scratch/nld6854/earthcare/aeronet/'
+df = pd.read_table(aeronet_path+year+month+'_all_sites_aod15_dailyAVG.txt', delimiter=',', header=[7])
 df = df.replace(-999.0, np.nan)
 
 print(df.keys())
@@ -45,7 +46,7 @@ monthly_avg = (
     .agg({'AOD_355nm': np.nanmean})
     .reset_index()
 )
-df_final = monthly_avg[monthly_avg['Month'] == '2025-'+month]
+df_final = monthly_avg[monthly_avg['Month'] == year+'-'+month]
 print(df_final,len(df_final))
 aod = df_final['AOD_355nm']
 
@@ -95,14 +96,14 @@ ax1.set_title('AERONET AOD '+month2,fontsize=15)
 
 
 #-CAMS-------------------------------------------------------------------------
-fcams = '/net/pc190625/nobackup_1/users/wangxu/cams_data/total_aerosol_optical_depth_355nm_'+month3+'_2025.nc'
+fcams = '/scratch/nld6854/earthcare/cams_data/'+month3+'_'+year+'/'+'total_aerosol_optical_depth_355nm_'+month3+'_'+year+'.nc'
 
 ds = xr.open_dataset(fcams)
 cams_aod_r = ds['aod355'].values[::3]
 print('cams_aod_r',cams_aod_r.shape)
 
 #this file should be merged
-dslwc = xr.open_dataset('/net/pc190625/nobackup_1/users/wangxu/cams_data/lwc/specific_cloud_liquid_water_content_'+month3+'_2025.nc')
+dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month3+'_'+year+'/specific_cloud_liquid_water_content_'+month3+'_'+year+'.nc')
 lwc = dslwc['clwc'].values[:,:]
 def collapse_lwc(cloud,data):
     for i in range(data.shape[0]):
@@ -214,7 +215,7 @@ ax3.set_title('CAMS-AERONET AOD '+month2,fontsize=15)
 
 
 plt.tight_layout()
-fig.savefig('global_AERONET_CAMS_aod_'+month2+'_2025_100km.jpg',bbox_inches='tight')
+fig.savefig('global_AERONET_CAMS_aod_'+month2+'_'+year+'_100km.jpg',bbox_inches='tight')
 
 print('*********Differences between AERONET & CAMS*********')
 cams_at_stations = np.array(cams_at_stations)
@@ -222,6 +223,7 @@ mask = ~np.isnan(df_final['AOD_355nm'].values) & ~np.isnan(cams_at_stations)
 print('CAMS mean=',np.nanmean(cams_at_stations[mask]))
 print('AERONET mean=',np.nanmean(df_final['AOD_355nm'].values[mask]))
 print('CAMS-AERONET mean=',np.nanmean(cams_at_stations[mask]-df_final['AOD_355nm'].values[mask]))
+print('(CAMS-AERONET)/AERONET mean=',np.nanmean((cams_at_stations[mask]-df_final['AOD_355nm'].values[mask])/df_final['AOD_355nm'].values[mask]))
 print('AERONET,CAMS NMB=',statistics.normalized_mean_bias(cams_at_stations[mask],df_final['AOD_355nm'].values[mask]))
 print('RMSE=',np.sqrt(np.nanmean((df_final['AOD_355nm'].values[mask]-cams_at_stations[mask])**2)))
 
@@ -245,9 +247,9 @@ a_cams,a_aeronet = np.where(mask,cams_at_stations,np.nan),np.where(mask,df_final
 print('Thailand, Cambodia, Laos, Vietnam diffAOD (CAMS-AERONET)=',np.nanmean(a_cams-a_aeronet))
 
 #-ATLID-------------------------------------------------------------------------
-file_dir = '/net/pc190625/nobackup_1/users/wangxu/cams_data/'
+file_dir = '/scratch/nld6854/earthcare/cams_data/'
 print('Month=',month3)
-df = pd.read_csv(file_dir+"2025_"+month3+"_atlid_aeronet_co-located_100km.csv", delimiter=",")
+df = pd.read_csv(file_dir+month3+'_'+year+'/'+year+"_"+month3+"_atlid_aeronet_co-located_100km_10atlid_per_aeronet.csv", delimiter=",")
 
 atlid_aod = df['atlid_aod'].values
 atlid_lat = df['atlid_lat'].values
@@ -372,7 +374,7 @@ ax3.set_title('ATLID-AERONET AOD '+month2,fontsize=15)
 
 
 plt.tight_layout()
-fig.savefig('global_AERONET_ATLID_aod_'+month2+'_2025_100km.jpg',bbox_inches='tight')
+fig.savefig('global_AERONET_ATLID_aod_'+month2+'_'+year+'_100km.jpg',bbox_inches='tight')
 
 atl_aod = np.array(atl_aod)
 aer_aod = np.array(aer_aod)
@@ -381,6 +383,7 @@ mask = ~np.isnan(aer_aod) & ~np.isnan(atl_aod)
 print('ATLID mean=',np.nanmean(atl_aod))
 print('AERONET mean=',np.nanmean(aer_aod[mask]))
 print('ATLID-AERONET mean=',np.nanmean(atl_aod[mask]-aer_aod[mask]))
+print('(ATLID-AERONET)/AERONET mean=',np.nanmean((atl_aod[mask]-aer_aod[mask])/aer_aod[mask]))
 print('AERONET,ATLID NMB=',statistics.normalized_mean_bias(atl_aod[mask],aer_aod[mask]))
 print('RMSE=',np.sqrt(np.nanmean((aer_aod[mask]-atl_aod[mask])**2)))
 

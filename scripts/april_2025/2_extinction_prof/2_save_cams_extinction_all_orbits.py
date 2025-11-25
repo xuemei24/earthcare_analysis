@@ -49,10 +49,12 @@ from pathlib import Path
 
 from multiprocessing import Pool
 
-month = 'march'
+month = 'december'
 forecast_period = '3'
+
+year = '2024' if month == 'december' else '2025'
 # CAMS Data (xxx)
-fcams = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/aerosol_extinction_coe_355nm_'+month+'_2025_'+str(int(forecast_period))+'.nc'
+fcams = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/aerosol_extinction_coe_355nm_'+month+'_'+year+'_'+str(int(forecast_period))+'.nc'
 
 if fcams[-4:-3] == '0':
     utcs = ['00','01','11','12','13','23']
@@ -94,7 +96,7 @@ orography = xr.open_dataset('/scratch/nld6854/earthcare/earthcare_scripts/script
 orography = orography.assign_coords(longitude=(('longitude',), cams_lon))
 #orog = orography['orography'][:]
 
-dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_2025/specific_cloud_liquid_water_content_'+month+'_2025_'+str(int(forecast_period))+'.nc')
+dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_cloud_liquid_water_content_'+month+'_'+year+'_'+str(int(forecast_period))+'.nc')
 lwc = dslwc['clwc'].values[0,:]
 
 '''
@@ -126,7 +128,7 @@ print(cams_extcoe_clear.shape)
 ds_clear = ds.copy(deep=True)
 ds_clear['aerext355'].values = cams_extcoe_clear[:,:,::-1,:,:]
  
-srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/'
+srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
 ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")

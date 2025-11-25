@@ -12,9 +12,14 @@
 *aaa*
 *temp*
 *test*
+*2025*txt
+atlid_cams_ext.txt
 ectools
 3may.py
 4may.py
+april_2025/plotting_tools/__pycache__/
+not_used/
+figures
 
 scripts/april_2025/1_global_aod/histograms/
 scripts/april_2025/1_global_aod/march.py

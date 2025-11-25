@@ -46,10 +46,16 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors,projections
 
-month = 'july'
-#month = 'april'
+month = 'october'
+day_or_night = 'day_'
+day_or_night = ''
+print('Month=',month,'day or night=',day_or_night)
+
 # CAMS Data (xxx)
-fcams = '/net/pc190625/nobackup_1/users/wangxu/cams_data/total_aerosol_optical_depth_355nm_'+month+'_2025.nc'
+year = '2024' if month == 'december' else '2025'
+
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
+fcams = cams_dir+'total_aerosol_optical_depth_355nm_'+month+'_'+year+'.nc'
 
 ds = xr.open_dataset(fcams)
 print(ds)
@@ -82,7 +88,7 @@ cams_lon[ilon] = cams_lon[ilon]-360.
 ds = ds.assign_coords(longitude=(('longitude',), cams_lon))
 
 #this file should be merged
-dslwc = xr.open_dataset('/net/pc190625/nobackup_1/users/wangxu/cams_data/lwc/specific_cloud_liquid_water_content_'+month+'_2025.nc')
+dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_cloud_liquid_water_content_'+month+'_'+year+'.nc')
 lwc = dslwc['clwc'].values[:,:]
 def collapse_lwc(cloud,data):
     for i in range(data.shape[0]):
@@ -106,6 +112,7 @@ print('valid_time_flat.shape,lwc_flat.shape',valid_time_flat.shape,lwc_flat.shap
 sorted_indices = np.argsort(valid_time_flat)
 lwc_sorted = lwc_flat[sorted_indices]
 lwc_final = np.transpose(lwc_sorted,(1,2,0))
+
 
 print(lwc_final.shape)
 aod_cams = np.where(lwc_final>=0.0001,np.nan,cams_aod_r)
@@ -142,7 +149,7 @@ orography = orography.assign_coords(longitude=(('longitude',), cams_lon))
 
 
 
-srcdir = '/net/pc190625/nobackup_1/users/wangxu/earthcare_data/'+month+'_2025/EBD/'
+srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
 ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
@@ -151,6 +158,7 @@ cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC
 #category_colors = ecplt.ATC_category_colors
 #cmap_tc = ListedColormap(sns.color_palette(category_colors[:len(u)]).as_hex())
 
+'''
 fname = "selected_files_Greenland.txt"
 dirs = "/usr/people/wangxu/Desktop/earthcare_scripts/scripts/april_2025/3_co-located_orbits/"
 fname = "selected_files_Africa_"+month+"_2025.txt"
@@ -160,57 +168,24 @@ print(fname[15:-4])
 f = open(dirs+fname, "r")
 ebd_files = [line.strip() for line in f]
 f.close()
+'''
+from multiprocessing import Pool
+from pathlib import Path
+import numpy as np
 
-#ebd_files = sorted(glob.glob(srcdir+'*h5'))
-for i,filen in enumerate(ebd_files):
-    print(i,filen)
+def process_file(filen):
+    tc_file = filen.replace('EBD','TC_')
+    if not Path(tc_file).exists():
+        return None  # skip missing files
 
-    orbit_sequence=filen[-9:-3]
-    atlid_aod,atlid_lats,atlid_lons,atlid_times = read_h5.get_aod(filen,np.array([10,11,12,13,14,15,25,26,27]))
-    #atlid_extcoe = atlid_extcoe#[::nagg]
-    #atlid_lats = atlid_lats#[::nagg]
-    #atlid_lons = atlid_lons#[::nagg]
-    #atlid_times = atlid_times#[::nagg]
-    #atlid_h = atlid_h#[::nagg]
+    orbit_sequence = filen[-9:-3]
+    atlid_aod, atlid_lats, atlid_lons, atlid_times = read_h5.get_aod_snr(filen, np.array([10,11,12,13,14,15,25,26,27]))
 
-    cams_interp = ds_clear.interp(latitude=('points',atlid_lats), longitude=('points',atlid_lons), timeN=('points',atlid_times), method='nearest')
-    print('cams_interp',cams_interp)
+    cams_interp = ds_clear.interp(latitude=('points', atlid_lats),
+                                  longitude=('points', atlid_lons),
+                                  timeN=('points', atlid_times),
+                                  method='nearest')
     cams_aod = cams_interp['aod355'].values
-    print('cams_ext.shape',cams_aod.shape)
-    print('cams_ext',cams_aod[cams_aod>0])
-
-    nan_percentage = np.isnan(atlid_aod).sum() / atlid_aod.size * 100
-    print(f"Percentage of NaNs in atlid_aod: {nan_percentage:.2f}%")
-    nan_percentage = np.isnan(cams_aod).sum() / cams_aod.size * 100
-    print(f"Percentage of NaNs in cams_aod: {nan_percentage:.2f}%")
-
-    #AEBD = ecio.load_AEBD(filen,prodmod_code="ECA_EXAC")
-    #aod = np.trapz(atlid_extcoe,x=atlid_h,axis=1)
-
-    #start plotting
-#    nrows=4
-#    suffix = '_low_resolution'
-#    hmax=20e3
-    
-#    fig, axes = plt.subplots(figsize=(25,7*nrows), nrows=nrows, gridspec_kw={'hspace':0.75})
-#    print(AEBD['time'].shape,aod.shape)
-#    print(AEBD)
-#    #print(aod[aod>0])
-#    ecplt.plot_EC_1Dxw(axes[0], AEBD, {'AEBD':{'xdata':AEBD['time'][:],'ydata':aod_cams}},#AEBD['time'], 'ydata':aod[0]}},
-#                 "CAMS Aerosol optical depth", "AOD / -", timevar='time', include_ruler=False,line_color='red',label='CAMS')
-#    ecplt.plot_EC_1Dxw(axes[0], AEBD, {'AEBD':{'xdata':AEBD['time'][:],'ydata':aod}},#AEBD['time'], 'ydata':aod[0]}},
-#                 "ATLID Aerosol optical depth", "AOD / -", timevar='time', include_ruler=False,line_color='black',label='ATLID')
-#
-#    ecplt.plot_EC_2D(axes[1], AEBD, 'particle_extinction_coefficient_355nm_low_resolution', r"$\alpha_\mathrm{mie}$", cmap=ecplt.colormaps.calipso, plot_scale='log', plot_range=[1e-6,1e-3], units='m$^{-1}$', hmax=hmax, plot_where=AEBD.particle_extinction_coefficient_355nm > 1e-6)
-# 
-#    ecplt.plot_EC_2Dxw(axes[2], AEBD, 'particle_extinction_coefficient_355nm_low_resolution','particle_extinction_coefficient_355nm_low_resolution_error', r"-", cmap=ecplt.colormaps.calipso, plot_scale='linear', title='Extinction coefficient SNR', plot_range=[0,30],units='-', hmax=hmax, plot_where=AEBD.particle_extinction_coefficient_355nm > 1e-6)
-# 
-#    ecplt.plot_EC_target_classification(axes[3], ATC, 'classification_low_resolution', ecplt.ATC_category_colors, hmax=hmax)
-# 
-#    ecplt.add_subfigure_labels(axes)
-#    
-#    fig.savefig('slices_regions/'+fname[15:-4]+'_atlid_cams_aod_'+orbit_sequence+'.jpg')
-# 
 
     fig, axs = plt.subplots(1, 1, figsize=(25,7*1), gridspec_kw={'hspace':0.67}, sharex=True)
     axs.plot(atlid_times,atlid_aod,'k-',label='ATLID')
@@ -236,13 +211,20 @@ for i,filen in enumerate(ebd_files):
     axs.set_ylabel('AOD',fontsize='xx-small')
     axs.tick_params(labelsize=15)
     axs.legend(frameon=False, fontsize='xx-small')
-    fig.savefig('slices_regions/'+fname[15:-4]+'_atlid_vs_cams_AOD_'+orbit_sequence+'.jpg')
+    fig.savefig('slices_regions/atlid_vs_cams_AOD_'+orbit_sequence+'.jpg')
 
     from cartopy.crs import Globe
     my_globe = Globe(semimajor_axis=6378137, semiminor_axis=6356752.314245179,
                      inverse_flattening=298.257223563)
 
-    fig_name = 'slices_regions/'+fname[15:-4]+'_atlid_orbit_'+orbit_sequence+'.jpg'
+    fig_name = 'slices_regions/atlid_orbit_'+orbit_sequence+'.jpg'
     fig_title = orbit_sequence
     projections.plot_on_orthographic(atlid_lons,atlid_lats, fig_name, fig_title,globe=my_globe)
+
+
+ebd_files = sorted(glob.glob(srcdir+'*h5'))
+
+with Pool(processes=8) as pool:  # adjust number of processes
+    pool.map(process_file, ebd_files)
+
 

@@ -46,13 +46,14 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors
 
-month = 'april'
+month = 'december'
 day_or_night = 'day_'
 day_or_night = ''
 print('Month=',month,'day or night=',day_or_night)
 
-cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
-srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_2025/EBD/'
+year = '2024' if month == 'december' else '2025'
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
+srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
 ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
@@ -100,7 +101,7 @@ for res in results:
     a_aod.extend(aod)
 
 # save once
-np.savetxt(cams_dir+'2025_'+month+'_cams_atlid_co-located_'+day_or_night+'aod_variance_snr_gr_2.txt',
+np.savetxt(cams_dir+year+'_'+month+'_cams_atlid_co-located_'+day_or_night+'aod_variance_snr_gr_2.txt',
            np.array([all_lat, all_lon, a_aod]).T,
            header='latitude,longitude,aod_355nm_var_atlid',
            delimiter=',')

@@ -20,14 +20,15 @@ from plotting_tools import statistics
 
 # Load your dataset (assuming it's a CSV with 'lat', 'lon', 'aod')
 file_dir = '/scratch/nld6854/earthcare/cams_data/'
-month = 'april'
-fmonth = 'April'
+month = 'october'
+fmonth = 'October'
 day_or_night = 'day_'
 day_or_night = ''
 print('Month=',month,'day or night=',day_or_night)
 
-df = pd.read_csv(file_dir+month+'_2025/'+"2025_"+month+"_cams_atlid_co-located_"+day_or_night+"aod_snr_gr_2.txt", delimiter=",")
-dfuncer = xr.open_dataset(file_dir+month+'_2025/'+"2025_"+month+'_atlid_'+day_or_night+'uncertainty_snr_gr_2.nc')
+year = '2024' if month == 'december' else '2025'
+df = pd.read_csv(file_dir+month+'_'+year+'/'+year+"_"+month+"_cams_atlid_co-located_"+day_or_night+"aod_snr_gr_2.txt", delimiter=",")
+dfuncer = xr.open_dataset(file_dir+month+'_'+year+'/'+year+"_"+month+'_atlid_'+day_or_night+'uncertainty_snr_gr_2.nc')
 uncertainty = dfuncer['sigma_total']
 count = dfuncer['count']
 
@@ -78,6 +79,20 @@ aod_atlid = filter_uncertainty(uncertainty,count,aod_atlid)
 
 lon_centers = (lon_bins[:-1] + lon_bins[1:]) / 2
 lat_centers = (lat_bins[:-1] + lat_bins[1:]) / 2
+
+
+ds = xr.Dataset(
+    {
+        "atlid_aod": (("latitude", "longitude"), aod_atlid),
+        "cams_aod": (("latitude", "longitude"), aod_cams)
+    },
+    coords={
+        "latitude": lat_centers,
+        "longitude": lon_centers
+    }
+)
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
+ds.to_netcdf(cams_dir+year+'_'+month+'_atlid_'+day_or_night+'aod_filtered_with_uncertainty_snr_gr_2.nc', format="NETCDF4")
 
 clons,clats = np.meshgrid(lon_centers,lat_centers)
 nan_percentage = np.isnan(aod_cams).sum() / aod_cams.size * 100
@@ -165,7 +180,7 @@ bar.ax.set_ylabel('-',fontsize=15)
 bar.ax.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
 bar.ax.tick_params(labelsize=15)
 
-ax1.set_title('ATLID integrated AOD '+day_or_night[:-1]+' '+fmonth+' 2025',fontsize=15)
+ax1.set_title('ATLID integrated AOD '+day_or_night[:-1]+' '+fmonth+' '+year,fontsize=15)
 
 
 
@@ -190,7 +205,7 @@ bar.ax.tick_params(labelsize=15)
 ax2.set_title('CAMS total AOD',fontsize=15)
 
 ax3.set_extent([-180, 180, -89.9, 89.9])
-bounds2 = np.linspace(-vmax,vmax,11)
+bounds2 = np.linspace(-vmax/2,vmax/2,11)
 norm2 = colors.BoundaryNorm(bounds2,ncolors=plt.colormaps['RdYlBu_r'].N,clip=True)
 im=ax3.pcolormesh(clons,clats,aod_cams-aod_atlid,cmap='RdYlBu_r',transform=ccrs.PlateCarree(),norm=norm2)
 gl = ax3.gridlines(crs=ccrs.PlateCarree(central_longitude=0), draw_labels=True,
@@ -209,7 +224,7 @@ bar.ax.tick_params(labelsize=15)
 ax3.set_title('CAMS-ATLID AOD',fontsize=15)
 
 plt.tight_layout()
-fig.savefig('figures/global_'+day_or_night+'aod_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located_filtered_uncertainty.jpg',bbox_inches='tight')
+fig.savefig('figures/global_'+day_or_night+'aod_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_'+year+'_co-located_filtered_uncertainty.jpg',bbox_inches='tight')
 
 nbins = 150
 binsc = np.linspace(0,np.nanmax(aod_cams.flatten()),nbins)
@@ -266,10 +281,10 @@ ax1.set_xlabel('AOD',fontsize=15)
 ax1.set_ylabel('Counts',fontsize=15)
 
 ax1.tick_params(labelsize=12)
-ax1.set_title(day_or_night[:-1]+' '+fmonth+' 2025',fontsize=15)
+ax1.set_title(day_or_night[:-1]+' '+fmonth+' '+year,fontsize=15)
 ax1.legend(frameon=False,fontsize=15)
 
-fig.savefig('figures/histograms_CAMS_ATLID_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_2025_co-located_filtered_'+day_or_night+'uncertainty_with_modes.jpg')
+fig.savefig('figures/histograms_CAMS_ATLID_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_'+year+'_co-located_filtered_'+day_or_night+'uncertainty_with_modes.jpg')
 sys.exit()
 '''
 Cmax_index = np.argmax(histc[1:])

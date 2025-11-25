@@ -62,16 +62,17 @@ cams_data = ['sea_salt_0.03-0.5', 'sea_salt_0.5-5', 'sea_salt_5-20','dust_0.03-0
 
 
 
-month = 'march'
+month = 'december'
+year = '2024' if month == 'december' else '2025'
 ### Forecast periods
-suffix1 = '_mmr_'+month+'_2025_'
+suffix1 = '_mmr_'+month+'_'+year+'_'
 suffix2 = '.nc'
 forecast_periods = ['0','3']#,'6','9']
 
-cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_2025/'
+cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
 
 #load AOD files
-faod355 = xr.open_dataset(cams_dir+'total_aerosol_optical_depth_355nm_'+month+'_2025.nc')
+faod355 = xr.open_dataset(cams_dir+'total_aerosol_optical_depth_355nm_'+month+'_'+year+'.nc')
 all_aod355  = faod355['aod355']
 clat = faod355['latitude'].data
 clon = faod355['longitude'].data
@@ -81,7 +82,7 @@ all_forecast_period_aod = faod355['forecast_period']
 length = faod355['aod355'].shape[1]
 faod355.close()
 
-faod550 = xr.open_dataset(cams_dir+'multiple_aod_550nm_'+month+'_2025.nc') #12,60,451,900
+faod550 = xr.open_dataset(cams_dir+'multiple_aod_550nm_'+month+'_'+year+'.nc') #12,60,451,900
 all_aod550  = faod550['aod550']
 faod550.close()
 
@@ -90,11 +91,11 @@ fl137 = pd.read_csv('L137.csv')
 a_param = fl137["a [Pa]"]
 b_param = fl137["b"]
 
-fsurfp = xr.open_dataset(cams_dir+'surface_pressure_'+month+'_2025.nc') #12,60,451,900
+fsurfp = xr.open_dataset(cams_dir+'surface_pressure_'+month+'_'+year+'.nc') #12,60,451,900
 all_Pressure_s = fsurfp['sp']
 fsurfp.close()
 
-fgeop = xr.open_dataset(cams_dir+'surface_geopotential_'+month+'_2025.nc') #12,60,451,900
+fgeop = xr.open_dataset(cams_dir+'surface_geopotential_'+month+'_'+year+'.nc') #12,60,451,900
 all_Geopotential_s = fgeop['z']
 fgeop.close()
 
@@ -146,11 +147,11 @@ for lforecast_period in forecast_periods:
         for l in range(1, n_levels):
             Pressure_f[l - 1,:, :] = (Pressure_i[l-1, :, :] + Pressure_i[l, :, :]) / 2
  
-        ftemp = xr.open_dataset(cams_dir+'temperature_'+month+'_2025_'+lforecast_period+'.nc') #xxx #1,60,137,451,900
+        ftemp = xr.open_dataset(cams_dir+'temperature_'+month+'_'+year+'_'+lforecast_period+'.nc') #xxx #1,60,137,451,900
         Temperature_f = ftemp['t'][0,iff]#xxx
         ftemp.close()
  
-        fqt = xr.open_dataset(cams_dir+'specific_humidity_'+month+'_2025_'+lforecast_period+'.nc') #xxx #1,60,137,451,900
+        fqt = xr.open_dataset(cams_dir+'specific_humidity_'+month+'_'+year+'_'+lforecast_period+'.nc') #xxx #1,60,137,451,900
         SpecificHumidity_f = fqt['q'][0,iff] #xxx
         fqt.close()
  
@@ -311,5 +312,5 @@ for lforecast_period in forecast_periods:
     )
 
     filepath = os.path.join(cams_dir+'/TTcal/',
-    f"TTcal_aod355nm_per_composition_{month}_2025_{lforecast_period}.nc")
+    f"TTcal_aod355nm_per_composition_{month}_"+year+"_{lforecast_period}.nc")
     ds.to_netcdf(filepath, format="NETCDF4")
