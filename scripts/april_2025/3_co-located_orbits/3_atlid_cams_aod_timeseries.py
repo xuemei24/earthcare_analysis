@@ -46,7 +46,7 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors,projections
 
-month = 'october'
+month = 'july'
 day_or_night = 'day_'
 day_or_night = ''
 print('Month=',month,'day or night=',day_or_night)
@@ -219,7 +219,8 @@ def process_file(filen):
 
     fig_name = 'slices_regions/atlid_orbit_'+orbit_sequence+'.jpg'
     fig_title = orbit_sequence
-    projections.plot_on_orthographic(atlid_lons,atlid_lats, fig_name, fig_title,globe=my_globe)
+    projections.plot_on_orthographic(atlid_lons,atlid_lats, fig_name, fig_title,central_longitude=atlid_lons[len(atlid_lons)//2],central_latitude=atlid_lats[len(atlid_lons)//2],globe=my_globe)
+
 
 
 ebd_files = sorted(glob.glob(srcdir+'*h5'))

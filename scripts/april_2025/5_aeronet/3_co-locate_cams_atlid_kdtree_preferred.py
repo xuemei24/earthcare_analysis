@@ -13,9 +13,9 @@ def get_AOD(aod_old, wave_old, wave_new, angstrom):
     return ((wave_new / wave_old) ** (-angstrom)) * aod_old
 
 #Use this script after ATLID AOD has been processed
-month = '12'
-month2 = 'December'
-month3 = 'december'
+month = '11'
+month2 = 'November'
+month3 = 'november'
 
 year = '2024' if month3 == 'december' else '2025'
 print('month=',month2)
@@ -249,20 +249,16 @@ print('Thailand, Cambodia, Laos, Vietnam diffAOD (CAMS-AERONET)=',np.nanmean(a_c
 #-ATLID-------------------------------------------------------------------------
 file_dir = '/scratch/nld6854/earthcare/cams_data/'
 print('Month=',month3)
-df = pd.read_csv(file_dir+month3+'_'+year+'/'+year+"_"+month3+"_atlid_aeronet_co-located_100km_10atlid_per_aeronet.csv", delimiter=",")
+df = pd.read_csv(file_dir+month3+'_'+year+'/'+year+"_"+month3+"_atlid_aeronet_co-located_100km_10atlid_per_aeronet_2nd_method.csv", delimiter=",")
 
-atlid_aod = df['atlid_aod'].values
-atlid_lat = df['atlid_lat'].values
-atlid_lon = df['atlid_lon'].values
+atlid_aod = df['co_located_atlid'].values
 
 aeronet_aod = df['aeronet_aod'].values
-aeronet_lat = df['aeronet_lat'].values
-aeronet_lon = df['aeronet_lon'].values
+aeronet_lat = df['lat'].values
+aeronet_lon = df['lon'].values
 
 mask = ~np.isnan(atlid_aod) & ~np.isnan(aeronet_aod)
 atlid_aod = atlid_aod[mask]
-atlid_lat = atlid_lat[mask]
-atlid_lon = atlid_lon[mask]
 
 aeronet_aod = aeronet_aod[mask]
 aeronet_lat = aeronet_lat[mask]
@@ -386,6 +382,8 @@ print('ATLID-AERONET mean=',np.nanmean(atl_aod[mask]-aer_aod[mask]))
 print('(ATLID-AERONET)/AERONET mean=',np.nanmean((atl_aod[mask]-aer_aod[mask])/aer_aod[mask]))
 print('AERONET,ATLID NMB=',statistics.normalized_mean_bias(atl_aod[mask],aer_aod[mask]))
 print('RMSE=',np.sqrt(np.nanmean((aer_aod[mask]-atl_aod[mask])**2)))
+print('ATLID std=',np.std(atl_aod[mask]))
+print('AERONET std=',np.std(aer_aod[mask]))
 
 
 r, p_value = pearsonr(aer_aod[mask],atl_aod[mask])

@@ -13,6 +13,7 @@
 *temp*
 *test*
 *2025*txt
+*aa*
 atlid_cams_ext.txt
 ectools
 3may.py
@@ -20,6 +21,8 @@ ectools
 april_2025/plotting_tools/__pycache__/
 not_used/
 figures
+interpolate_mmr*
+ne_110m_admin_0_countries/*
 
 scripts/april_2025/1_global_aod/histograms/
 scripts/april_2025/1_global_aod/march.py

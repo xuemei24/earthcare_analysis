@@ -49,7 +49,7 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors,projections
 
-month = 'october'
+month = 'march'
 forecast_period = '3'
 
 year = '2024' if month == 'december' else '2025'
@@ -63,7 +63,7 @@ ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/EC
 
 cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC,'classification_low_resolution')
 
-cams_files = sorted(glob.glob(srcdir+'*7686A*nc'))
+cams_files = sorted(glob.glob(srcdir+'*nc'))
 def atlid_cams_ext(cams_file):
     filen = cams_file.replace('CAMS','EBD')
     filen = filen.replace('nc','h5')
@@ -175,6 +175,18 @@ def atlid_cams_ext(cams_file):
 
     fig,ax1 = plt.subplots(1,figsize=(10,8))
     c4 = ax1.hist2d(atlid_extcoe3,cams_interp_varp3,bins=[x_bins, y_bins],cmap=cmap)#, norm=LogNorm())
+
+    x,y = atlid_extcoe3,cams_interp_varp3
+    mask = (np.isfinite(x) & np.isfinite(y) & (x > 0) & (y > 0))
+    x_fit,y_fit = x[mask],y[mask]
+    a, b = np.polyfit(x_fit, y_fit, 1)
+    y_pred = a * x_fit + b
+    rmse = np.sqrt(np.mean((y_fit - y_pred)**2))
+    x_line = np.logspace(np.log10(5e-6),np.log10(1e-3),200)
+    y_line = a * x_line + b
+
+    ax1.plot(x_line, y_line,color="red",linewidth=2,label=(f"$y = {a:.2f}x + {b:.2e}$\n"f"RMSE = {rmse:.2e}"))
+
     cb=fig.colorbar(c4[3], ax=ax1, label='')
     cb.ax.tick_params(labelsize=15)
     ax1.set_xlabel('ATLID extinction coefficient',fontsize=15)
@@ -185,6 +197,11 @@ def atlid_cams_ext(cams_file):
     ax1.set_xlim(5e-6,1e-3)
     ax1.set_ylim(5e-6,1e-3)
 
+    ax1.set_axisbelow(False)  # grid on top of artists
+
+    ax1.grid(True,which="both",color='gray',linestyle="--",linewidth=0.7,alpha=0.7)
+
+    ax1.legend(frameon=False)
     fig.savefig('slices_regions/atlid_vs_cams_extinction_'+orbit_sequence+'_correlation_hist.jpg')
     plt.close(fig)
 
@@ -194,7 +211,8 @@ def atlid_cams_ext(cams_file):
 
     fig_name = 'slices_regions/atlid_orbit_'+orbit_sequence+'.jpg'
     fig_title = orbit_sequence
-    projections.plot_on_orthographic(atlid_lons,atlid_lats, fig_name, fig_title,central_longitude=atlid_lons[len(atlid_lons)//2],central_latitude=atlid_lats[len(atlid_lons)//2],globe=my_globe)
+    print(atlid_lons,atlid_lats)
+    projections.plot_on_orthographic(atlid_lons,atlid_lats, fig_name, fig_title,central_longitude=np.nanmean(atlid_lons),central_latitude=atlid_lats[np.nanmean(atlid_lats)],globe=my_globe)
 
 
 with Pool(processes=8) as pool:  # adjust number of processes

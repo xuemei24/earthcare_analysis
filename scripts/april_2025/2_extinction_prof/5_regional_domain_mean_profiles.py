@@ -11,8 +11,8 @@ import os
 script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), script_path)))
 
-month='october'
-fmonth='October'
+month='july'
+fmonth='July'
 vname = 'extinction_coefficient'
 figname = 'extinction_coefficient'
 
@@ -26,12 +26,15 @@ print(file_cams)
 # Define region(s) as dictionary:
 # Name : [lat_min, lat_max, lon_min, lon_max]
 regions = {
-    "North_America"  : [ 26, 60, -120, -76],
-    "North_Atlantic" : [ 13, 37,  -60, -19],
-    "North_Africa"   : [ 13, 37,   -4,  40],
+    #"North_America"  : [ 26, 60, -120, -76],
+    #"North_Atlantic" : [ 13, 37,  -60, -19],
+    #"North_Africa"   : [ 13, 37,   -4,  40],
     "East_China"     : [ 20, 40,  105, 122],
-    "South_Africa"   : [-29, -3,   10,  40],
+    #"South_Africa"   : [-29, -3,   10,  40],
     "Southern_Ocean" : [-70,-40, -180, 180],
+    "40N_North"      : [ 40, 70, -180, 180],
+    "India"          : [  8, 30,   68,  88],
+    "Tropical_Africa": [-10, 15,    9,  37]
 }
 
 # ============================================================
@@ -52,35 +55,56 @@ height = ds_cams["height"]
 # HELPER FUNCTION: regional mean extinction profile
 # ============================================================
 
-def regional_mean_profile_weighted(ext, lat, lon,
-                                   lat_min, lat_max, lon_min, lon_max):
+def regional_mean_std_profile_weighted(ext, lat, lon,
+                                       lat_min, lat_max, lon_min, lon_max):
     """
-    Compute area-weighted mean extinction profile over a region.
-    ext: (lat, lon, height)
+    Compute area-weighted mean and std extinction profile for a region.
+    ext: xarray DataArray with dims (latitude, longitude, height)
     """
+    import numpy as np
+    import xarray as xr
 
-    # Select region
+    # --- 1. Select region ---
     region = ext.sel(
         latitude=slice(lat_min, lat_max),
         longitude=slice(lon_min, lon_max)
     )
 
-    # Latitude weights
+    # --- 2. Latitude weights ---
     lat_rad = np.deg2rad(region.latitude.values)
-    weights = np.cos(lat_rad)
+    w_lat = np.cos(lat_rad)
+    w_lat = w_lat / np.nansum(w_lat)   # normalize
 
-    # Normalize
-    weights = weights / np.nansum(weights)
+    # --- 3. Create a weight array matching region dims ---
+    # shape: (lat, lon, height)
+    w3d = xr.DataArray(
+        w_lat[:, None, None] * np.ones((1, region.longitude.size, region.height.size)),
+        dims=("latitude", "longitude", "height"),
+        coords={
+            "latitude": region.latitude,
+            "longitude": region.longitude,
+            "height": region.height,
+        }
+    )
 
-    # Expand to 3D: (lat, 1, 1) so it broadcasts over lon & height
-    w3d = weights[:, np.newaxis, np.newaxis]
-
-    # Weighted average:
-    # Multiply by weights, mean over lon, sum over lat
+    # --- 4. Weighted mean ---
     weighted = region * w3d
-    prof = weighted.mean(dim="longitude", skipna=True).sum(dim="latitude", skipna=True)
+    mean_profile = (
+        weighted.mean(dim="longitude", skipna=True)
+               .sum(dim="latitude", skipna=True)
+    )
 
-    return prof
+    # --- 5. Weighted std ---
+    diff2 = (region - mean_profile)**2
+    weighted_diff2 = diff2 * w3d
+
+    std_profile = (
+        weighted_diff2.mean(dim="longitude", skipna=True)
+                      .sum(dim="latitude", skipna=True)
+                      .pipe(np.sqrt)
+    )
+
+    return mean_profile, std_profile
 
 # ============================================================
 # LOOP OVER REGIONS AND COMPUTE MEAN PROFILES
@@ -91,11 +115,11 @@ profiles = {}
 for name, (lat_min, lat_max, lon_min, lon_max) in regions.items():
     print(f"Processing region: {name}")
 
-    prof_cams  = regional_mean_profile_weighted(ext_cams,  lat, lon, lat_min, lat_max, lon_min, lon_max)
-    prof_atlid = regional_mean_profile_weighted(ext_atlid, lat, lon, lat_min, lat_max, lon_min, lon_max)
+    prof_cams,std_cams  = regional_mean_std_profile_weighted(ext_cams,  lat, lon, lat_min, lat_max, lon_min, lon_max)
+    prof_atlid,std_atlid = regional_mean_std_profile_weighted(ext_atlid, lat, lon, lat_min, lat_max, lon_min, lon_max)
     diff = ext_cams.copy()
     diff.values = ext_cams.values-ext_atlid.values 
-    prof_diff  = regional_mean_profile_weighted(diff,      lat, lon, lat_min, lat_max, lon_min, lon_max)
+    prof_diff,_  = regional_mean_std_profile_weighted(diff,      lat, lon, lat_min, lat_max, lon_min, lon_max)
 
     # Compute regional mean AOD (simple vertical integral)
     # ext is m^-1, height is meters ⇒ integrate along height dimension
@@ -111,18 +135,20 @@ for name, (lat_min, lat_max, lon_min, lon_max) in regions.items():
 
     fig,ax = plt.subplots(1,figsize=(4,5))
     ax.plot(prof_cams,height/1000,'r-',label='CAMS')
+    ax.fill_betweenx(height/1000,prof_cams-std_cams,prof_cams+std_cams,color='red',edgecolor='none',alpha=0.3)
     ax.plot(prof_atlid,height/1000,'k-',label='ATLID')
+    ax.fill_betweenx(height/1000,prof_atlid-std_atlid,prof_atlid+std_atlid,color='black',edgecolor='none',alpha=0.3)
     ax.plot(prof_diff.values,height/1000,'g--',label='CAMS-ATLID')
     ax.axvline(x=0,color='lightgray',alpha=0.5)
     ax.legend(frameon=False, fontsize=15)
     ax.set_title(name,fontsize=15)
     ax.set_xlabel('Extinction coefficient / m$^{-1}$',fontsize=15)
     ax.set_ylabel('Altitude / km', fontsize=15)
-    ax.set_ylim(0,20)
+    ax.set_ylim(1,20)
     ax.tick_params(axis='x', labelsize=15)
     ax.tick_params(axis='y', labelsize=15)
     fig.tight_layout()
-    fig.savefig(name+'_domain_mean_ext_prof.jpg')
+    fig.savefig(name+'_domain_mean_ext_prof_'+month+'.jpg')
 
 # ============================================================
 # PRINT SUMMARY

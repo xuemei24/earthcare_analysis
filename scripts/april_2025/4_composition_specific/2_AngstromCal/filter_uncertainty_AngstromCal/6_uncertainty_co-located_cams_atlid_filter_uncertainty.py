@@ -19,8 +19,8 @@ sys.path.append(script_path)
 from plotting_tools import statistics
 
 # Load your dataset (assuming it's a CSV with 'lat', 'lon', 'aod')
-month = 'january'
-fmonth = 'January'
+month = 'november'
+fmonth = 'November'
 print('Month=',month)
 #simple_classification
 which_aerosol='dust'

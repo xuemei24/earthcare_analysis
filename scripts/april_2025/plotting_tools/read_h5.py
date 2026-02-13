@@ -365,4 +365,3 @@ def get_aod_snr(file_path,aer_index):
         print(f"Error processing file {file_path}: {e}")
         return None
 
-

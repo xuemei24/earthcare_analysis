@@ -49,7 +49,7 @@ from pathlib import Path
 
 from multiprocessing import Pool
 
-month = 'december'
+month = 'november'
 forecast_period = '3'
 
 year = '2024' if month == 'december' else '2025'

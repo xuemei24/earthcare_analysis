@@ -1,0 +1,394 @@
+year= 2025
+month= January
+Month= january
+01 2025 diff_ATLID_Aqua Mean= continent
+Africa           0.039546
+Asia            -0.051351
+Europe          -0.009861
+North America    0.002274
+Oceania          0.002723
+South America    0.072261
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.014087
+Asia            -0.034814
+Europe          -0.028307
+North America   -0.004191
+Oceania          0.022020
+South America    0.082095
+Name: diff_ATLID_Aqua, dtype: float64
+01 2025 diff_ATLID_VIIRS Mean= continent
+Africa          -0.006374
+Asia            -0.029444
+Europe          -0.015403
+North America   -0.016687
+Oceania         -0.020623
+South America    0.031012
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa          -0.034723
+Asia            -0.033931
+Europe          -0.005372
+North America   -0.018587
+Oceania          0.001496
+South America    0.040479
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= February
+Month= february
+02 2025 diff_ATLID_Aqua Mean= continent
+Africa           0.010992
+Asia            -0.111168
+Europe          -0.019419
+North America   -0.011445
+Oceania          0.001920
+South America    0.058615
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.065526
+Asia            -0.013873
+Europe          -0.027551
+North America   -0.024662
+Oceania         -0.000352
+South America    0.022221
+Name: diff_ATLID_Aqua, dtype: float64
+02 2025 diff_ATLID_VIIRS Mean= continent
+Africa          -0.058176
+Asia            -0.024949
+Europe          -0.026538
+North America   -0.016420
+Oceania         -0.014692
+South America    0.034239
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa          -0.057849
+Asia             0.009195
+Europe          -0.015197
+North America   -0.007104
+Oceania         -0.004760
+South America    0.015813
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= March
+Month= march
+03 2025 diff_ATLID_Aqua Mean= continent
+Africa           0.017880
+Asia            -0.094208
+Europe           0.026344
+North America   -0.013110
+Oceania         -0.013943
+South America    0.027855
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.030270
+Asia            -0.055910
+Europe           0.034635
+North America   -0.013447
+Oceania         -0.009377
+South America    0.036741
+Name: diff_ATLID_Aqua, dtype: float64
+03 2025 diff_ATLID_VIIRS Mean= continent
+Africa          -0.077071
+Asia            -0.070652
+Europe          -0.026472
+North America   -0.012068
+Oceania          0.009483
+South America    0.000393
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa          -0.069116
+Asia            -0.084137
+Europe          -0.026375
+North America   -0.022938
+Oceania          0.019998
+South America    0.018276
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= April
+Month= april
+04 2025 diff_ATLID_Aqua Mean= continent
+Africa          -0.012387
+Asia            -0.087791
+Europe           0.001683
+North America    0.011951
+Oceania         -0.026007
+South America   -0.073524
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.026917
+Asia            -0.047007
+Europe          -0.005801
+North America    0.000280
+Oceania         -0.050667
+South America   -0.027327
+Name: diff_ATLID_Aqua, dtype: float64
+04 2025 diff_ATLID_VIIRS Mean= continent
+Africa          -0.066730
+Asia            -0.112767
+Europe          -0.004570
+North America   -0.006935
+Oceania         -0.022085
+South America   -0.092480
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa          -0.065729
+Asia            -0.054741
+Europe          -0.013673
+North America   -0.023954
+Oceania         -0.003935
+South America   -0.043333
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= May
+Month= may
+05 2025 diff_ATLID_Aqua Mean= continent
+Africa           0.003386
+Asia            -0.095370
+Europe           0.013247
+North America   -0.021588
+Oceania         -0.007806
+South America   -0.004130
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.003077
+Asia            -0.092912
+Europe           0.004713
+North America   -0.020027
+Oceania         -0.007806
+South America    0.013226
+Name: diff_ATLID_Aqua, dtype: float64
+05 2025 diff_ATLID_VIIRS Mean= continent
+Africa          -0.007560
+Asia            -0.166295
+Europe          -0.045255
+North America   -0.054533
+Oceania          0.028317
+South America   -0.002076
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa           0.012906
+Asia            -0.119403
+Europe          -0.044757
+North America   -0.051830
+Oceania          0.024220
+South America   -0.015164
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= June
+Month= june
+06 2025 diff_ATLID_Aqua Mean= continent
+Africa          -0.008328
+Asia            -0.121597
+Europe           0.022301
+North America   -0.005298
+Oceania          0.027837
+South America   -0.039695
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.028678
+Asia            -0.103459
+Europe           0.012784
+North America   -0.002587
+Oceania          0.026718
+South America   -0.024299
+Name: diff_ATLID_Aqua, dtype: float64
+06 2025 diff_ATLID_VIIRS Mean= continent
+Africa          -0.081207
+Asia            -0.080055
+Europe           0.008557
+North America   -0.041937
+Oceania          0.019882
+South America   -0.023864
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa          -0.052749
+Asia            -0.095157
+Europe           0.003573
+North America   -0.034636
+Oceania          0.012956
+South America   -0.023829
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= July
+Month= july
+07 2025 diff_ATLID_Aqua Mean= continent
+Africa           0.059527
+Asia            -0.104660
+Europe          -0.005271
+North America   -0.035686
+Oceania          0.005761
+South America    0.071187
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.079427
+Asia            -0.045419
+Europe          -0.003969
+North America   -0.025728
+Oceania          0.009459
+South America    0.068723
+Name: diff_ATLID_Aqua, dtype: float64
+07 2025 diff_ATLID_VIIRS Mean= continent
+Africa          -0.052465
+Asia            -0.017895
+Europe          -0.037974
+North America   -0.120098
+Oceania         -0.019455
+South America   -0.018444
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa          -0.049460
+Asia            -0.007901
+Europe          -0.022945
+North America   -0.064764
+Oceania         -0.012846
+South America   -0.002442
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= August
+Month= august
+08 2025 diff_ATLID_Aqua Mean= continent
+Africa           0.041967
+Asia            -0.093728
+Europe           0.017280
+North America    0.002633
+Oceania         -0.089494
+South America   -0.002515
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.047752
+Asia            -0.095632
+Europe           0.024874
+North America    0.004906
+Oceania         -0.090249
+South America   -0.024253
+Name: diff_ATLID_Aqua, dtype: float64
+08 2025 diff_ATLID_VIIRS Mean= continent
+Africa          -0.041848
+Asia            -0.106957
+Europe          -0.020281
+North America   -0.027236
+Oceania         -0.020681
+South America    0.010158
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa          -0.030859
+Asia            -0.062133
+Europe          -0.004977
+North America   -0.035422
+Oceania         -0.030303
+South America    0.016430
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= September
+Month= september
+09 2025 diff_ATLID_Aqua Mean= continent
+Africa           0.003038
+Asia            -0.050777
+Europe           0.005478
+North America    0.032005
+Oceania          0.164799
+South America    0.119272
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.118292
+Asia            -0.046354
+Europe           0.004261
+North America    0.029137
+Oceania          0.164799
+South America    0.121304
+Name: diff_ATLID_Aqua, dtype: float64
+09 2025 diff_ATLID_VIIRS Mean= continent
+Africa           0.006551
+Asia            -0.117756
+Europe          -0.052398
+North America   -0.032248
+Oceania         -0.003396
+South America    0.007824
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa           0.005116
+Asia            -0.059335
+Europe          -0.046099
+North America   -0.026384
+Oceania         -0.019880
+South America    0.019585
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= October
+Month= october
+10 2025 diff_ATLID_Aqua Mean= continent
+Africa           0.157225
+Asia            -0.027682
+Europe           0.007842
+North America    0.005306
+South America    0.013849
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.227278
+Asia             0.026902
+Europe           0.015785
+North America   -0.002603
+South America   -0.025996
+Name: diff_ATLID_Aqua, dtype: float64
+10 2025 diff_ATLID_VIIRS Mean= continent
+Africa           0.051553
+Asia            -0.096969
+Europe           0.001239
+North America   -0.012940
+Oceania          0.004479
+South America    0.029286
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa           0.034115
+Asia            -0.009526
+Europe          -0.004337
+North America   -0.017359
+Oceania          0.009987
+South America    0.019282
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2025
+month= November
+Month= november
+11 2025 diff_ATLID_Aqua Mean= continent
+Africa           0.053005
+Asia            -0.073250
+Europe          -0.027364
+North America    0.020186
+Oceania          0.035868
+South America    0.051156
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.042394
+Asia            -0.057333
+Europe          -0.029036
+North America    0.004099
+Oceania          0.035868
+South America    0.104948
+Name: diff_ATLID_Aqua, dtype: float64
+11 2025 diff_ATLID_VIIRS Mean= continent
+Africa          -0.145869
+Asia            -0.101598
+Europe          -0.037250
+North America   -0.008043
+Oceania         -0.120668
+South America   -0.039918
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa          -0.109008
+Asia            -0.042415
+Europe          -0.038405
+North America   -0.019322
+Oceania         -0.078336
+South America   -0.045103
+Name: diff_ATLID_VIIRS, dtype: float64
+year= 2024
+month= December
+Month= december
+12 2024 diff_ATLID_Aqua Mean= continent
+Africa           0.062884
+Asia            -0.131270
+Europe          -0.013494
+North America    0.006508
+Oceania         -0.019699
+South America    0.055630
+Name: diff_ATLID_Aqua, dtype: float64 Median= continent
+Africa           0.026818
+Asia            -0.090560
+Europe          -0.015481
+North America   -0.004552
+Oceania          0.008543
+South America    0.056666
+Name: diff_ATLID_Aqua, dtype: float64
+12 2024 diff_ATLID_VIIRS Mean= continent
+Africa          -0.024040
+Asia            -0.113245
+Europe          -0.019015
+North America   -0.023628
+Oceania         -0.064824
+South America   -0.030931
+Name: diff_ATLID_VIIRS, dtype: float64 Median= continent
+Africa          -0.067229
+Asia            -0.118380
+Europe          -0.017635
+North America   -0.020734
+Oceania         -0.042504
+South America   -0.033333
+

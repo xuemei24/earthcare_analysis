@@ -46,9 +46,9 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors,projections
 
-month = 'december'
+month = 'november'
 which_aerosol = 'dust_om'
-#which_aerosol = 'ssa'
+which_aerosol = 'ssa'
 fname = 'sea_salt' if which_aerosol == 'ssa' else 'dust'
 tcs   = [11] if which_aerosol == 'ssa' else [10,13,14,15,27] #12=continental pollution?
 

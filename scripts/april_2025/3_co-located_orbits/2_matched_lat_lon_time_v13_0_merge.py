@@ -1,7 +1,7 @@
 import xarray as xr
 
 # List of NetCDF files
-month = 'december'
+month = 'november'
 year = '2024' if month == 'december' else '2025'
 cams_dir='/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
 file_list = [cams_dir+"specific_cloud_liquid_water_content_"+month+"_"+year+"_0.nc",cams_dir+"specific_cloud_liquid_water_content_"+month+"_"+year+"_3.nc", cams_dir+"specific_cloud_liquid_water_content_"+month+"_"+year+"_6.nc", cams_dir+"specific_cloud_liquid_water_content_"+month+"_"+year+"_9.nc"]
