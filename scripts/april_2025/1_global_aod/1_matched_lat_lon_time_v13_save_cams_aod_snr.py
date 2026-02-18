@@ -40,10 +40,11 @@ from matplotlib.colors import ListedColormap, BoundaryNorm
 
 script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
 sys.path.append(script_path)
+os.environ['MAAP_credentials'] = '/home/nld6854/earthcare_scripts/scripts/april_2025/ectools/ectools/maap_credentials.txt'
 
-from ectools import ecio
-from ectools import ecplot as ecplt
-from ectools import colormaps
+from ectools.ectools import ecio
+from ectools.ectools import ecplot as ecplt
+from ectools.ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors
 
 month = 'may'

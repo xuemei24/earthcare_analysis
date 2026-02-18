@@ -233,21 +233,9 @@ binsc = np.linspace(0,np.nanmax(aod_cams.flatten()),nbins)
 histc,binsc = np.histogram(aod_cams,bins=binsc,density=False)
 bcc = 0.5*(binsc[1:] + binsc[:-1])
 
-binsa = np.linspace(0,np.nanmax(aod_atlid),nbins)
+binsa = np.linspace(0,np.nanmax(aod_cams),nbins)
 hista,binsa = np.histogram(aod_atlid,bins=binsa,density=False)
 bca = 0.5*(binsa[1:] + binsa[:-1])
-
-binsa0 = np.linspace(0,np.nanmax(a_aod),nbins)
-hista0,binsa0 = np.histogram(a_aod,bins=binsa0,density=False)
-bca0 = 0.5*(binsa0[1:] + binsa0[:-1])
-
-binsa_ = np.linspace(0,np.nanmax(aod_atlid),nbins)
-hista_,binsa_ = np.histogram(aod_atlid,bins=binsa_,density=True)
-bca_ = 0.5*(binsa_[1:] + binsa_[:-1])
-
-binsa0_ = np.linspace(0,np.nanmax(a_aod),nbins)
-hista0_,binsa0_ = np.histogram(a_aod,bins=binsa0_,density=True)
-bca0_ = 0.5*(binsa0_[1:] + binsa0_[:-1])
 
 a_errors = np.sqrt(hista)
 c_errors = np.sqrt(histc)

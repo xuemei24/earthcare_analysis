@@ -1,6 +1,6 @@
 import numpy as np
 import glob
-from ectools import ecio
+from ectools.ectools import ecio
 
 select_height=-241
 
@@ -216,7 +216,7 @@ def get_aod(file_path,aer_index):
 
             reversed_data = data[:,::-1]
             reversed_height = height[:,::-1]
-            aod = np.trapz(reversed_data,x=reversed_height,axis=1)
+            aod = np.trapezoid(reversed_data,x=reversed_height,axis=1)
         return aod, lat, lon,time
     except Exception as e:
         print(f"Error processing file {file_path}: {e}")
@@ -359,7 +359,7 @@ def get_aod_snr(file_path,aer_index):
 
             reversed_data = data[:,::-1]
             reversed_height = height[:,::-1]
-            aod = np.trapz(reversed_data,x=reversed_height,axis=1)
+            aod = np.trapezoid(reversed_data,x=reversed_height,axis=1)
         return aod, lat, lon,time
     except Exception as e:
         print(f"Error processing file {file_path}: {e}")

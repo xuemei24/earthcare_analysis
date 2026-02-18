@@ -44,9 +44,9 @@ from multiprocessing import Pool
 script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
 sys.path.append(script_path)
 
-from ectools import ecio
-from ectools import ecplot as ecplt
-from ectools import colormaps
+from ectools.ectools_edited import ecio
+from ectools.ectools_edited import ecplot as ecplt
+from ectools.ectools_edited import colormaps
 from plotting_tools import read_h5,ATC_category_colors,projections
 
 month = 'march'
@@ -59,11 +59,11 @@ cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
 srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/CAMS/'
 
 cmap = ecplt.colormaps.chiljet2
-ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
+ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5')
 
 cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC,'classification_low_resolution')
 
-cams_files = sorted(glob.glob(srcdir+'*nc'))
+cams_files = sorted(glob.glob(srcdir+'*nc'))[:10]
 def atlid_cams_ext(cams_file):
     filen = cams_file.replace('CAMS','EBD')
     filen = filen.replace('nc','h5')

@@ -6,6 +6,7 @@
 !aerosol_ifs_rrtm_49R1_20230119.nc
 
 *jpg
+*png
 *log*
 *job
 .ipynb_checkpoints
@@ -22,7 +23,11 @@ april_2025/plotting_tools/__pycache__/
 not_used/
 figures
 interpolate_mmr*
-ne_110m_admin_0_countries/*
+scripts/april_2025/5_aeronet/aeronet_vs_modis/ne_110m_admin_0_countries/
+scripts/april_2025/5_aeronet/modis_vs_atlid/ne_110m_admin_0_countries/
+scripts/april_2025/5_aeronet/ne_110m_admin_0_countries/
+scripts/april_2025/3_co-located_orbits/curtain_plots/*csv
+*ipynb
 
 scripts/april_2025/1_global_aod/histograms/
 scripts/april_2025/1_global_aod/march.py

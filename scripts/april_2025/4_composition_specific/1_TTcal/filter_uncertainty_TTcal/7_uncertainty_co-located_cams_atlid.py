@@ -199,25 +199,13 @@ plt.tight_layout()
 fig.savefig('figures/global_aod_'+which_aerosol+'_'+str(reso)+'deg_binned_'+mean_or_std+'_'+month+'_'+year+'_co-located_filtered_uncertainty_TTcal_snr_gr_2.jpg',bbox_inches='tight')
 
 nbins = 150
-binsc = np.linspace(0,np.nanmax(aod_cams.flatten()),nbins)
+binsc = np.linspace(0,np.nanmax(aod_atlid),nbins)
 histc,binsc = np.histogram(aod_cams,bins=binsc,density=False)
 bcc = 0.5*(binsc[1:] + binsc[:-1])
 
 binsa = np.linspace(0,np.nanmax(aod_atlid),nbins)
 hista,binsa = np.histogram(aod_atlid,bins=binsa,density=False)
 bca = 0.5*(binsa[1:] + binsa[:-1])
-
-binsa0 = np.linspace(0,np.nanmax(a_aod),nbins)
-hista0,binsa0 = np.histogram(a_aod,bins=binsa0,density=False)
-bca0 = 0.5*(binsa0[1:] + binsa0[:-1])
-
-binsa_ = np.linspace(0,np.nanmax(aod_atlid),nbins)
-hista_,binsa_ = np.histogram(aod_atlid,bins=binsa_,density=True)
-bca_ = 0.5*(binsa_[1:] + binsa_[:-1])
-
-binsa0_ = np.linspace(0,np.nanmax(a_aod),nbins)
-hista0_,binsa0_ = np.histogram(a_aod,bins=binsa0_,density=True)
-bca0_ = 0.5*(binsa0_[1:] + binsa0_[:-1])
 
 #fig,(ax1,ax2,ax3) = plt.subplots(1,3,figsize=(15,5),gridspec_kw={'width_ratios': [2, 1, 1]},sharey=False)
 fig,ax1 = plt.subplots(1,figsize=(6,5))

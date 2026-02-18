@@ -7,6 +7,11 @@ from scipy.stats import binned_statistic_2d,pearsonr
 script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
 sys.path.append(script_path)
 from plotting_tools import statistics
+import matplotlib.pyplot as plt
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
+import matplotlib.colors as colors
+
 
 def get_AOD(aod_old, wave_old, wave_new, angstrom):
     print('aod_old>0',aod_old[aod_old>0], 'wave_old',wave_old, 'wave_new',wave_new, 'angstrom>0',angstrom[angstrom>0])
@@ -61,11 +66,6 @@ yearly_avg = (
 df_final = yearly_avg
 print(f"Number of sites with yearly data: {len(df_final)}")
 aod = df_final['AOD_355nm']
-
-import matplotlib.pyplot as plt
-import cartopy.crs as ccrs
-import cartopy.feature as cfeature
-import matplotlib.colors as colors
 
 # --- Load your DataFrame ---
 # Make sure df_final is ready and contains:
@@ -212,7 +212,7 @@ gl.xlabel_style = {'size': 15}
 gl.ylabel_style = {'size': 15}
 
 # Plot AOD values
-bounds = np.linspace(-0.5,0.5,11)
+bounds = np.linspace(-0.2,0.2,11)
 scatter = ax3.scatter(
     df_final['Site_Longitude(Degrees)'],
     df_final['Site_Latitude(Degrees)'],
@@ -266,31 +266,13 @@ print('Thailand, Cambodia, Laos, Vietnam diffAOD (CAMS-AERONET)=',np.nanmean(a_c
 #-ATLID-------------------------------------------------------------------------
 file_dir = '/scratch/nld6854/earthcare/cams_data/'
 
-# Load ATLID data for all months
-atlid_dfs = []
-for month, month3 in zip(months, month_names_lower):
-    try:
-        df_atlid = pd.read_csv(
-            f'{file_dir}{month3}_{year}/{year}_{month3}_atlid_aeronet_co-located_100km_10atlid_per_aeronet_2nd_method.csv',
-            delimiter=","
-        )
-        atlid_dfs.append(df_atlid)
-    except FileNotFoundError:
-        print(f"Warning: ATLID file not found for {month3} {year}")
-        continue
+df_atlid_yearly = pd.read_csv(f'{file_dir}122024-112025_detailed_yearly_atlid_aeronet_detailed_matches.csv')
 
-# Combine and average ATLID data
-df_atlid_all = pd.concat(atlid_dfs, ignore_index=True)
-df_atlid_yearly = (
-    df_atlid_all.groupby(['lat', 'lon'])
-    .agg({'co_located_atlid': np.nanmean, 'aeronet_aod': np.nanmean})
-    .reset_index())
-
-atlid_aod = df_atlid_yearly['co_located_atlid'].values
+atlid_aod = df_atlid_yearly['atlid_aod'].values
 
 aeronet_aod = df_atlid_yearly['aeronet_aod'].values
-aeronet_lat = df_atlid_yearly['lat'].values
-aeronet_lon = df_atlid_yearly['lon'].values
+aeronet_lat = df_atlid_yearly['aeronet_lat'].values
+aeronet_lon = df_atlid_yearly['aeronet_lon'].values
 
 mask = ~np.isnan(atlid_aod) & ~np.isnan(aeronet_aod)
 atlid_aod = atlid_aod[mask]
@@ -301,13 +283,10 @@ aeronet_lon = aeronet_lon[mask]
 
 lat,lon,aer_aod,atl_aod = [],[],[],[]
 for ij in np.unique(aeronet_lat):
-    print(aeronet_lon[aeronet_lat==ij])
     lon.append(aeronet_lon[aeronet_lat==ij][0])
     lat.append(ij)
     aer_aod.append(np.nanmean(aeronet_aod[aeronet_lat==ij]))
     atl_aod.append(np.nanmean(atlid_aod[aeronet_lat==ij]))
-
-print(lat,lon,aer_aod,atl_aod)
 
 fig,(ax1,ax2,ax3)=plt.subplots(3,1,figsize=(20,36),subplot_kw=dict(projection=ccrs.PlateCarree()))
 #plt.figure(figsize=(6,3))
@@ -408,7 +387,7 @@ plt.tight_layout()
 fig.savefig('global_AERONET_ATLID_aod_122024-112025_100km.jpg',bbox_inches='tight')
 
 nbins = 150
-binsc = np.linspace(0,np.nanmax(aer_aod.flatten()),nbins)
+binsc = np.linspace(0,np.nanmax(atl_aod.flatten()),nbins)
 histc,binsc = np.histogram(aer_aod,bins=binsc,density=False)
 bcc = 0.5*(binsc[1:] + binsc[:-1])
 
@@ -451,7 +430,7 @@ ax1.set_xlim(1e-3,2)
 ax1.set_xscale('log')
 
 ax1.set_xlabel('AOD',fontsize=15)
-ax1.set_ylabel('Counts',fontsize=15)
+ax1.set_ylabel('Density',fontsize=15)
 
 ax1.tick_params(labelsize=12)
 ax1.set_title('Dec 2024 - Nov 2025',fontsize=15)
