@@ -62,13 +62,20 @@ lat_max = 33
 lon_min = 70.8
 lon_max = 89.3
 fname = 'India'
-'''
 
 lat_min = 44
 lat_max = 47
 lon_min = -73
 lon_max = -70
 fname = 'Western_America'
+'''
+
+lat_min = 17
+lat_max = 20
+lon_min = 71
+lon_max = 75
+fname = 'India_Pune'
+
 f_regional = sel_files(ebd_files,lat_min,lat_max,lon_min,lon_max)
 #np.savetxt('selected_files_Greenland.txt',np.array(f_regional),delimiter=',')
 

@@ -15,12 +15,13 @@ import matplotlib.colors as colors
 import sys
 import os
 script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), script_path)))
+sys.path.append(script_path)
+os.environ['MAAP_credentials'] = '/home/nld6854/earthcare_scripts/scripts/april_2025/ectools/ectools/maap_credentials.txt'
 
-from ectools import ecio
-from ectools import ecplot as ecplt
-from ectools import colormaps
-from plotting_tools import read_h5,ATC_category_colors
+from ectools.ectools_edited import ecio
+from ectools.ectools_edited import ecplot as ecplt
+from ectools.ectools_edited import colormaps
+from plotting_tools import read_h5
 
 
 def landsea_mean(var):
@@ -31,8 +32,8 @@ def landsea_mean(var):
     print('not weighted by area')
     return land,sea
 
-month='november'
-fmonth='November'
+month='january'#'february'#'january'
+fmonth='January'#'February'#'January'
 vname = 'extinction_coefficient'
 figname = 'extinction_coefficient'
 
@@ -112,6 +113,7 @@ ax3.set_ylabel('Altitude / km',fontsize=15)
 plt.tight_layout()
 fig.savefig('time_lat_lon_co_located_zonal_nanmean_extinction_coefficient_'+figname+'_2deg_mean_'+month+'_'+year+'.jpg',bbox_inches='tight')
 
+sys.exit()
 lon_bins = np.arange(-180.1, 180.1, 2)
 lat_cams,cams_hp = np.meshgrid(lat_cams,cams_h)
 

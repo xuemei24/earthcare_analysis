@@ -76,7 +76,7 @@ for month,month2,fmonth in zip(months,month2s,fmonths):
     year = '2024' if month == 'december' else '2025'
     #####AERONET#####
     df = pd.read_table(aeronet_path+year+month2+'_all_sites_aod15_allpoints.txt', delimiter=',', header=[7])
-    df = df[df['AERONET_Site'] == 'CARTEL']
+    df = df[df['AERONET_Site'] == 'SRMIST_CHENNAI']
     df = df.replace(-999,np.nan)
     
     sites = df['AERONET_Site']
@@ -168,7 +168,7 @@ for month,month2,fmonth in zip(months,month2s,fmonths):
     
     # query all AERONET points at once for neighbors within 100 km
     R = 6371.0  # Earth radius in km
-    max_rad = 100 / R  # convert 100 km to radians on unit sphere
+    max_rad = 50 / R  # convert 100 km to radians on unit sphere
     
     neighbors = tree.query_ball_point(aeronet_xyz, r=max_rad)
     print(len(neighbors))
@@ -196,7 +196,7 @@ for month,month2,fmonth in zip(months,month2s,fmonths):
             for match_idx in np.where(mask)[0]:
                 all_matches.append({
                     "aeronet_time": t_aer,
-                    "aeronet_site": "CARTEL",
+                    "aeronet_site": "SRMIST_CHENNAI",
                     "aeronet_lat": aer_lat,
                     "aeronet_lon": aer_lon,
                     "aeronet_aod": aer_aod,
@@ -210,7 +210,7 @@ for month,month2,fmonth in zip(months,month2s,fmonths):
     # Convert the list of matches into a new DataFrame
     df_detailed_matches = pd.DataFrame(all_matches)
     # Save to a different file
-    output_path = f"/scratch/nld6854/earthcare/cams_data/{month}_{year}/detailed_atlid_matches_cartel_{month}.csv"
+    output_path = f"/scratch/nld6854/earthcare/cams_data/{month}_{year}/detailed_atlid_matches_SRMIST_CHENNAI_{month}_50km.csv"
     df_detailed_matches.to_csv(output_path, index=False)
     
     print(f"Saved {len(df_detailed_matches)} individual co-located points to {output_path}")

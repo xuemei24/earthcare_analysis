@@ -166,14 +166,14 @@ for nday in range(1,no_of_days+1):
         lat_k = []
         lon_k = []
  
-        for ext, lat, lon, _,_ in results:
+        for ext, lat, lon in zip(ext_list, lat_list, lon_list):
             if ext.shape[1] <= k:
                 continue
- 
+
             ext_k.append(ext[:, k])
             lat_k.append(lat)
             lon_k.append(lon)
- 
+
         all_ext = np.concatenate(ext_k)
         all_lat = np.concatenate(lat_k)
         all_lon = np.concatenate(lon_k)
@@ -200,10 +200,10 @@ for nday in range(1,no_of_days+1):
         lat_k = []
         lon_k = []
  
-        for ext, lat, lon, _,_ in results:
+        for ext, lat, lon in zip(ext_list, lat_list, lon_list):
             if ext.shape[1] <= k:
                 continue
- 
+
             # Remove NaNs BEFORE binning
             mask = np.isfinite(ext[:, k])
             if not np.any(mask):

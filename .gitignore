@@ -72,4 +72,16 @@ scripts/april_2025/5_aeronet/test_atlid_to_aeronet.py
 scripts/april_2025/all_orbits.py
 scripts/april_2025/v2.py
 
+scripts/april_2025/2_extinction_prof/1copy.py
+scripts/april_2025/2_extinction_prof/bb.py
+scripts/april_2025/2_extinction_prof/ext_col/
+scripts/april_2025/3_co-located_orbits/1_12_months.py
+scripts/april_2025/3_co-located_orbits/ASTGTMV003_N03E008_dem.tif
+scripts/april_2025/3_co-located_orbits/topo_cache/
+scripts/april_2025/3_co-located_orbits/working_jupyternoteboot.py
+scripts/april_2025/5_aeronet/tmp.py
+scripts/april_2025/5_aeronet/tmp3.py
+scripts/april_2025/5_aeronet/tmp4.py
+scripts/april_2025/plotting_tools/__pycache__/read_h5copy.cpython-312.pyc
+scripts/april_2025/plotting_tools/read_h5copy.py
 

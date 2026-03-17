@@ -17,7 +17,7 @@ from ectools.ectools_edited import ecplot as ecplt
 from ectools.ectools_edited import colormaps
 from plotting_tools import statistics,read_h5,ATC_category_colors,projections
 
-df = pd.read_csv('/scratch/nld6854/earthcare/cams_data/122024-112025_detailed_yearly_atlid_aeronet_detailed_matches.csv', delimiter=",")
+df = pd.read_csv('/scratch/nld6854/earthcare/cams_data/122024-112025_detailed_yearly_atlid_aeronet_detailed_matches_50km.csv', delimiter=",")
 cmap = ecplt.colormaps.chiljet2
 
 def read_df(df):
@@ -30,7 +30,7 @@ def read_df(df):
     #aeronet_lon = df['aeronet_lon'].values
 
     #mask = ~np.isnan(atlid_aod) & ~np.isnan(aeronet_aod)
-    mask = (atlid_aod>0.02) & (aeronet_aod>0.02)
+    mask = (atlid_aod>=0.02) & (aeronet_aod>=0.02)
     atlid_aod = atlid_aod[mask]
 
     aeronet_aod = aeronet_aod[mask]
@@ -47,9 +47,7 @@ def read_df(df):
     return np.asarray(atl_aod),np.asarray(aer_aod)
     '''
     return np.asarray(atlid_aod),np.asarray(aeronet_aod)
-atlid_aod,aer_aod = read_df(df)
-mask = (atlid_aod>=0) & (aer_aod>=0)
-Aaod,aero_aod = atlid_aod[mask],aer_aod[mask]
+Aaod,aero_aod = read_df(df)
 
 x_bins = np.logspace(np.log10(0.001),np.log10(2),100)
 y_bins = np.logspace(np.log10(0.001),np.log10(2),100)
@@ -85,8 +83,66 @@ ax1.legend(frameon=False)
 ax1.set_title('ATLID vs AERONET AOD',fontsize=15)
 
 fig.tight_layout()
-fig.savefig('122024-112025_correlation_hist.jpg')
+fig.savefig('122024-112025_correlation_hist_50km.jpg')
 plt.close(fig)
 
 
+########################
+#Monthly mean timeseries
+########################
+def read_df(df,month):
+    df = df[df['month']==month]
+    atlid_aod = df['atlid_aod'].values
+    #atlid_lat = df['atlid_lat'].values
+    #atlid_lon = df['atlid_lon'].values
+
+    aeronet_aod = df['aeronet_aod'].values
+    #aeronet_lat = df['aeronet_lat'].values
+    #aeronet_lon = df['aeronet_lon'].values
+
+    #mask = ~np.isnan(atlid_aod) & ~np.isnan(aeronet_aod)
+    mask = (atlid_aod>=0.02) & (aeronet_aod>=0.02)
+    atlid_aod = np.asarray(atlid_aod[mask])
+
+    aeronet_aod = np.asarray(aeronet_aod[mask])
+    '''
+    aeronet_lat = aeronet_lat[mask]
+    aeronet_lon = aeronet_lon[mask]
+
+    lat,lon,aer_aod,atl_aod = [],[],[],[]
+    for ij in np.unique(aeronet_lat):
+        lon.append(aeronet_lon[aeronet_lat==ij][0])
+        lat.append(ij)
+        aer_aod.append(np.nanmean(aeronet_aod[aeronet_lat==ij]))
+        atl_aod.append(np.nanmean(atlid_aod[aeronet_lat==ij]))
+    return np.asarray(atl_aod),np.asarray(aer_aod)
+    '''
+    return np.nanmean(atlid_aod),np.nanstd(atlid_aod,ddof=1),np.nanmean(aeronet_aod),np.nanstd(aeronet_aod,ddof=1)
+
+months = ['december','january','february','march','april','may','june','july','august','september','october','november']
+fmonth = ['12-2024','01-2025','02-2025','03-2025','04-2025','05-2025','06-2025','07-2025','08-2025','09-2025','10-2025','11-2025']
+atlid_aod = np.array([])
+atlid_std = np.array([])
+aeronet_aod = np.array([])
+aeronet_std = np.array([])
+for month in months:
+    atl_aod,atl_std,aer_aod,aer_std = read_df(df,month)
+    atlid_aod=np.append(atlid_aod,atl_aod)
+    aeronet_aod=np.append(aeronet_aod,aer_aod)
+    atlid_std=np.append(atlid_std,atl_std)
+    aeronet_std=np.append(aeronet_std,aer_std)
+
+fig,ax = plt.subplots(1,figsize=(12,5))
+ax.plot(fmonth, aeronet_aod, marker='o', label='AERONET')
+ax.fill_between(fmonth,aeronet_aod-aeronet_std,aeronet_aod+aeronet_std,color='blue',alpha=0.3)
+ax.plot(fmonth, atlid_aod, marker='s',label='ATLID')
+ax.fill_between(fmonth,atlid_aod-atlid_std,atlid_aod+atlid_std,color='orange',alpha=0.3)
+ax.set_ylabel("AOD",fontsize=15)
+ax.set_title("Monthly AOD Comparison: ATLID vs AERONET",fontsize=15)
+ax.set_ylim(-0.1,0.7)
+ax.grid(True, linestyle='--', alpha=0.5)
+ax.tick_params(labelsize=12)
+ax.legend(frameon=False)
+fig.tight_layout()
+fig.savefig('AERONET_ATLID_monthly_mean_aod_50km.jpg')
 

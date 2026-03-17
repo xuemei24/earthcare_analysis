@@ -47,6 +47,7 @@ for fmonth, month2, month in zip(fmonths, month2s, months):
         
         # Calculate AOD 355
         aod355 = get_AOD(df_aeronet_raw['AOD_340nm'], 340, 355, df_aeronet_raw['340-440_Angstrom_Exponent'])
+        aod675 = df_aeronet_raw['AOD_675nm']
         
         # DateTime handling
         dt_str = df_aeronet_raw["Date(dd:mm:yyyy)"] + " " + df_aeronet_raw["Time(hh:mm:ss)"]
@@ -54,7 +55,9 @@ for fmonth, month2, month in zip(fmonths, month2s, months):
             "time": pd.to_datetime(dt_str, format="%d:%m:%Y %H:%M:%S"),
             "lat": df_aeronet_raw["Site_Latitude(Degrees)"],
             "lon": df_aeronet_raw["Site_Longitude(Degrees)"],
-            "aeronet_aod": aod355
+            "AERONET_Site_Name": df_aeronet_raw["AERONET_Site_Name"],
+            "aeronet_aod": aod355,
+            "aeronet_aod_675": aod675
         }).dropna(subset=['lat', 'lon', 'time', 'aeronet_aod'])
     except Exception as e:
         print(f"Skipping AERONET for {month}: {e}")
@@ -88,9 +91,8 @@ for fmonth, month2, month in zip(fmonths, month2s, months):
     aer_xyz = latlon_to_xyz(np.radians(df_aer_f["lat"].values), np.radians(df_aer_f["lon"].values))
     
     tree = cKDTree(atlid_xyz)
-    max_rad = 100 / 6371.0
+    max_rad = 50 / 6371.0
     neighbors = tree.query_ball_point(aer_xyz, r=max_rad)
-
     # --- Detailed Co-location Loop ---
     for i in range(len(df_aer_f)):
         inds = neighbors[i]
@@ -117,9 +119,11 @@ for fmonth, month2, month in zip(fmonths, month2s, months):
                     "overpass_id": overpass_id,
                     "month": month,
                     "aeronet_time": t_aer,
+                    "aeronet_site": df_aer_f["AERONET_Site_Name"].iloc[i],
                     "aeronet_lat": df_aer_f["lat"].iloc[i],    # Added AERONET Lat
                     "aeronet_lon": df_aer_f["lon"].iloc[i],    # Added AERONET Lon
                     "aeronet_aod": df_aer_f["aeronet_aod"].iloc[i],
+                    "aeronet_aod_675": df_aer_f["aeronet_aod_675"].iloc[i],
                     "atlid_time": all_time_f[idx],
                     "atlid_lat": all_lat_f[idx],               # Added ATLID Lat
                     "atlid_lon": all_lon_f[idx],               # Added ATLID Lon
@@ -133,7 +137,7 @@ df_final = pd.DataFrame(all_detailed_matches)
 
 # Optional: Add a column for the distance error
 # This helps you see if the 'insane' points happen when the satellite is far away
-df_final.to_csv("/scratch/nld6854/earthcare/cams_data/122024-112025_detailed_yearly_atlid_aeronet_detailed_matches.csv", index=False)
+df_final.to_csv("/scratch/nld6854/earthcare/cams_data/122024-112025_detailed_yearly_atlid_aeronet_detailed_matches_50km.csv", index=False)
 
 # --- Analysis: Address the "Insane Low" weighting problem ---
 # 1. Group by Overpass ID to get 1:1 averages (Weight is now per event, not per point)

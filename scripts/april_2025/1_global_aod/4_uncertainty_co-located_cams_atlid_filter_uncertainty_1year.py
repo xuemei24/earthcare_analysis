@@ -33,6 +33,7 @@ day_or_night = ''
 which_aerosol='total'
 
 mean_or_std = 'median'
+#mean_or_std = 'mean'
 months = [
     ('december', 'December', '2024'),
     ('january',  'January',  '2025'),
@@ -47,7 +48,6 @@ months = [
     ('october',  'October',  '2025'),
     ('november', 'November', '2025'),
 ]
-
 
 atlid_all = []
 cams_all  = []
@@ -100,6 +100,7 @@ all_lat = np.asarray(lat_all)
 all_lon = np.asarray(lon_all)
 
 a_aod = np.where(atlid_all>=0.02, atlid_all, np.nan)
+c_aod = np.where(c_aod>=0.02,c_aod,np.nan)
 
 print('max and min of latitude before mask',np.nanmax(all_lat),np.nanmin(all_lat))
 mask = ~np.isnan(a_aod) & ~np.isnan(c_aod)
@@ -323,4 +324,45 @@ ax1.set_title(day_or_night[:-1]+' Dec 2024 - Nov 2025',fontsize=15)
 ax1.legend(frameon=False,fontsize=15)
 
 fig.savefig('figures/histograms_CAMS_ATLID_'+str(reso)+'deg_binned_'+mean_or_std+'_122024-112025_co-located_filtered_'+day_or_night+'uncertainty_with_modes.jpg')
+
+
+x_bins = np.logspace(np.log10(0.001),np.log10(2),100)
+y_bins = np.logspace(np.log10(0.001),np.log10(2),100)
+
+#####################################################
+fig,(ax1,ax2) = plt.subplots(1,2,figsize=(16,6))
+script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
+sys.path.append(script_path)
+from ectools.ectools_edited import ecplot as ecplt
+
+c1 = ax1.hist2d(aod_atlid.flatten(),aod_cams.flatten(),bins=[x_bins, y_bins],cmap=ecplt.colormaps.chiljet2)#, norm=LogNorm())
+
+x,y = aod_atlid.flatten(),aod_cams.flatten()
+mask = (np.isfinite(x) & np.isfinite(y) & (x > 0) & (y > 0))
+x_fit,y_fit = x[mask],y[mask]
+a, b = np.polyfit(x_fit, y_fit, 1)
+y_pred = a * x_fit + b
+rmse = np.sqrt(np.mean((y_fit - y_pred)**2))
+x_line = np.logspace(np.log10(0.001),np.log10(2),200)
+y_line = a * x_line + b
+
+ax1.plot(x_line, y_line,color="red",linewidth=2,label=(f"$y = {a:.2f}x + {b:.2e}$\n"f"RMSE = {rmse:.2e}"))
+ax1.plot([1e-2, 2],[1e-2, 2],'k-')
+
+cb=fig.colorbar(c1[3], ax=ax1, label='')
+cb.ax.tick_params(labelsize=15)
+ax1.set_xlabel('ATLID AOD 355 nm',fontsize=15)
+ax1.set_ylabel('CAMS AOD 355 nm',fontsize=15)
+ax1.tick_params(labelsize=15)
+ax1.set_xscale('log')
+ax1.set_yscale('log')
+ax1.set_xlim(0.01,2)
+ax1.set_ylim(0.01,2)
+ax1.set_axisbelow(False)  # grid on top of artists
+ax1.grid(True,which="both",color='gray',linestyle="--",linewidth=0.7,alpha=0.7)
+ax1.legend(frameon=False)#,labelcolor='white')
+ax1.set_title('ATLID vs CAMS AOD',fontsize=15)
+
+fig.tight_layout()
+fig.savefig('122024-112025_correlation_hist.jpg')
 

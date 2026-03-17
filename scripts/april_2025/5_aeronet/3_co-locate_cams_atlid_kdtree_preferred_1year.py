@@ -266,7 +266,7 @@ print('Thailand, Cambodia, Laos, Vietnam diffAOD (CAMS-AERONET)=',np.nanmean(a_c
 #-ATLID-------------------------------------------------------------------------
 file_dir = '/scratch/nld6854/earthcare/cams_data/'
 
-df_atlid_yearly = pd.read_csv(f'{file_dir}122024-112025_detailed_yearly_atlid_aeronet_detailed_matches.csv')
+df_atlid_yearly = pd.read_csv(f'{file_dir}122024-112025_detailed_yearly_atlid_aeronet_detailed_matches_50km.csv')
 
 atlid_aod = df_atlid_yearly['atlid_aod'].values
 
@@ -447,6 +447,7 @@ print('ATLID mean=',np.nanmean(atl_aod))
 print('AERONET mean=',np.nanmean(aer_aod[mask]))
 print('ATLID-AERONET mean=',np.nanmean(atl_aod[mask]-aer_aod[mask]))
 print('(ATLID-AERONET)/AERONET mean=',np.nanmean((atl_aod[mask]-aer_aod[mask])/aer_aod[mask]))
+print('(ATLID-AERONET)/ATLID mean=',np.nanmean((atl_aod[mask]-aer_aod[mask])/atl_aod[mask]))
 print('AERONET,ATLID NMB=',statistics.normalized_mean_bias(atl_aod[mask],aer_aod[mask]))
 print('RMSE=',np.sqrt(np.nanmean((aer_aod[mask]-atl_aod[mask])**2)))
 print('ATLID std=',np.std(atl_aod[mask]))

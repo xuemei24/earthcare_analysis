@@ -40,10 +40,11 @@ from matplotlib.colors import ListedColormap, BoundaryNorm
 
 script_path = '/home/nld6854/earthcare_scripts/scripts/april_2025'
 sys.path.append(script_path)
+os.environ['MAAP_credentials'] = '/home/nld6854/earthcare_scripts/scripts/april_2025/ectools/ectools/maap_credentials.txt'
 
-from ectools import ecio
-from ectools import ecplot as ecplt
-from ectools import colormaps
+from ectools.ectools_edited import ecio
+from ectools.ectools_edited import ecplot as ecplt
+from ectools.ectools_edited import colormaps
 from plotting_tools import read_h5,ATC_category_colors,projections
 from pathlib import Path
 
@@ -98,6 +99,13 @@ orography = orography.assign_coords(longitude=(('longitude',), cams_lon))
 
 dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_cloud_liquid_water_content_'+month+'_'+year+'_'+str(int(forecast_period))+'.nc')
 lwc = dslwc['clwc'].values[0,:]
+
+print('dwlwc',dslwc)
+print('lwc.shape',lwc.shape)
+sys.exit()
+#need to add rain water to remove columns
+#ice water and snow to remove grids downloading january
+
 
 '''
 #def where_cloudy(cloud,data):

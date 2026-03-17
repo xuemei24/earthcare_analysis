@@ -67,7 +67,7 @@ def assign_continent_with_amazon(df):
 # NEW: Dual histogram plotting function (AERONET vs Dataset)
 # -------------------------------------------------
 def plot_dual_histograms_by_continent(df, aeronet_var, dataset_var, dataset_name, 
-                                     filename_suffix="", title_suffix=""):
+                                     filename_suffix="", title_suffix="",dist="100km"):
     """
     Plot side-by-side histograms for AERONET and corresponding dataset
     
@@ -124,7 +124,7 @@ def plot_dual_histograms_by_continent(df, aeronet_var, dataset_var, dataset_name
         dat_median = dataset_data.median()
         
         # Add vertical lines for means
-        ax.axvline(aer_mean, color='blue', linestyle='--', linewidth=1.5, alpha=0.8,label='AERONET mean')
+        ax.axvline(aer_mean, color='black', linestyle='--', linewidth=1.5, alpha=0.8,label='AERONET mean')
         ax.axvline(dat_mean, color='red', linestyle='--', linewidth=1.5, alpha=0.8,label=dataset_name+' mean')
         
         # Labels and title
@@ -142,17 +142,17 @@ def plot_dual_histograms_by_continent(df, aeronet_var, dataset_var, dataset_name
     fig.suptitle(f'AERONET vs {dataset_name} AOD Histograms by Continent{title_suffix}', 
                 fontsize=16, y=0.995)
     plt.tight_layout()
-    plt.savefig(f'AERONET_vs_{dataset_name}_histograms_by_continent{filename_suffix}.jpg', 
+    plt.savefig(f'AERONET_vs_{dataset_name}_histograms_by_continent{filename_suffix}_{dist}.jpg', 
                dpi=300, bbox_inches='tight')
     plt.close()
     
     print(f"Saved dual histograms for AERONET vs {dataset_name}{filename_suffix}")
 
    
-df_AT = pd.read_csv('/scratch/nld6854/earthcare/cams_data/122024-112025_detailed_yearly_atlid_aeronet_detailed_matches.csv', delimiter=",")
+df_AT = pd.read_csv('/scratch/nld6854/earthcare/cams_data/122024-112025_detailed_yearly_atlid_aeronet_detailed_matches_50km.csv', delimiter=",")
 df_AT = df_AT.dropna(subset=["aeronet_aod", "atlid_aod", "aeronet_lat", "aeronet_lon"])
 
 plot_dual_histograms_by_continent(df_AT, 'aeronet_aod', 'atlid_aod', 'ATLID',
-                                 '_122024-112025', ': Dec 2024 - Nov 2025')
+                                 '_122024-112025', ': Dec 2024 - Nov 2025','50km')
 
 print("\nDone! All dual histograms generated.")
