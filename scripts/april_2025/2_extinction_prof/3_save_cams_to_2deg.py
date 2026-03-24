@@ -292,4 +292,4 @@ for month in months:
     print(" →", outfile_normal)
     print(" →", outfile_masknan)
    
-    
+    sys.exit()    

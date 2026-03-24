@@ -39,8 +39,8 @@ figname = 'extinction_coefficient'
 
 year = '2024' if month == 'december' else '2025'
 cams_dir = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/'
-file_name = cams_dir+'regridded_satellite_total_extinction_coe_2deg_masknan_mean_single_alt_'+month+'_'+year+'_snr_gr_2.nc'
-cams_file = file_name.replace('satellite','CAMS')#'regridded_CAMS_total_extinction_coe_2deg_masknan_mean_single_alt_'+month+'_2025.nc'
+file_name = cams_dir+'regridded_satellite_total_extinction_coe_2deg_masknan_mean_single_alt_'+month+'_'+year+'_snr_gr_2_extra_output.nc'
+cams_file = file_name.replace('satellite','CAMS').replace('_extra_output.nc','.nc')#'regridded_CAMS_total_extinction_coe_2deg_masknan_mean_single_alt_'+month+'_2025.nc'
 
 cams_ha = Dataset(cams_file)
 cams_h = cams_ha.variables['height'][:]
@@ -65,7 +65,7 @@ cams_h = cams.variables['height'][:]
 print(var_cams.shape) #(451, 900, 254)
 print(var_zonal_cams.shape)
 
-vmax = 1.e-4
+vmax = 1.e-3
 
 atlid_hpx,lat_atlidpa = np.meshgrid(atlid_h,lat_atlid)
 cams_hpx,lat_atlidpc  = np.meshgrid(cams_h,lat_cams)

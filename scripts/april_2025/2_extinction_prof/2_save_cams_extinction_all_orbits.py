@@ -50,14 +50,14 @@ from pathlib import Path
 
 from multiprocessing import Pool
 
-month = 'november'
+month = 'january'
 forecast_period = '3'
 
 year = '2024' if month == 'december' else '2025'
 # CAMS Data (xxx)
 fcams = '/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/aerosol_extinction_coe_355nm_'+month+'_'+year+'_'+str(int(forecast_period))+'.nc'
 
-if fcams[-4:-3] == '0':
+if fcams[-5:-3] == '12':
     utcs = ['00','01','11','12','13','23']
 elif fcams[-4:-3] == '3':
     utcs = ['02','03','04','14','15','16']
@@ -95,51 +95,54 @@ print('cams_h[:,0,0]',cams_h[:,0,0])
 
 orography = xr.open_dataset('/scratch/nld6854/earthcare/earthcare_scripts/scripts/cams_orography.nc')
 orography = orography.assign_coords(longitude=(('longitude',), cams_lon))
-#orog = orography['orography'][:]
+orog = orography['orography'].values
+orog_3d = orog[np.newaxis, :, :]
+print(orog.shape,orog_3d.shape)
+
+below_ground_mask = cams_h <= orog_3d
 
 dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_cloud_liquid_water_content_'+month+'_'+year+'_'+str(int(forecast_period))+'.nc')
 lwc = dslwc['clwc'].values[0,:]
+dslwc.close()
 
-print('dwlwc',dslwc)
-print('lwc.shape',lwc.shape)
-sys.exit()
-#need to add rain water to remove columns
-#ice water and snow to remove grids downloading january
+dsrwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_rain_water_content_'+month+'_'+year+'_'+str(int(forecast_period))+'.nc')
+rwc = dsrwc['crwc'].values[0,:]
+dsrwc.close()
+
+high_lwc_mask = lwc+rwc > 0.0001
+ext_masked = np.where(high_lwc_mask,np.nan,cams_extcoe)
+
+# Check the results
+print(f"Original shape: {cams_extcoe.shape}")
+print(f"Masked values: {np.isnan(ext_masked).sum()}")
+print(ext_masked.shape)
+
+dsiwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_cloud_ice_water_content_'+month+'_'+year+'_'+str(int(forecast_period))+'.nc')
+iwc = dsiwc['ciwc'].values[0,:] #cutoff 2e-7
+dsiwc.close()
+
+dsswc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_snow_water_content_'+month+'_'+year+'_'+str(int(forecast_period))+'.nc')
+swc = dsswc['cswc'].values[0,:] #cutoff 1e-5
+dsswc.close()
 
 
-'''
-#def where_cloudy(cloud,data):
-#    print('before',data.shape)
-#    for i in range(cloud.shape[0]):
-#        for j in range(cloud.shape[2]):
-#            mask = (cloud[i,:,j,:]>=0.0001).any(axis=0)
-#            data[i,:,j,mask] = np.nan
-#    print('after',data.shape)
-#    return data
-def where_cloudy(cloud,data):
-    print('before',data.shape)
-    mask = (cloud>=0.0001).any(axis=1)
-    mask_expanded = np.expand_dims(mask, axis=1) #Expand mask to match 'data' shape for height (axis=1)
-    mask_final = np.repeat(mask_expanded, repeats=137, axis=1)
-    print('mask_expanded.shape',mask_expanded.shape)
-    data[:, :, :, :] = np.where(mask_final, np.nan, data)
-    print('after',data.shape)
-    return data
-
-cams_extcoe_clear = where_cloudy(lwc,cams_extcoe)
-'''
 #the lines below keeps more aerosol grids than above
-cams_extcoe_clear = np.where(lwc<0.0001,cams_extcoe,0) # was np.nan
+cams_extcoe_clear = np.where(iwc<2.e-7,ext_masked,np.nan) # was np.nan
+cams_extcoe_clear = np.where(swc<1e-5,cams_extcoe_clear,np.nan)
+cams_extcoe_clear = cams_extcoe_clear[:,::-1,:,:]
+
+cams_extcoe_clear = np.where(below_ground_mask, np.nan, cams_extcoe_clear)
 cams_extcoe_clear = np.expand_dims(cams_extcoe_clear,axis=0)
-print(cams_extcoe_clear.shape)
+print('cams_extcoe_clear.shape',cams_extcoe_clear.shape)
 
 ds_clear = ds.copy(deep=True)
-ds_clear['aerext355'].values = cams_extcoe_clear[:,:,::-1,:,:]
- 
+ds_clear['aerext355'].values = cams_extcoe_clear[:,:,:,:,:]
+print('ds_clear',ds_clear)
+
 srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
-ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
+ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5')
 
 cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC,'classification_low_resolution')
 #category_colors = ecplt.ATC_category_colors
@@ -161,7 +164,7 @@ def process_file(filen):
             return None
 
         orbit_sequence = filen[-9:-3]
-        atlid_extcoe, atlid_lats, atlid_lons, atlid_times, atlid_h, tc_cld, tc_all, err = read_h5.get_ext(filen,np.array([10,11,12,13,14,15,25,26,27]))
+        atlid_extcoe, atlid_lats, atlid_lons, atlid_times, atlid_h, elev,tc_cld, tc_all, err = read_h5.get_ext(filen,np.array([10,11,12,13,14,15,25,26,27]))
 
         # Interpolate CAMS data to ATLID positions
         cams_interp = ds_clear.interp(

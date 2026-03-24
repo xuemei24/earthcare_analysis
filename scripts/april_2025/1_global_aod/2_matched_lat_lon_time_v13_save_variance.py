@@ -46,7 +46,7 @@ from ectools import ecplot as ecplt
 from ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors
 
-month = 'november'
+month = 'january'
 day_or_night = 'day_'
 day_or_night = ''
 print('Month=',month,'day or night=',day_or_night)

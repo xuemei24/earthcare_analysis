@@ -20,8 +20,8 @@ from plotting_tools import statistics
 
 # Load your dataset (assuming it's a CSV with 'lat', 'lon', 'aod')
 file_dir = '/scratch/nld6854/earthcare/cams_data/'
-month = 'november'
-fmonth = 'November'
+month = 'june'
+fmonth = 'June'
 day_or_night = 'day_'
 day_or_night = ''
 print('Month=',month,'day or night=',day_or_night)

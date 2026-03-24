@@ -47,7 +47,7 @@ from ectools.ectools import ecplot as ecplt
 from ectools.ectools import colormaps
 from plotting_tools import read_h5,ATC_category_colors
 
-month = 'may'
+month = 'june'
 day_or_night = 'day_'
 day_or_night = ''
 print('Month=',month,'day or night=',day_or_night)
@@ -91,6 +91,10 @@ ds = ds.assign_coords(longitude=(('longitude',), cams_lon))
 #this file should be merged
 dslwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_cloud_liquid_water_content_'+month+'_'+year+'.nc')
 lwc = dslwc['clwc'].values[:,:]
+dsrwc = xr.open_dataset('/scratch/nld6854/earthcare/cams_data/'+month+'_'+year+'/specific_rain_water_content_'+month+'_'+year+'.nc')
+lwc = lwc+dsrwc['crwc'].values[:,:]
+dsrwc.close()
+
 def collapse_lwc(cloud,data):
     for i in range(data.shape[0]):
         for j in range(data.shape[1]):
@@ -102,6 +106,7 @@ lwc_cams = collapse_lwc(lwc,lwc[:,:,0,:,:])
 print('lwc_cams.shape',lwc_cams.shape)
 
 valid_timelwc = dslwc['forecast_period']+dslwc['forecast_reference_time'][:]
+dslwc.close()
 print(valid_timelwc.shape)
 
 # Flatten both
@@ -153,7 +158,7 @@ orography = orography.assign_coords(longitude=(('longitude',), cams_lon))
 srcdir = '/scratch/nld6854/earthcare/earthcare_data/'+month+'_'+year+'/EBD/'
 
 cmap = ecplt.colormaps.chiljet2
-ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5', prodmod_code="ECA_EXBA")
+ATC = ecio.load_ATC('/scratch/nld6854/earthcare/earthcare_data/march_2025/TC_/ECA_EXBA_ATL_TC__2A_20250321T122819Z_20250913T131504Z_04614F.h5')
 
 cmap_tc,bounds,categories_formatted,norm_tc = ATC_category_colors.ecplt_cmap(ATC,'classification_low_resolution')
 #category_colors = ecplt.ATC_category_colors
